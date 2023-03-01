@@ -3,7 +3,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
-
+#include <i8254.h>
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -31,16 +31,47 @@ int main(int argc, char *argv[]) {
 
 int(timer_test_read_config)(uint8_t timer, enum timer_status_field field) {
   uint8_t st = 0;
-  return timer_get_conf(timer, &st) & timer_display_conf(timer, st, field);
+  if (timer_get_conf(timer, &st) != OK) return 1;
+  if (timer_display_conf(timer, st, field) != OK) return 1;
+  return OK;
 }
 
 int(timer_test_time_base)(uint8_t timer, uint32_t freq) {
-  return timer_set_frequency(timer, freq);
+  if (timer_set_frequency(timer, freq) != OK) return 1;
+  return OK;
 }
 
 int(timer_test_int)(uint8_t time) {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  extern uint32_t counter;
+  int ipc_status;
+  int r;
+  message msg;
+  uint8_t bit_no;
+  timer_subscribe_int(&bit_no);
+  uint8_t irq_set = BIT(bit_no);
+  
+  while (time > 0) { 
+        if( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) {
+          printf("driver_receive failed with: %d", r);
+          continue;
+        }
+        if (is_ipc_notify(ipc_status)) { /* received notification */
+            switch (_ENDPOINT_P(msg.m_source)) {
+              case HARDWARE:         
+                if (msg.m_notify.interrupts & irq_set) { 
+                  timer_int_handler();
+                  if(counter % 60 == 0){
+                    timer_print_elapsed_time();
+                    time--;
+                  }
+                }
+                break;
+              default:
+                break; /* no other notifications expected: do nothi*/
+            }
+      }
+  }
 
-  return 1;
+  if (timer_unsubscribe_int() != 0) {return !OK;}
+  return OK;
 }
