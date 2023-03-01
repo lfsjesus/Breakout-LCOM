@@ -10,7 +10,10 @@ uint32_t counter = 0;
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   uint8_t timer_config = 0;
-  timer_get_conf(timer, &timer_config);
+
+  if (timer_get_conf(timer, &timer_config) != OK) {
+    return !OK;
+  }
   
   // Extract the last 4 bits of the timer config
   uint8_t timer_config_lsb = timer_config & 0x0F;
@@ -24,7 +27,7 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   }
 
   // Calculate the timer counter value needed for the desired frequency
-  uint16_t timer_counter_value = TIMER_FREQ / freq;
+  uint16_t timer_counter_value = TIMER_FREQ / freq; 
 
   // Extract LSB and MSB of the timer counter value
   uint8_t timer_counter_value_lsb, timer_counter_value_msb;
@@ -32,9 +35,10 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   util_get_MSB(timer_counter_value, &timer_counter_value_msb);
 
   // Write the timer counter value in the timer register
-  if (!(sys_outb(TIMER_0 + timer, timer_counter_value_lsb) == OK &&
-      sys_outb(TIMER_0 + timer, timer_counter_value_msb) == OK)) {
+  if (sys_outb(TIMER_0 + timer, timer_counter_value_lsb) != OK) 
+    return !OK;
 
+  if (sys_outb(TIMER_0 + timer, timer_counter_value_msb) != OK) {
     return !OK;
   }
 
@@ -43,17 +47,12 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
 
 int (timer_subscribe_int)(uint8_t *bit_no) {
   *bit_no = hook_id;
-  if (sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook_id) != OK) {
-    return 1;
-  }
-  return OK;
+  return sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook_id) != OK;
+  
 }
 
 int (timer_unsubscribe_int)() {
-  if (sys_irqrmpolicy(&hook_id) != OK) {
-    return !OK;
-  }
-  return OK;
+  return sys_irqrmpolicy(&hook_id);
 }
 
 void (timer_int_handler)() {
