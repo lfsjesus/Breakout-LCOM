@@ -67,7 +67,7 @@ int(timer_test_int)(uint8_t time) {
                 }
                 break;
               default:
-                break; /* no other notifications expected: do nothi*/
+                break; /* no other notifications expected: do nothing*/
             }
       }
   }
