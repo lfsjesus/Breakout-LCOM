@@ -5,65 +5,66 @@
 
 #include "i8254.h"
 
+static int hook_id = 0;
+uint32_t counter = 0;
+
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
-  // Retrieve the current timer configuration
   uint8_t timer_config = 0;
   timer_get_conf(timer, &timer_config);
   
-  // Extract the least significant byte of the configuration
+  // Extract the last 4 bits of the timer config
   uint8_t timer_config_lsb = timer_config & 0x0F;
 
   // Construct the new timer configuration using the desired frequency
-  uint8_t timer_config_msb = (timer << 6) | TIMER_LSB_MSB | timer_config_lsb;
+  uint8_t new_config = (timer << 6) | TIMER_LSB_MSB | timer_config_lsb;
 
-  // Write the new configuration to the timer control register
-  if (sys_outb(TIMER_CTRL, timer_config_msb) != OK) {
-    // Failed to write configuration
-    return 1;
+  // Write new config in control register
+  if (sys_outb(TIMER_CTRL, new_config) != OK) {
+    return !OK;
   }
 
   // Calculate the timer counter value needed for the desired frequency
   uint16_t timer_counter_value = TIMER_FREQ / freq;
 
-  // Extract the least and most significant bytes of the timer counter value
+  // Extract LSB and MSB of the timer counter value
   uint8_t timer_counter_value_lsb, timer_counter_value_msb;
   util_get_LSB(timer_counter_value, &timer_counter_value_lsb);
   util_get_MSB(timer_counter_value, &timer_counter_value_msb);
 
-  // Write the timer counter value to the timer's counter registers
+  // Write the timer counter value in the timer register
   if (!(sys_outb(TIMER_0 + timer, timer_counter_value_lsb) == OK &&
       sys_outb(TIMER_0 + timer, timer_counter_value_msb) == OK)) {
 
-    return 1;
+    return !OK;
   }
 
-  return 0;
+  return OK;
 }
 
 int (timer_subscribe_int)(uint8_t *bit_no) {
-    /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
-
-  return 1;
+  *bit_no = hook_id;
+  if (sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook_id) != OK) {
+    return 1;
+  }
+  return OK;
 }
 
 int (timer_unsubscribe_int)() {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
-
-  return 1;
+  if (sys_irqrmpolicy(&hook_id) != OK) {
+    return !OK;
+  }
+  return OK;
 }
 
 void (timer_int_handler)() {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  counter += 1;
 }
 
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
   uint8_t command = TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(timer);
 
   if(sys_outb(TIMER_CTRL, command) != OK) {
-    return 1;
+    return !OK;
   }
 
   return util_sys_inb(TIMER_0 + timer, st);
