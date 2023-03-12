@@ -68,4 +68,13 @@ void (kbc_ih)() {
   kbc_read_byte();
 }
 
+int (kbd_dis_int)(uint8_t* restore) {
+  uint8_t cmd = kbd_read_status(&cmd);
+  (*restore) = cmd;
+  cmd = cmd & ~ KBD_CB_INT;
+  if (sys_outb(STAT_REG, cmd) != OK) {
+    return !OK;
+  }
+  return OK;
+}
 
