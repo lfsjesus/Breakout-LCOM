@@ -6,8 +6,10 @@
 #include <stdint.h>
 #include "keyboard.h"
 #include "i8042.h"
+#include "i8254.h"
 
 extern int sys_inb_count;
+extern uint32_t counter;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -94,15 +96,121 @@ int(kbd_test_scan)() {
 }
 
 int(kbd_test_poll)() {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  uint8_t status;
+  int index = 0;
+  int esc = 0;
 
-  return 1;
+  uint8_t restore = kbd_dis_int(&restore);
+
+  while (!esc) {
+    if (kbd_read_status(&status) != OK) {
+      perror("Error reading status register\n");
+      return !OK;
+    }
+
+    if (kbc_read_byte() != OK) {
+      micro_delay(5000);
+      continue;
+    }
+
+    uint8_t* scancode = get_scancode();
+
+    if(scancode[index] == ESC_BK_CODE) {
+      esc = 1;
+    }
+
+    if (scancode[index] == TWO_BYTE_CODE) {
+      index = 1;
+      continue;
+    }
+
+    kbd_print_scancode(!BREAK_CODE(scancode[index]), index + 1, scancode);
+    index = 0;
+
+  }
+
+  if (sys_outb(STAT_REG, restore) != OK) {
+    perror("Error reenabling interrupts\n");
+    return !OK;
+  }
+  
+  kbd_print_no_sysinb(sys_inb_count);
+  return OK;
 }
+
 
 int(kbd_test_timed_scan)(uint8_t n) {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  int ipc_status;
+  int r;
+  message msg;
+  int index = 0;
+  int esc = 0;
 
-  return 1;
+  uint8_t kbd_bit_no;
+  uint8_t timer_bit_no;
+
+  if (kbd_subscribe_int(&kbd_bit_no) != OK) {
+    perror("Error subscribing keyboard interrupts\n");
+    return !OK;
+  }
+
+  if (timer_subscribe_int(&timer_bit_no) != OK) {
+    perror("Error subscribing timer interrupts\n");
+    return !OK;
+  }
+
+  uint8_t irq_set_kbd = BIT(kbd_bit_no);
+  uint8_t irq_set_timer = BIT(timer_bit_no);
+
+  while (!esc) {
+    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+      printf("driver_receive failed with: %d", r);
+      continue;
+    }
+
+    if (is_ipc_notify(ipc_status)) {
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE:
+          if (msg.m_notify.interrupts & irq_set_kbd) {
+            kbc_ih();
+            uint8_t* scancode = get_scancode();
+
+            if (scancode[index] == ESC_BK_CODE) {
+              esc = 1;
+            }
+
+            if (scancode[index] == TWO_BYTE_CODE) {
+              index = 1;
+              continue;
+            }
+
+            kbd_print_scancode(!BREAK_CODE(scancode[index]), index + 1, scancode);
+
+            index = 0;
+          }
+
+          if (msg.m_notify.interrupts & irq_set_timer) {
+            timer_int_handler();
+            if (counter/60 >= n) break;
+          }
+      break;
+
+        default:
+          break;
+      }
+    }
+  }
+
+  if (kbd_unsubscribe_int() != OK) {
+    perror("Error unsubscribing keyboard interrupts\n");
+    return !OK;
+  }
+
+  if (timer_unsubscribe_int() != OK) {
+    perror("Error unsubscribing timer interrupts\n");
+    return !OK;
+  }
+
+  return OK;
 }
+
