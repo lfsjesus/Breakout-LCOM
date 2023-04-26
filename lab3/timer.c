@@ -9,46 +9,34 @@ static int hook_id = TIMER0_IRQ;
 uint32_t counter = 0;
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
-  uint8_t timer_config = 0;
-
-  if (timer_get_conf(timer, &timer_config) != OK) {
+  uint8_t config;
+  if (timer_get_conf(timer, &config) != OK)
     return !OK;
-  }
   
-  // Extract the last 4 bits of the timer config
-  uint8_t timer_config_lsb = timer_config & 0x0F;
+  // Now we need a new config for the timer
+  uint8_t control_word = ((TIMER_SEL0 + timer) << 6) | TIMER_LSB_MSB | (config & 0x0F);
 
-  // Construct the new timer configuration using the desired frequency
-  uint8_t new_config = (timer << 6) | TIMER_LSB_MSB | timer_config_lsb;
-
-  // Write new config in control register
-  if (sys_outb(TIMER_CTRL, new_config) != OK) {
-    return !OK;
-  }
-
-  // Calculate the timer counter value needed for the desired frequency
-  uint16_t timer_counter_value = TIMER_FREQ / freq; 
-
-  // Extract LSB and MSB of the timer counter value
-  uint8_t timer_counter_value_lsb, timer_counter_value_msb;
-  util_get_LSB(timer_counter_value, &timer_counter_value_lsb);
-  util_get_MSB(timer_counter_value, &timer_counter_value_msb);
-
-  // Write the timer counter value in the timer register
-  if (sys_outb(TIMER_0 + timer, timer_counter_value_lsb) != OK) 
+  if (sys_outb(TIMER_CTRL, control_word) != OK)
     return !OK;
 
-  if (sys_outb(TIMER_0 + timer, timer_counter_value_msb) != OK) {
-    return !OK;
-  }
+  // New counter value
+  uint16_t new_freq = TIMER_FREQ / freq;
+  uint8_t new_freq_lsb, new_freq_msb;
+  util_get_LSB(new_freq, &new_freq_lsb);
+  util_get_MSB(new_freq, &new_freq_msb);
 
+  if (sys_outb(TIMER_0 + timer, new_freq_lsb) != OK)
+    return !OK;
+  
+  if (sys_outb(TIMER_0 + timer, new_freq_msb) != OK)
+    return !OK;
+  
   return OK;
 }
 
 int (timer_subscribe_int)(uint8_t *bit_no) {
-  *bit_no = hook_id;
+  (*bit_no) = hook_id;
   return sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook_id);
-  
 }
 
 int (timer_unsubscribe_int)() {
@@ -60,40 +48,39 @@ void (timer_int_handler)() {
 }
 
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
-  uint8_t command = TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(timer);
+  uint8_t command = TIMER_RB_CMD | TIMER_RB_SEL(timer) | TIMER_MSB;
 
-  if(sys_outb(TIMER_CTRL, command) != OK) {
+  if (sys_outb(TIMER_CTRL, command) != OK) 
     return !OK;
-  }
 
-  return util_sys_inb(TIMER_0 + timer, st);
+  if (util_sys_inb(TIMER_0 + timer, st) != OK)
+    return !OK;
+
+  return OK;
 
 }
 
 int (timer_display_conf)(uint8_t timer, uint8_t st,
                         enum timer_status_field field) {
-                          
-  union timer_status_field_val val; //union to store the value of the field
 
-  switch(field) {
+  union timer_status_field_val conf;
+  
+  switch (field) {
     case tsf_all:
-      val.byte = st;
+      conf.byte = st;
       break;
     case tsf_initial:
-      st = st & (BIT(4) | BIT(5));
-      st >>= 4;
-      val.in_mode = st;
+      conf.in_mode = (st & (BIT(4) | BIT(5))) >> 4;
       break;
     case tsf_mode:
-      st = st & (BIT(1) | BIT(2) | BIT(3));
-      st >>= 1;
-      val.count_mode = st;
+      conf.count_mode = (st & (BIT(1) | BIT(2) | BIT(3))) >> 1;
       break;
     case tsf_base:
-      st = st & BIT(0);
-      val.bcd = st;
+      conf.bcd = st & BIT(0);
       break;
   }
-  
-  return timer_print_config(timer, field, val);
+
+  if (timer_print_config(timer, field, conf) != OK)
+    return !OK;
+  return OK;
 }
