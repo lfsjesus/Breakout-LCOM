@@ -7,7 +7,7 @@ int read_status_register(uint8_t* status) {
   return OK;
 }
 
-int read_output_buffer(uint8_t* byte) {
+int read_output(uint8_t port, uint8_t* byte, uint8_t mouse) {
   uint8_t status;
   uint8_t attempts = 3;
 
@@ -18,7 +18,7 @@ int read_output_buffer(uint8_t* byte) {
     }
 
     if ((status & OBF) != 0) {
-      if (util_sys_inb(IN_OUT_BUF, byte) != OK) {
+      if (util_sys_inb(port, byte) != OK) {
         return !OK;
       }
 
@@ -31,6 +31,17 @@ int read_output_buffer(uint8_t* byte) {
         printf("Timeout error!\n");
         return !OK;
       }
+
+      if (!mouse && (status & BIT(5))) {
+        printf("Error: Keyboard output expected\n");
+        return !OK;
+      }
+
+      if (mouse && !(status & BIT(5))) {
+        printf("Error: Mouse output expected\n");
+        return !OK;
+      }
+
       return OK;
     }
     tickdelay(micros_to_ticks(20000));
