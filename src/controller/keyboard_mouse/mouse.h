@@ -14,6 +14,15 @@ void (mouse_ih)();
 int (mouse_unsubscribe_int)();
 int (mouse_sync)();
 int (mouse_process_packet)();
+void (sync_mouse_info) ();
+
+
+typedef struct {
+    uint8_t right_click;
+    uint8_t left_click;
+    int16_t x;
+    int16_t y;
+} MouseInfo;   
 
 
 #endif

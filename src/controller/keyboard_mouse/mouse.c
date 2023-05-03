@@ -5,6 +5,8 @@ uint8_t byte;
 uint8_t mouse_bytes[3];
 struct packet mouse_packet;
 unsigned int packet_counter = 0;
+MouseInfo mouse_info = {0, 0, 100, 100};
+extern vbe_mode_info_t mode_info;
 
 int (mouse_config)(uint8_t control_word) {
   uint8_t response;
@@ -62,6 +64,20 @@ int (mouse_process_packet)() {
   mouse_packet.delta_x = (mouse_bytes[0] & MOUSE_X_SIGNAL) ? (0xff00 | mouse_bytes[1]) : mouse_bytes[1];
   mouse_packet.delta_y = (mouse_bytes[0] & MOUSE_Y_SIGNAL) ? (0xff00 | mouse_bytes[2]) : mouse_bytes[2];
 
+
   return OK;
+}
+
+void (sync_mouse_info) () {
+
+  mouse_info.left_click = mouse_packet.lb;
+  mouse_info.right_click = mouse_packet.rb;
+
+  if (mouse_bytes[0] & MOUSE_X_OVERFLOW || mouse_bytes[0] & MOUSE_Y_OVERFLOW) return;
+
+  if (mouse_packet.delta_x < 0 || mouse_packet.delta_x > mode_info.XResolution || mouse_packet.delta_y < 0 || mouse_packet.delta_y > mode_info.YResolution) return;
+
+  mouse_info.x = mouse_packet.delta_x;
+  mouse_info.y = mouse_packet.delta_y;
 }
 

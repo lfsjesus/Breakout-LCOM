@@ -8,6 +8,11 @@
   "editor.wordWrapColumn": 100,
   "files.associations": {
     "*.embeddedhtml": "html",
-    "i8254.h": "c"
+    "i8254.h": "c",
+    "mouse.h": "c",
+    "*.xpm": "c",
+    "sprite.h": "c",
+    "model.h": "c",
+    "graphics.h": "c"
   },
 }

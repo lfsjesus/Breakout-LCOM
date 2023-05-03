@@ -41,7 +41,7 @@ int (set_frame_buffer)(uint16_t mode) {
   bytes_per_pixel = (modeinfo.BitsPerPixel + 7) / 8; // adds 7 to the bits per pixel and divides by 8 because we want the number of bytes
 
   frame_size = modeinfo.XResolution * modeinfo.YResolution * bytes_per_pixel; // calculates the size of the frame buffer in bytes
-
+  buffer_index = 0;
   // We have to map the frame buffer
   struct minix_mem_range physical_memory; // struct that supports memory ranges
   physical_memory.mr_base = modeinfo.PhysBasePtr; // the base address of the frame buffer
