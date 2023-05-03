@@ -10,7 +10,7 @@
 #define STAT_REG 0x64
 
 #define ESC_MK_CODE 0x01
-#define ESC_BK_CODE 0x81s
+#define ESC_BK_CODE 0x81
 
 #define KBC_READ_CMD 0x20
 #define KBC_WRITE_CMD 0x60

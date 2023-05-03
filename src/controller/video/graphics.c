@@ -38,9 +38,9 @@ int (set_frame_buffer)(uint16_t mode) {
   }
 
   // We have to calculate the size of the frame buffer
-  unsigned int bytes_per_pixel = (modeinfo.BitsPerPixel + 7) / 8; // adds 7 to the bits per pixel and divides by 8 because we want the number of bytes
+  bytes_per_pixel = (modeinfo.BitsPerPixel + 7) / 8; // adds 7 to the bits per pixel and divides by 8 because we want the number of bytes
 
-  unsigned int frame_size = modeinfo.XResolution * modeinfo.YResolution * bytes_per_pixel; // calculates the size of the frame buffer in bytes
+  frame_size = modeinfo.XResolution * modeinfo.YResolution * bytes_per_pixel; // calculates the size of the frame buffer in bytes
 
   // We have to map the frame buffer
   struct minix_mem_range physical_memory; // struct that supports memory ranges
@@ -65,13 +65,14 @@ int (set_frame_buffer)(uint16_t mode) {
 }
 
 int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
-  if (x > modeinfo.XResolution || y > modeinfo.YResolution) {
+  if (x > modeinfo.XResolution || y > modeinfo.YResolution) {   //TODO limites
     printf("Error: pixel out of bounds");
     return !OK;
   }
-
-  unsigned bytes_per_pixel = (modeinfo.BitsPerPixel + 7) / 8;
+  
   unsigned int index = (modeinfo.XResolution * y + x) * bytes_per_pixel; // calculates the index of the pixel
+  if (buffer_index == 1)
+    index += frame_size;
 
   if (memcpy(&frame_buffer[index], &color, bytes_per_pixel) == NULL) {
     printf("Error copying the pixel");
@@ -115,11 +116,38 @@ int (print_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
   return OK;
 }
 
+void (clear_vram) () {
+  vg_draw_rectangle(0,0, modeinfo.XResolution, modeinfo.YResolution, 0);
+}
+
+int (vg_set_start) () {
+  reg86_t r86;
+
+  memset(&r86, 0, sizeof(r86));
+
+  r86.intno = 0x10;
+  r86.ah = 0x4F;
+  r86.al = 0x07;
+  r86.bh = 0x00;
+  r86.bl = 0x00;
+  r86.cx = 0;
+  r86.dx = modeinfo.YResolution * buffer_index;
+
+  if (sys_int86(&r86) != OK) {
+    printf("\tvg_exit(): sys_int86() failed \n");
+    return 1;
+  }
+  buffer_index++;
+  buffer_index %= 2;
+  return 0;
+}
+
 int (normalize_color)(uint32_t color, uint32_t *new_color) {
   if (modeinfo.BitsPerPixel == 32) *new_color = color;
   else *new_color = color & (BIT(modeinfo.BitsPerPixel) - 1);
   return OK;
 }
+
 
 
 
