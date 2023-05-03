@@ -1,6 +1,6 @@
-#include "timer.h"
 #include <stdint.h>
 #include <lcom/lcf.h>
+#include "i8254.h"
 
 static int hook_id = TIMER0_IRQ;
 uint32_t counter = 0;
