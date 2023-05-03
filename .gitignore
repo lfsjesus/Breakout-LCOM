@@ -1,0 +1,13 @@
+.DS_Store
+.idea
+.gdbinit
+.clang-format
+*.o
+*.d
+*.depend
+*trace.txt
+*output.txt
+core.*
+proj/doc/doxygen
+proj/doc/doxyfile
+
