@@ -6,6 +6,7 @@
 #include <lcom/lcf.h>
 #include <stdint.h>
 #include <stdio.h>
+#include "../video/graphics.h"
 
 
 int (mouse_config)(uint8_t control_word);

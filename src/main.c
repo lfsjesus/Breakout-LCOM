@@ -7,10 +7,12 @@
 #include "view/view.h"
 #include "controller/timer/i8254.h"
 
+extern SystemState systemState;
+
 int (main)(int argc, char *argv[]) {
   lcf_set_language("EN-US");
-  lcf_trace_calls("debug/trace.txt");
-  lcf_log_output("debug/output.txt");
+  lcf_trace_calls("/home/lcom/labs/g4-main/proj/src/debug/trace.txt");
+  lcf_log_output("/home/lcom/labs/g4-main/proj/src/debug/output.txt");
   if (lcf_start(argc, argv)) return 1;
   lcf_cleanup();
   return 0;
@@ -37,7 +39,7 @@ int setup() {
   //if (rtc_subscribe_interrupts() != 0) return 1;
 
   // Ativar stream-mode e report de dados do rato
-  //if (mouse_write(ENABLE_STREAM_MODE) != 0) return 1;
+  if (mouse_config(ENABLE_STREAM_MODE) != 0) return 1;
   if (mouse_config(ENABLE_DATA_REPORT) != 0) return 1;
 
   // Setup do Real Time Clock
@@ -66,12 +68,12 @@ int teardown() {
 }
 
 int (proj_main_loop)(int argc, char *argv[]) {
-  SystemState state = RUNNING;
   setup();
 
   int ipc_status;
   message msg;
-  while (state == RUNNING) {
+  printf ("%d\n", BIT(MOUSE_IRQ));
+  while (systemState == RUNNING) {
     
     if (driver_receive(ANY, &msg, &ipc_status) != 0) {
       printf("Error");
@@ -81,14 +83,14 @@ int (proj_main_loop)(int argc, char *argv[]) {
     if (is_ipc_notify(ipc_status)) {
       switch(_ENDPOINT_P(msg.m_source)) {
         case HARDWARE: 
-          if (msg.m_notify.interrupts & TIMER0_IRQ)    update_timer_state();
-          if (msg.m_notify.interrupts & KEYBOARD_IRQ) update_keyboard_state();
-          if (msg.m_notify.interrupts & MOUSE_IRQ)    update_mouse_state();
+          if (msg.m_notify.interrupts & BIT(TIMER0_IRQ))    update_timer_state();    //troca buffers
+          if (msg.m_notify.interrupts & BIT(KEYBOARD_IRQ)) update_keyboard_state(); 
+          if (msg.m_notify.interrupts & BIT(MOUSE_IRQ))    update_mouse_state();
+
           //if (msg.m_notify.interrupts & RTC_IRQ)      update_rtc_state();
         }
     }
   }
   teardown();
-  vg_exit();
   return OK;
 }

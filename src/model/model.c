@@ -3,7 +3,7 @@
 
 // Variáveis externas importantes à construção e manipulação do modelo
 extern uint8_t scancode;
-extern uint8_t byte_index;
+extern uint8_t packet_counter;
 SystemState systemState = RUNNING;
 MenuState menuState = START;
 extern vbe_mode_info_t mode_info;
@@ -30,9 +30,9 @@ void update_keyboard_state() {
 void update_mouse_state() {
     (mouse_ih)();
     mouse_sync();
-    if (byte_index == 3) {
+    if (packet_counter == 3) {
         sync_mouse_info();
-        byte_index = 0;
+        packet_counter = 0;
     }
 }
 

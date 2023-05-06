@@ -54,7 +54,7 @@ int (set_frame_buffer)(uint16_t mode) {
   }
 
   // virtual address of the frame buffer
-  frame_buffer = vm_map_phys(SELF, (void*)physical_memory.mr_base, frame_size);
+  frame_buffer = vm_map_phys(SELF, (void*)physical_memory.mr_base, frame_size * 2);
 
   if (frame_buffer == NULL) {
     printf("Error mapping the frame buffer");
@@ -113,6 +113,8 @@ int (print_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
       colors++;
     }
   }
+    printf("%d", buffer_index == 1);
+
   return OK;
 }
 
@@ -138,7 +140,7 @@ int (vg_set_start) () {
     return 1;
   }
   buffer_index++;
-  buffer_index %= 2;
+  buffer_index = buffer_index % 2;
   return 0;
 }
 
