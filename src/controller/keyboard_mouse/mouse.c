@@ -38,7 +38,7 @@ int (mouse_unsubscribe_int)() {
 
 void (mouse_ih)() {
   if (read_output(KBC_WRITE_CMD, &byte, 1)) {
-    printf("Error: could not handle mouse interrupt");
+    printf("Error: could not handle mouse interrupt\n");
   }
 }
 
@@ -72,12 +72,14 @@ void (sync_mouse_info) () {
 
   mouse_info.left_click = mouse_packet.lb;
   mouse_info.right_click = mouse_packet.rb;
-
   if (mouse_bytes[0] & MOUSE_X_OVERFLOW || mouse_bytes[0] & MOUSE_Y_OVERFLOW) return;
+  int16_t x = mouse_info.x;
+  int16_t y = mouse_info.y;
 
-  if (mouse_packet.delta_x < 0 || mouse_packet.delta_x > modeinfo.XResolution || mouse_packet.delta_y < 0 || mouse_packet.delta_y > modeinfo.YResolution) return;
-
-  mouse_info.x = mouse_packet.delta_x;
-  mouse_info.y = mouse_packet.delta_y;
+  if (x + mouse_packet.delta_x < 0 || x + mouse_packet.delta_x > modeinfo.XResolution || y + mouse_packet.delta_y < 0 || y + mouse_packet.delta_y > modeinfo.YResolution) return;
+  printf("delta_x:%d, delta_y:%d\n", mouse_packet.delta_x, mouse_packet.delta_y);
+  mouse_info.x += mouse_packet.delta_x;
+  mouse_info.y += mouse_packet.delta_y;
+  printf("lc:%d, x:%d, y:%d\n", mouse_info.left_click, mouse_info.x, mouse_info.y);
 }
 

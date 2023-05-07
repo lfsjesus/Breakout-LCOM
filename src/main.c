@@ -72,7 +72,6 @@ int (proj_main_loop)(int argc, char *argv[]) {
 
   int ipc_status;
   message msg;
-  printf ("%d\n", BIT(MOUSE_IRQ));
   while (systemState == RUNNING) {
     
     if (driver_receive(ANY, &msg, &ipc_status) != 0) {
@@ -83,11 +82,12 @@ int (proj_main_loop)(int argc, char *argv[]) {
     if (is_ipc_notify(ipc_status)) {
       switch(_ENDPOINT_P(msg.m_source)) {
         case HARDWARE: 
-          if (msg.m_notify.interrupts & BIT(TIMER0_IRQ))    update_timer_state();    //troca buffers
+          //printf("Interrupt: %d\n", msg.m_notify.interrupts);
+          if (msg.m_notify.interrupts & BIT(TIMER0_IRQ))   update_timer_state();    //troca buffers
           if (msg.m_notify.interrupts & BIT(KEYBOARD_IRQ)) update_keyboard_state(); 
           if (msg.m_notify.interrupts & BIT(MOUSE_IRQ))    update_mouse_state();
-
-          //if (msg.m_notify.interrupts & RTC_IRQ)      update_rtc_state();
+          break;
+          //if (msg.m_notify.interrupts & RTC_IRQ)      update_rtc_state(); 
         }
     }
   }

@@ -28,10 +28,11 @@ void update_keyboard_state() {
 }
 
 void update_mouse_state() {
-    (mouse_ih)();
-    mouse_sync();
+    mouse_ih();
+    mouse_process_packet();
     if (packet_counter == 3) {
         sync_mouse_info();
+        draw_new_frame();
         packet_counter = 0;
     }
 }

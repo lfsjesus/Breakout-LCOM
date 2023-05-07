@@ -45,7 +45,7 @@ int (set_frame_buffer)(uint16_t mode) {
   // We have to map the frame buffer
   struct minix_mem_range physical_memory; // struct that supports memory ranges
   physical_memory.mr_base = modeinfo.PhysBasePtr; // the base address of the frame buffer
-  physical_memory.mr_limit = physical_memory.mr_base + frame_size; // the limit address of the frame buffer
+  physical_memory.mr_limit = physical_memory.mr_base + frame_size * 2; // the limit address of the frame buffer
 
   // Allocates the memory range
   if (sys_privctl(SELF, SYS_PRIV_ADD_MEM, &physical_memory) != OK) {
@@ -73,7 +73,6 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
   unsigned int index = (modeinfo.XResolution * y + x) * bytes_per_pixel; // calculates the index of the pixel
   if (buffer_index == 1)
     index += frame_size;
-
   if (memcpy(&frame_buffer[index], &color, bytes_per_pixel) == NULL) {
     printf("Error copying the pixel");
     return !OK;
@@ -82,7 +81,9 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
 }
 
 int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
-  for (unsigned i = 0; i < len; i++) {
+  printf("Here!\n");
+  for (int i = 0; i < len; i++) {
+    printf("loop%d\n", i);
     if (vg_draw_pixel(x + i, y, color) != OK) {
       printf("Error drawing the pixel");
       return !OK;
