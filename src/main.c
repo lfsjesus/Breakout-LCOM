@@ -69,7 +69,6 @@ int teardown() {
 
 int (proj_main_loop)(int argc, char *argv[]) {
   setup();
-
   int ipc_status;
   message msg;
   while (systemState == RUNNING) {

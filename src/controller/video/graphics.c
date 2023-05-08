@@ -81,9 +81,7 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
 }
 
 int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
-  printf("Here!\n");
   for (int i = 0; i < len; i++) {
-    printf("loop%d\n", i);
     if (vg_draw_pixel(x + i, y, color) != OK) {
       printf("Error drawing the pixel");
       return !OK;

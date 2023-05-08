@@ -75,11 +75,10 @@ void (sync_mouse_info) () {
   if (mouse_bytes[0] & MOUSE_X_OVERFLOW || mouse_bytes[0] & MOUSE_Y_OVERFLOW) return;
   int16_t x = mouse_info.x;
   int16_t y = mouse_info.y;
-
   if (x + mouse_packet.delta_x < 0 || x + mouse_packet.delta_x > modeinfo.XResolution || y + mouse_packet.delta_y < 0 || y + mouse_packet.delta_y > modeinfo.YResolution) return;
   printf("delta_x:%d, delta_y:%d\n", mouse_packet.delta_x, mouse_packet.delta_y);
   mouse_info.x += mouse_packet.delta_x;
   mouse_info.y += mouse_packet.delta_y;
-  printf("lc:%d, x:%d, y:%d\n", mouse_info.left_click, mouse_info.x, mouse_info.y);
+  printf("lc:%d, x:%d, y:%d\n\n", mouse_info.left_click, mouse_info.x, mouse_info.y);
 }
 

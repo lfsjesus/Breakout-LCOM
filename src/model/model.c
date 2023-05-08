@@ -29,8 +29,9 @@ void update_keyboard_state() {
 
 void update_mouse_state() {
     mouse_ih();
-    mouse_process_packet();
+    mouse_sync();
     if (packet_counter == 3) {
+        mouse_process_packet();
         sync_mouse_info();
         draw_new_frame();
         packet_counter = 0;

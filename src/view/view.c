@@ -27,5 +27,6 @@ void draw_mouse() {
 }
 
 void draw_new_frame() {
+  clear_vram();
   draw_mouse();
 }
