@@ -43,19 +43,24 @@ void (mouse_ih)() {
 }
 
 int (mouse_sync)() {
-  if (packet_counter == 0 && (byte & FIRST_BYTE)) mouse_bytes[0] = byte;
+  if (packet_counter == 0 && (byte & FIRST_BYTE)) {
+    mouse_bytes[packet_counter] = byte;
+    packet_counter++;
+  }
 
-  else mouse_bytes[packet_counter] = byte;
-  
-  packet_counter++;
+  else if (packet_counter > 0) {
+    mouse_bytes[packet_counter] = byte;
+    packet_counter++;
+  }
+
   return OK;
 }
 
 int (mouse_process_packet)() {
-  for (int i = 0; i < 3; i++) {
+  for (unsigned i = 0; i < 3; i++) {
       mouse_packet.bytes[i] = mouse_bytes[i];
   }
-
+  
   mouse_packet.lb = mouse_bytes[0] & MOUSE_LB;
   mouse_packet.mb = mouse_bytes[0] & MOUSE_MB;
   mouse_packet.rb = mouse_bytes[0] & MOUSE_RB;
@@ -69,16 +74,15 @@ int (mouse_process_packet)() {
 }
 
 void (sync_mouse_info) () {
-
+  mouse_process_packet();
   mouse_info.left_click = mouse_packet.lb;
   mouse_info.right_click = mouse_packet.rb;
-  if (mouse_bytes[0] & MOUSE_X_OVERFLOW || mouse_bytes[0] & MOUSE_Y_OVERFLOW) return;
-  int16_t x = mouse_info.x;
-  int16_t y = mouse_info.y;
-  if (x + mouse_packet.delta_x < 0 || x + mouse_packet.delta_x > modeinfo.XResolution || y + mouse_packet.delta_y < 0 || y + mouse_packet.delta_y > modeinfo.YResolution) return;
-  printf("delta_x:%d, delta_y:%d\n", mouse_packet.delta_x, mouse_packet.delta_y);
-  mouse_info.x += mouse_packet.delta_x;
-  mouse_info.y += mouse_packet.delta_y;
-  printf("lc:%d, x:%d, y:%d\n\n", mouse_info.left_click, mouse_info.x, mouse_info.y);
+  if (mouse_packet.x_ov || mouse_packet.y_ov) return;
+  int16_t x = mouse_info.x + mouse_packet.delta_x;
+  int16_t y = mouse_info.y - mouse_packet.delta_y;
+  if (x < 0 || x > modeinfo.XResolution || y < 0 || y > modeinfo.YResolution) return;
+
+  mouse_info.x = x;
+  mouse_info.y = y;
 }
 

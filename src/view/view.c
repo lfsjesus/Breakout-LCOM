@@ -22,7 +22,6 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y) {
 }
 
 void draw_mouse() {
-  //vg_draw_rectangle(100, 100, 100, 50, 0xFF0000);
   draw_sprite_xpm(mouse, mouse_info.x, mouse_info.y);
 }
 
