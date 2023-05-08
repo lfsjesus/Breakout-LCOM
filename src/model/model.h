@@ -8,6 +8,10 @@
 #include "../controller/video/graphics.h"
 #include "xpm/mouse.xpm"
 #include "xpm/menu_background.xpm"
+#include "xpm/singleplayer_button.xpm"
+#include "xpm/multiplayer_button.xpm"
+#include "xpm/leaderboard_button.xpm"
+#include "xpm/settings_button.xpm"
 #include "../view/view.h"
 #include "../model/sprite.h"
 

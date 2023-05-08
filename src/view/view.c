@@ -5,6 +5,10 @@ extern MouseInfo mouse_info;
 extern SystemState systemState;
 extern Sprite *mouse;
 extern Sprite *background;
+extern Sprite *button_singleplayer;
+extern Sprite *button_multiplayer;
+extern Sprite *button_leaderboard;
+extern Sprite *button_settings;
 
 int draw_sprite_xpm(Sprite *sprite, int x, int y) {
   uint16_t height = sprite->height;
@@ -26,8 +30,13 @@ void draw_mouse() {
   draw_sprite_xpm(mouse, mouse_info.x, mouse_info.y);
 }
 
-void draw_background() {
+void draw_menu() {
   draw_sprite_xpm(background, 0, 0);
+  draw_sprite_xpm(button_singleplayer, 150, 290);
+  draw_sprite_xpm(button_multiplayer, 444, 290);
+  draw_sprite_xpm(button_leaderboard, 150, 390);
+  draw_sprite_xpm(button_settings, 444, 390);
+
 }
 
 void draw_new_frame() {
@@ -35,10 +44,5 @@ void draw_new_frame() {
 }
 
 void clear_screen() {
-  if (systemState == START) {
-    draw_background();
-  }
-  else {
-    vg_draw_rectangle(0, 0, modeinfo.XResolution, modeinfo.YResolution, 0);
-  }
+  draw_menu();
 }

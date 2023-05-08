@@ -10,10 +10,18 @@ extern vbe_mode_info_t mode_info;
 
 Sprite* mouse;
 Sprite* background;
+Sprite* button_singleplayer;
+Sprite* button_multiplayer;
+Sprite* button_leaderboard;
+Sprite* button_settings;
 
 void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
     background = create_sprite_xpm((xpm_map_t) menu_background_xpm);
+    button_singleplayer = create_sprite_xpm((xpm_map_t) singleplayer_button_xpm);
+    button_multiplayer = create_sprite_xpm((xpm_map_t) multiplayer_button_xpm);
+    button_leaderboard = create_sprite_xpm((xpm_map_t) leaderboard_button_xpm);
+    button_settings = create_sprite_xpm((xpm_map_t) settings_button_xpm);
 }
 
 void destroy_sprites() {
