@@ -33,11 +33,12 @@ void update_mouse_state() {
     if (packet_counter == 3) {
         mouse_process_packet();
         sync_mouse_info();
-        draw_new_frame();
-        packet_counter = 0;
     }
+
 }
 
 void update_timer_state() {
     vg_set_start();
+    clear_vram();
+    draw_new_frame();
 }

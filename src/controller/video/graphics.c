@@ -66,8 +66,12 @@ int (set_frame_buffer)(uint16_t mode) {
 
 int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
   if (x > modeinfo.XResolution || y > modeinfo.YResolution) {   //TODO limites
-    printf("Error: pixel out of bounds");
+    printf("Error: pixel out of bounds. 1\n");
     return !OK;
+  }
+  if (x < 0 || y < 0) {
+    printf("Error: pixel out of bounds. 2\n");
+
   }
   
   unsigned int index = (modeinfo.XResolution * y + x) * bytes_per_pixel; // calculates the index of the pixel
