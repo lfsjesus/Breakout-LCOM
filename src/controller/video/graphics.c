@@ -122,7 +122,7 @@ int (print_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
 }
 
 void (clear_vram) () {
-  vg_draw_rectangle(0,0, modeinfo.XResolution, modeinfo.YResolution, 0);
+  vg_draw_rectangle(0,0, modeinfo.XResolution, modeinfo.YResolution, 0x0);
 }
 
 int (vg_set_start) () {
