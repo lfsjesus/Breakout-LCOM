@@ -7,6 +7,7 @@
 #include "../controller/keyboard_mouse/mouse.h"
 #include "../controller/video/graphics.h"
 #include "xpm/mouse.xpm"
+#include "xpm/menu_background.xpm"
 #include "../view/view.h"
 #include "../model/sprite.h"
 

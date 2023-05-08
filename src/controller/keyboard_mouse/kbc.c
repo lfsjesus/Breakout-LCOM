@@ -9,7 +9,7 @@ int read_status_register(uint8_t* status) {
 
 int read_output(uint8_t port, uint8_t* byte, uint8_t mouse) {
   uint8_t status;
-  uint8_t attempts = 3;
+  uint8_t attempts = 10;
 
   while (attempts > 0) {
     if (read_status_register(&status) != OK) {
@@ -44,7 +44,7 @@ int read_output(uint8_t port, uint8_t* byte, uint8_t mouse) {
 
       return OK;
     }
-    tickdelay(micros_to_ticks(20000));
+    //tickdelay(micros_to_ticks(20000));
     attempts--;
   }
   return !OK;

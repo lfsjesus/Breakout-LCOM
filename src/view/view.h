@@ -12,7 +12,11 @@
 
 void draw_mouse();
 
+void draw_background();
+
 int draw_sprite_xpm(Sprite *sprite, int x, int y);
 
 void draw_new_frame();
+
+void clear_screen();
 #endif

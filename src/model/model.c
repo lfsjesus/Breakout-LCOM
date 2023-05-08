@@ -9,9 +9,11 @@ MenuState menuState = START;
 extern vbe_mode_info_t mode_info;
 
 Sprite* mouse;
+Sprite* background;
 
 void setup_sprites() {
-  mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
+    mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
+    background = create_sprite_xpm((xpm_map_t) menu_background_xpm);
 }
 
 void destroy_sprites() {
@@ -33,11 +35,10 @@ void update_mouse_state() {
     if (packet_counter == 3) {
         sync_mouse_info();
     }
-
 }
 
 void update_timer_state() {
     vg_set_start();
-    clear_vram();
+    clear_screen();
     draw_new_frame();
 }
