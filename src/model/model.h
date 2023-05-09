@@ -21,7 +21,6 @@ void update_keyboard_state();
 void update_mouse_state();
 void update_timer_state();
 
-void update_ball_pos();
 
 typedef enum {
     RUNNING,
@@ -53,6 +52,8 @@ typedef struct {
     uint16_t y;
     uint8_t hp;
 }Brick;
+
+void update_ball_pos(Ball* ball);
 
 
 #endif

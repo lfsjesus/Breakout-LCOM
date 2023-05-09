@@ -44,6 +44,20 @@ void draw_ball() {
   vg_draw_rectangle(mainBall.x, mainBall.y, mainBall.radius, mainBall.radius, 0xFFFFFF);
 }
 
+void draw_level() {
+  int width = 70;
+  int height = 30;
+  int padding = 50;
+  for (int i = 0; i < 8; i++)
+    for (int j = 0; j < 10; j++) {
+      if (maps1[i][j] == 'X')
+        vg_draw_rectangle(padding + width * j, padding + i * height, width, height, 0xFF0200); // substituir por xpm
+      else if (maps1[i][j] == 'A')
+        vg_draw_rectangle(padding + width * j, padding + i * height, width, height, 0x0000FF);
+
+    }
+}
+
 void draw_new_frame() {
   switch (gameState){
   case START:
@@ -60,6 +74,7 @@ void draw_new_frame() {
     break;
   
   case GAME:
+    draw_level();
     draw_ball();
     break;
   default:

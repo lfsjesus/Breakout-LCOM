@@ -68,40 +68,40 @@ void update_mouse_state() {
     }
 }
 
-void update_ball_pos() {
+void update_ball_pos(Ball* ball) {
     int screenWidth = modeinfo.XResolution;
     int screenHeight = modeinfo.YResolution;
-    int x = mainBall.x;
-    int y = mainBall.y;
-    x += mainBall.vx;
-    y -= mainBall.vy;
+    int x = ball->x;
+    int y = ball->y;
+    x += ball->vx;
+    y -= ball->vy;
 
     // Check if the ball has exceeded the screen limits and adjust accordingly
     
     if (x < 0) {
         x = 0;
-        mainBall.vx *= -1;
+        ball->vx *= -1;
     } 
-    else if (x + mainBall.radius > screenWidth) {
-        x = screenWidth - mainBall.radius;
-        mainBall.vx *= -1;
+    else if (x + ball->radius > screenWidth) {
+        x = screenWidth - ball->radius;
+        ball->vx *= -1;
     }
 
     if (y < 0) {
         y = 0;
-        mainBall.vy = mainBall.vy * -1;
+        ball->vy *= -1;
     }
-    else if (y + mainBall.radius > screenHeight) {
-        y = screenHeight - mainBall.radius;
-        mainBall.vy *= -1;
+    else if (y + ball->radius > screenHeight) {
+        y = screenHeight - ball->radius;
+        ball->vy *= -1;
     }
 
-    mainBall.x = x;
-    mainBall.y = y;
+    ball->x = x;
+    ball->y = y;
 }
 
 void update_timer_state() {
-    update_ball_pos();
+    update_ball_pos(&mainBall);
     vg_set_start();
     clear_screen();
     draw_new_frame();
