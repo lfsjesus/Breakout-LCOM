@@ -13,6 +13,16 @@
 #define ESC_MK_CODE 0x01
 #define ESC_BK_CODE 0x81
 
+#define S_MK_CODE 0x1F
+#define S_BK_CODE 0x9F
+
+#define P_MK_CODE 0x19
+#define P_BK_CODE 0x99
+
+#define H_MK_CODE 0x23
+#define H_BK_CODE 0xA3
+
+
 #define KBC_READ_CMD 0x20
 #define KBC_WRITE_CMD 0x60
 

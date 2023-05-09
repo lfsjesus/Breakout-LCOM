@@ -21,6 +21,7 @@ void update_keyboard_state();
 void update_mouse_state();
 void update_timer_state();
 
+void update_ball_pos();
 
 typedef enum {
     RUNNING,
@@ -30,8 +31,28 @@ typedef enum {
 typedef enum {
     START,
     GAME,
+    SCORE,
+    SETTINGS,
     END
-} MenuState;
+} GameState;
+
+typedef struct {
+    uint16_t radius;
+    uint16_t x;
+    uint16_t y;
+    int16_t vx;
+    int16_t vy;
+    uint8_t power;
+    uint16_t speed;
+}Ball;
+
+typedef struct {
+    uint16_t width;
+    uint16_t height;
+    uint16_t x;
+    uint16_t y;
+    uint8_t hp;
+}Brick;
 
 
 #endif

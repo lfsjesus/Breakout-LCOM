@@ -20,7 +20,7 @@ int (main)(int argc, char *argv[]) {
 
 int setup() {
   // Atualização da frequência
-  if (timer_set_frequency(0, 60) != 0) return 1;
+  if (timer_set_frequency(0, 30) != 0) return 1;
 
 
   // Inicialização dos buffers de vídeo (double buffering)

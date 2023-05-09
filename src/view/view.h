@@ -7,7 +7,6 @@
 #include "../controller/keyboard_mouse/mouse.h"
 #include "../model/sprite.h"
 #include "../model/model.h"
-#include "../controller/video/graphics.h"
 #define TRANSPARENT 0xFFFFFE
 
 void draw_mouse();
