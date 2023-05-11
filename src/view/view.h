@@ -7,7 +7,6 @@
 #include "../controller/keyboard_mouse/mouse.h"
 #include "../model/sprite.h"
 #include "../model/model.h"
-#include "../model/maps/map1.c"
 
 #define TRANSPARENT 0xFFFFFE
 
@@ -17,7 +16,7 @@ void draw_menu();
 
 void draw_ball();
 
-void draw_map();
+void draw_bricks();
 
 int draw_sprite_xpm(Sprite *sprite, int x, int y);
 

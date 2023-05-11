@@ -2,11 +2,15 @@
 #include <stdio.h>
 
 
-char* maps1[8] =  {"X X XXXX X",
-                   "  XX   XXA",
-                   "        XX",
-                   "     X    ",
-                   "    XXXX  ",
-                   "  XXX     ",
-                   "  XXXX    ",
-                   "          "};
+static char* map1[12] =  {" XXXXXXXX ",
+                          "XXXAAAAXXX",
+                          "XX      XX",
+                          "X        X",
+                          "X X    X X",
+                          "XXXX  XXXX",
+                          "XXXX  XXXX",
+                          " XXX  XXX ",
+                          "  XX  XX  ",
+                          "   X  X   ",
+                          "          ",
+                          "          "};

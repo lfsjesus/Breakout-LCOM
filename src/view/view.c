@@ -5,6 +5,8 @@ extern MouseInfo mouse_info;
 extern SystemState systemState;
 extern GameState gameState;
 extern Ball mainBall;
+extern Brick bricks[100];
+
 extern Sprite *mouse;
 extern Sprite *background;
 extern Sprite *button_singleplayer;
@@ -44,18 +46,16 @@ void draw_ball() {
   vg_draw_rectangle(mainBall.x, mainBall.y, mainBall.radius, mainBall.radius, 0xFFFFFF);
 }
 
-void draw_level() {
-  int width = 70;
-  int height = 30;
-  int padding = 50;
-  for (int i = 0; i < 8; i++)
-    for (int j = 0; j < 10; j++) {
-      if (maps1[i][j] == 'X')
-        vg_draw_rectangle(padding + width * j, padding + i * height, width, height, 0xFF0200); // substituir por xpm
-      else if (maps1[i][j] == 'A')
-        vg_draw_rectangle(padding + width * j, padding + i * height, width, height, 0x0000FF);
+void draw_bricks() {
+  int colors[2] = {0xFF0000, 0x0000FF};
+  vg_draw_rectangle(bricks[0].x, bricks[0].y, bricks[0].width, bricks[0].height, colors[bricks[0].color]);
 
-    }
+  for (int i = 0; i < 100; i++) {
+    if (bricks[i].width == 0)
+      break;
+
+    vg_draw_rectangle(bricks[i].x, bricks[i].y, bricks[i].width, bricks[i].height, colors[bricks[i].color]);
+  }
 }
 
 void draw_new_frame() {
@@ -74,7 +74,7 @@ void draw_new_frame() {
     break;
   
   case GAME:
-    draw_level();
+    draw_bricks();
     draw_ball();
     break;
   default:

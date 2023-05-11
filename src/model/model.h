@@ -14,6 +14,7 @@
 #include "xpm/settings_button.xpm"
 #include "../view/view.h"
 #include "../model/sprite.h"
+#include "../model/maps/map1.c"
 
 void setup_sprites();
 void destroy_sprites();
@@ -46,14 +47,16 @@ typedef struct {
 }Ball;
 
 typedef struct {
-    uint16_t width;
-    uint16_t height;
     uint16_t x;
     uint16_t y;
+    uint16_t width;
+    uint16_t height;
     uint8_t hp;
+    uint8_t color;
 }Brick;
 
 void update_ball_pos(Ball* ball);
 
+void setup_bricks();
 
 #endif
