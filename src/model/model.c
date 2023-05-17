@@ -31,6 +31,35 @@ void destroy_sprites() {
   destroy_sprite(mouse);
 }
 
+void setup_bricks() {
+    int width = 70;
+    int height = 40;
+    int padding = 50;
+    int index = 0;
+    for (int i = 0; i < 12; i++) {
+        for (int j = 0; j < 10; j++) {
+            if (map1[i][j] == ' ')
+                continue;
+            bricks[index].x = padding + j * width;
+            bricks[index].y = padding + i * height;
+            bricks[index].width = width;
+            bricks[index].height = height;
+            if (map1[i][j] == 'X') {
+                bricks[index].hp = 1;
+                bricks[index].color = 0;
+                brick_counter++;
+            }
+
+            else if (map1[i][j] == 'A') {
+                bricks[index].hp = 3;
+                bricks[index].color = 1;
+                brick_counter++;
+            }
+            index++;
+         }
+        }
+}
+
 void update_keyboard_state() {
     (kbc_ih)();
     switch (gameState) {
@@ -71,70 +100,11 @@ void update_mouse_state() {
 }
 
 void update_timer_state() {
-    update_ball_pos(&mainBall);
+    change_ball_pos(&mainBall);
     vg_set_start();
     clear_screen();
     draw_new_frame();
 }
 
-void update_ball_pos(Ball* ball) {
-    int screenWidth = modeinfo.XResolution;
-    int screenHeight = modeinfo.YResolution;
-    int x = ball->x;
-    int y = ball->y;
-    x += ball->vx;
-    y -= ball->vy;
-
-    
-    if (x < 0) {
-        x = 0;
-        ball->vx *= -1;
-    } 
-    else if (x + ball->radius > screenWidth) {
-        x = screenWidth - ball->radius;
-        ball->vx *= -1;
-    }
-
-    if (y < 0) {
-        y = 0;
-        ball->vy *= -1;
-    }
-    else if (y + ball->radius > screenHeight) {
-        y = screenHeight - ball->radius;
-        ball->vy *= -1;
-    }
-
-    ball->x = x;
-    ball->y = y;
-}
-
-void setup_bricks() {
-    int width = 70;
-    int height = 40;
-    int padding = 50;
-    int index = 0;
-    for (int i = 0; i < 12; i++) {
-        for (int j = 0; j < 10; j++) {
-            if (map1[i][j] == ' ')
-                continue;
-            bricks[index].x = padding + j * width;
-            bricks[index].y = padding + i * height;
-            bricks[index].width = width;
-            bricks[index].height = height;
-            if (map1[i][j] == 'X') {
-                bricks[index].hp = 1;
-                bricks[index].color = 0;
-                brick_counter++;
-            }
-
-            else if (map1[i][j] == 'A') {
-                bricks[index].hp = 3;
-                bricks[index].color = 1;
-                brick_counter++;
-            }
-            index++;
-         }
-        }
-}
 
 

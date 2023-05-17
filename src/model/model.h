@@ -15,9 +15,14 @@
 #include "../view/view.h"
 #include "../model/sprite.h"
 #include "../model/maps/map1.c"
+#include "../controller/ball/ball.h"
+#include "../controller/brick/brick.h"
+
 
 void setup_sprites();
 void destroy_sprites();
+void setup_bricks();
+
 void update_keyboard_state();
 void update_mouse_state();
 void update_timer_state();
@@ -35,28 +40,5 @@ typedef enum {
     SETTINGS,
     END
 } GameState;
-
-typedef struct {
-    uint16_t radius;
-    uint16_t x;
-    uint16_t y;
-    int16_t vx;
-    int16_t vy;
-    uint8_t power;
-    uint16_t speed;
-}Ball;
-
-typedef struct {
-    uint16_t x;
-    uint16_t y;
-    uint16_t width;
-    uint16_t height;
-    uint8_t hp;
-    uint8_t color;
-}Brick;
-
-void update_ball_pos(Ball* ball);
-
-void setup_bricks();
 
 #endif

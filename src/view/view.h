@@ -7,6 +7,8 @@
 #include "../controller/keyboard_mouse/mouse.h"
 #include "../model/sprite.h"
 #include "../model/model.h"
+#include "../controller/ball/ball.h"
+#include "../controller/brick/brick.h"
 
 #define TRANSPARENT 0xFFFFFE
 
