@@ -41,16 +41,15 @@ void change_ball_pos(Ball* ball) {
 
   collision_board(ball);
 
-
   for (int i = 0; i < 100; i++) {
     Brick* actual = &bricks[i];
     if (actual->width == 0)
-      continue;;
+      continue;
     collision_brick(ball, actual);
   }
 }
 
-void collision_brick(Ball* ball ,Brick* brick) {
+void collision_brick(Ball* ball, Brick* brick) {
     int16_t ballMinX = ball->x - ball->radius;
     int16_t ballMaxX = ball->x + ball->radius;
     int16_t ballMinY = ball->y - ball->radius;
@@ -61,25 +60,37 @@ void collision_brick(Ball* ball ,Brick* brick) {
     int16_t brickMinY = brick->y;
     int16_t brickMaxY = brick->y + brick->height;
 
-    if (ballMaxX > brickMinX && ballMinX < brickMaxX && ballMaxY > brickMinY && ballMinY < brickMaxY) {
-        // Collision detected
+    if (ballMaxX >= brickMinX && ballMinX <= brickMaxX && ballMaxY >= brickMinY && ballMinY <= brickMaxY) {
+        // Calculate the center of the brick
+        int16_t brickCenterX = brickMinX + brick->width / 2;
+        int16_t brickCenterY = brickMinY + brick->height / 2;
 
-        // Adjust the ball's velocity based on the collision
-        if (ballMinX < brickMinX) {
-          ball->vx = -ball->vx;
-        }
-        if (ballMaxX > brickMaxX) {
-          ball->vx = -ball->vx;
+        // Calculate the distance between the ball's center and the brick's center
+        int16_t distanceX = ball->x - brickCenterX;
+        int16_t distanceY = ball->y - brickCenterY;
+
+
+        // Check which side of the brick the ball collided with
+        if (abs(distanceX) >= abs(distanceY)) {
+            // Collided horizontally
+            if (distanceX > 0) {
+                ball->x = brickMaxX + ball->radius;
+            } else {
+                ball->x = brickMinX - ball->radius;
+            }
+            ball->vx = -ball->vx;
+        } else {
+            // Collided vertically
+            if (distanceY > 0) {
+                ball->y = brickMaxY + ball->radius;
+            } else {
+                ball->y = brickMinY - ball->radius;
+            }
+            ball->vy = -ball->vy;
         }
 
-        if (ballMinY < brickMinY) {
-          ball->vy = -ball->vy;
-        }
-
-        if  (ballMaxY > brickMaxY) {
-          ball->vy = -ball->vy;
-        }
-        brick->color ++;
+        brick->color++;
         brick->color %= 2;
     }
 }
+  
