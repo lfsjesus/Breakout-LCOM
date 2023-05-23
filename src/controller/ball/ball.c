@@ -2,9 +2,11 @@
 #include <lcom/lcf.h>
 
 extern vbe_mode_info_t modeinfo;
+extern Brick bricks[100];
 
-void change_ball_pos(Ball* ball) {
 
+void collision_board(Ball* ball) {
+  
     int screenWidth = modeinfo.XResolution;
     int screenHeight = modeinfo.YResolution;
     int x = ball->x;
@@ -33,4 +35,51 @@ void change_ball_pos(Ball* ball) {
 
     ball->x = x;
     ball->y = y;
+}
+
+void change_ball_pos(Ball* ball) {
+
+  collision_board(ball);
+
+
+  for (int i = 0; i < 100; i++) {
+    Brick* actual = &bricks[i];
+    if (actual->width == 0)
+      continue;;
+    collision_brick(ball, actual);
+  }
+}
+
+void collision_brick(Ball* ball ,Brick* brick) {
+    int16_t ballMinX = ball->x - ball->radius;
+    int16_t ballMaxX = ball->x + ball->radius;
+    int16_t ballMinY = ball->y - ball->radius;
+    int16_t ballMaxY = ball->y + ball->radius;
+
+    int16_t brickMinX = brick->x;
+    int16_t brickMaxX = brick->x + brick->width;
+    int16_t brickMinY = brick->y;
+    int16_t brickMaxY = brick->y + brick->height;
+
+    if (ballMaxX > brickMinX && ballMinX < brickMaxX && ballMaxY > brickMinY && ballMinY < brickMaxY) {
+        // Collision detected
+
+        // Adjust the ball's velocity based on the collision
+        if (ballMinX < brickMinX) {
+          ball->vx = -ball->vx;
+        }
+        if (ballMaxX > brickMaxX) {
+          ball->vx = -ball->vx;
+        }
+
+        if (ballMinY < brickMinY) {
+          ball->vy = -ball->vy;
+        }
+
+        if  (ballMaxY > brickMaxY) {
+          ball->vy = -ball->vy;
+        }
+        brick->color ++;
+        brick->color %= 2;
+    }
 }
