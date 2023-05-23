@@ -27,6 +27,8 @@ void update_keyboard_state();
 void update_mouse_state();
 void update_timer_state();
 
+void refresh_buttons_state();
+
 
 typedef enum {
     RUNNING,

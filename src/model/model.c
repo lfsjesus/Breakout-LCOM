@@ -7,6 +7,7 @@ extern uint8_t packet_counter;
 SystemState systemState = RUNNING;
 GameState gameState = START;
 extern vbe_mode_info_t mode_info;
+extern MouseInfo mouse_info;
 Ball mainBall = {15, 500, 500, 5, 10, 1, 5};
 Brick bricks[100] = {{0, 0, 0, 0, 0, 0}};
 int brick_counter = 0;
@@ -131,5 +132,6 @@ void refresh_buttons_state() {
         }
     }
 }
+
 
 
