@@ -13,6 +13,11 @@
     "*.xpm": "c",
     "sprite.h": "c",
     "model.h": "c",
-    "graphics.h": "c"
+    "graphics.h": "c",
+    "paddle.h": "c",
+    "keyboard.h": "c",
+    "brick.h": "c",
+    "ball.h": "c",
+    "lcf.h": "c"
   },
 }

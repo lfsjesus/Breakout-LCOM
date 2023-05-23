@@ -22,6 +22,7 @@ int (normalize_color)(uint32_t color, uint32_t *new_color);
 int (vg_set_start) ();
 
 int (print_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y);
+
 vbe_mode_info_t modeinfo;
 uint8_t* frame_buffer;
 unsigned buffer_index;

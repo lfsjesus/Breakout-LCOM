@@ -2,10 +2,11 @@
 #include <lcom/lcf.h>
 
 extern MouseInfo mouse_info;
-extern SystemState systemState;
-extern GameState gameState;
 extern Ball mainBall;
 extern Brick bricks[100];
+extern Paddle mainPaddle;
+
+extern GameState gameState;
 
 extern Sprite *mouse;
 extern Sprite *background;
@@ -13,6 +14,7 @@ extern Sprite *button_singleplayer;
 extern Sprite *button_multiplayer;
 extern Sprite *button_leaderboard;
 extern Sprite *button_settings;
+extern Sprite *paddle;
 
 int draw_sprite_xpm(Sprite *sprite, int x, int y) {
   uint16_t height = sprite->height;
@@ -46,6 +48,10 @@ void draw_ball() {
   vg_draw_rectangle(mainBall.x, mainBall.y, mainBall.radius, mainBall.radius, 0xFFFFFF);
 }
 
+void draw_paddle() {
+  draw_sprite_xpm(mainPaddle.sprite, mainPaddle.x, mainPaddle.y);
+}
+
 void draw_bricks() {
   int colors[2] = {0xFF0000, 0x0000FF};
   vg_draw_rectangle(bricks[0].x, bricks[0].y, bricks[0].width, bricks[0].height, colors[bricks[0].color]);
@@ -76,6 +82,7 @@ void draw_new_frame() {
   case GAME:
     draw_bricks();
     draw_ball();
+    draw_paddle();
     break;
   default:
     break;

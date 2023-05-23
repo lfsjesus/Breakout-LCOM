@@ -2,10 +2,8 @@
 #include "controller/video/graphics.h"
 #include "controller/keyboard_mouse/keyboard.h"
 #include "controller/keyboard_mouse/mouse.h"
-#include "model/model.h"
-#include "model/sprite.h"
-#include "view/view.h"
 #include "controller/timer/i8254.h"
+#include "controller/game/game.h"
 
 extern SystemState systemState;
 

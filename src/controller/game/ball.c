@@ -1,5 +1,4 @@
 #include "ball.h"
-#include <lcom/lcf.h>
 
 extern vbe_mode_info_t modeinfo;
 extern Brick bricks[100];

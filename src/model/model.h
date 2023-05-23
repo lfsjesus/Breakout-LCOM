@@ -3,44 +3,44 @@
 
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
-#include "../controller/keyboard_mouse/keyboard.h"
-#include "../controller/keyboard_mouse/mouse.h"
-#include "../controller/video/graphics.h"
 #include "xpm/mouse.xpm"
 #include "xpm/menu_background.xpm"
 #include "xpm/singleplayer_button.xpm"
 #include "xpm/multiplayer_button.xpm"
 #include "xpm/leaderboard_button.xpm"
 #include "xpm/settings_button.xpm"
-#include "../view/view.h"
+#include "xpm/paddle.xpm"
 #include "../model/sprite.h"
 #include "../model/maps/map1.c"
-#include "../controller/ball/ball.h"
-#include "../controller/brick/brick.h"
-
 
 void setup_sprites();
 void destroy_sprites();
 void setup_bricks();
 
-void update_keyboard_state();
-void update_mouse_state();
-void update_timer_state();
+typedef struct {
+    uint16_t x;
+    uint16_t y;
+    uint16_t width;
+    uint16_t height;
+    uint8_t hp;
+    uint8_t color;
+}Brick;
 
-void refresh_buttons_state();
+typedef struct {
+    uint16_t radius;
+    uint16_t x;
+    uint16_t y;
+    int16_t vx;
+    int16_t vy;
+    uint8_t power;
+    uint16_t speed;
+}Ball;
 
+typedef struct {
+    Sprite* sprite;
+    uint16_t x;
+    uint16_t y;
+} Paddle;
 
-typedef enum {
-    RUNNING,
-    EXIT,
-} SystemState;
-
-typedef enum {
-    START,
-    GAME,
-    SCORE,
-    SETTINGS,
-    END
-} GameState;
 
 #endif
