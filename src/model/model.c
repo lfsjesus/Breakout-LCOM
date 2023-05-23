@@ -97,6 +97,14 @@ void update_mouse_state() {
     if (packet_counter == 3) {
         sync_mouse_info();
     }
+    switch (gameState) {
+        case START: 
+            refresh_buttons_state();
+            break;
+        /* Continue */
+        default:
+            break;
+    }
 }
 
 void update_timer_state() {
@@ -106,5 +114,22 @@ void update_timer_state() {
     draw_new_frame();
 }
 
+
+void refresh_buttons_state() {
+    if (mouse_info.left_click) {
+        if (mouse_info.x >= 150 && mouse_info.x <= 150 + button_singleplayer->width && mouse_info.y >= 290 && mouse_info.y <= 290 + button_singleplayer->height) {
+            gameState = GAME;
+        }
+        else if (mouse_info.x >= 444 && mouse_info.x <= 444 + button_multiplayer->width && mouse_info.y >= 290 && mouse_info.y <= 290 + button_multiplayer->height) {
+            gameState = GAME;
+        }
+        else if (mouse_info.x >= 150 && mouse_info.x <= 150 + button_leaderboard->width && mouse_info.y >= 390 && mouse_info.y <= 390 + button_leaderboard->height) {
+            gameState = SCORE;
+        }
+        else if (mouse_info.x >= 444 && mouse_info.x <= 444 + button_settings->width && mouse_info.y >= 390 && mouse_info.y <= 390 + button_settings->height) {
+            gameState = SETTINGS;
+        }
+    }
+}
 
 
