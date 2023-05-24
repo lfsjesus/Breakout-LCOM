@@ -11,7 +11,7 @@ Sprite* button_settings;
 
 Ball mainBall = {15, 500, 500, 5, 10, 1, 5};
 
-Paddle mainPaddle = {NULL, 350, 550};
+Paddle mainPaddle = {NULL, 300, 500};
 
 Brick bricks[100] = {{0, 0, 0, 0, 0, 0}};
 int brick_counter = 0;
@@ -27,10 +27,7 @@ void setup_sprites() {
 }
 
 void destroy_sprites() {
-    destroy_sprite(mouse);
-    destroy_sprite(background);
-
-
+  destroy_sprite(mouse);
 }
 
 void setup_bricks() {

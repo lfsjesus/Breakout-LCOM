@@ -71,13 +71,13 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
   }
   if (x < 0 || y < 0) {
     printf("Error: pixel out of bounds. 2\n");
+
   }
   
   unsigned int index = (modeinfo.XResolution * y + x) * bytes_per_pixel; // calculates the index of the pixel
-  if (buffer_index == 1) {
+  if (buffer_index == 1)
     index += frame_size;
-  }
-  if (memcpy(frame_buffer + index, &color, bytes_per_pixel) == NULL) {
+  if (memcpy(&frame_buffer[index], &color, bytes_per_pixel) == NULL) {
     printf("Error copying the pixel");
     return !OK;
   }
@@ -85,7 +85,7 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
 }
 
 int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
-  for (int i = 0; i < len; i++) {  
+  for (int i = 0; i < len; i++) {
     if (vg_draw_pixel(x + i, y, color) != OK) {
       printf("Error drawing the pixel");
       return !OK;
