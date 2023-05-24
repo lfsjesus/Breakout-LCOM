@@ -7,6 +7,7 @@
 *.depend
 *trace.txt
 *output.txt
+<<<<<<< HEAD
 */lab2
 */lab3
 */lab4
@@ -15,3 +16,9 @@ proj/src/proj
 core.*
 proj/doc/doxygen
 proj/doc/doxyfile
+=======
+core.*
+proj/doc/doxygen
+proj/doc/doxyfile
+
+>>>>>>> origin/temp
