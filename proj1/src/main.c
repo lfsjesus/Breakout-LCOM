@@ -20,6 +20,7 @@ int setup() {
   // Atualização da frequência
   if (timer_set_frequency(0, 60) != 0) return 1;
 
+
   // Inicialização dos buffers de vídeo (double buffering)
   if (set_frame_buffer(0x115) != 0) return 1;
 

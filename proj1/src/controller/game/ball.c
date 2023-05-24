@@ -2,7 +2,7 @@
 
 extern vbe_mode_info_t modeinfo;
 extern Brick bricks[100];
-extern Paddle* mainPaddle;
+
 
 void collision_board(Ball* ball) {
   
@@ -37,7 +37,6 @@ void collision_board(Ball* ball) {
 
 void change_ball_pos(Ball* ball) {
   collision_board(ball);
-  collision_paddle(ball, mainPaddle);
 
   for (int i = 0; i < 100; i++) {
     Brick* actual = &bricks[i];
@@ -90,9 +89,5 @@ void collision_brick(Ball* ball, Brick* brick) {
         brick->color++;
         brick->color %= 2;
     }
-}
-
-void collision_paddle(Ball* ball, Paddle* paddle) {
-    // TO IMPLEMENT: collision between ball and paddle
 }
   
