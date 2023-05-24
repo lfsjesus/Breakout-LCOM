@@ -97,7 +97,7 @@ void clear_screen() {
     break;
   
   default:
-    vg_draw_rectangle(0, 0, modeinfo.XResolution, modeinfo.YResolution, 0);
+    memset(frame_buffer + buffer_index * frame_size, 0, (size_t) frame_size);
     break;
   }
 }
