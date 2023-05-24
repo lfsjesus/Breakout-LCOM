@@ -220,13 +220,24 @@ int(video_test_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint1
             if (speed > 0) {
               if (vertical) {
                 if (yi < yf) {
-                  if (yi + speed > yf) yi = yf;
-                  else yi += speed;  
+                  if (speed > 0) {
+                    if (yi + speed > yf) yi = yf;
+                    else yi += speed;
+                  }
+                  else {
+                    if (yi + speed < yf) yi = yf;
+                    else yi += speed;
+                  }
                 }
                 else {
-                  if (yi - speed < yf) yi = yf;
-                  else yi -= speed;
-
+                  if (speed > 0) {
+                    if (yi - speed < yf) yi = yf;
+                    else yi -= speed;
+                  }
+                  else {
+                    if (yi - speed > yf) yi = yf;
+                    else yi -= speed;
+                  }
                 }
               }
               else {
