@@ -7,10 +7,13 @@
 *.depend
 *trace.txt
 *output.txt
+<<<<<<< HEAD
 core.*
 proj/doc/doxygen
 proj/doc/doxyfile
 
+=======
+>>>>>>> 3cbaf3a (removed binary files and updated .gitignore)
 */lab2
 */lab3
 */lab4
