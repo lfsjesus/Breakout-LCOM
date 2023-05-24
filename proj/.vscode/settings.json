@@ -1,0 +1,23 @@
+{
+  "git.ignoreLimitWarning": true,
+  "C_Cpp.clang_format_fallbackStyle": "LLVM",
+  "diffEditor.ignoreTrimWhitespace": true,
+  "editor.formatOnSave": false,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 100,
+  "files.associations": {
+    "*.embeddedhtml": "html",
+    "i8254.h": "c",
+    "mouse.h": "c",
+    "*.xpm": "c",
+    "sprite.h": "c",
+    "model.h": "c",
+    "graphics.h": "c",
+    "paddle.h": "c",
+    "keyboard.h": "c",
+    "brick.h": "c",
+    "ball.h": "c",
+    "lcf.h": "c"
+  },
+}
