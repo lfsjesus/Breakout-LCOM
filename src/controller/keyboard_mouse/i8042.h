@@ -22,7 +22,6 @@
 #define H_MK_CODE 0x23
 #define H_BK_CODE 0xA3
 
-
 #define KBC_READ_CMD 0x20
 #define KBC_WRITE_CMD 0x60
 

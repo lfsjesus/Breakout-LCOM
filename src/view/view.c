@@ -80,9 +80,9 @@ void draw_new_frame() {
     break;
   
   case GAME:
+    draw_paddle();
     draw_bricks();
     draw_ball();
-    draw_paddle();
     break;
   default:
     break;

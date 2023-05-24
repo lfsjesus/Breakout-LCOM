@@ -12,7 +12,6 @@ void collision_board(Ball* ball) {
     int y = ball->y;
     x += ball->vx;
     y -= ball->vy;
-
     
     if (x < 0) {
         x = 0;
@@ -37,7 +36,6 @@ void collision_board(Ball* ball) {
 }
 
 void change_ball_pos(Ball* ball) {
-
   collision_board(ball);
 
   for (int i = 0; i < 100; i++) {

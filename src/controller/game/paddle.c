@@ -8,16 +8,10 @@ void movePaddle(Paddle* paddle) {
         if (paddle->x + paddle->sprite->width + mouse_packet.delta_x < modeinfo.XResolution) {
             paddle->x += mouse_packet.delta_x;
         }
-        else {
-            paddle->x = modeinfo.XResolution - paddle->sprite->width;
-        }
     }
     else if (mouse_packet.delta_x < 0) {
         if (paddle->x + mouse_packet.delta_x > 0) {
             paddle->x += mouse_packet.delta_x;
-        }
-        else {
-            paddle->x = 0;
         }
     }
 }

@@ -24,7 +24,7 @@ typedef struct {
     uint16_t height;
     uint8_t hp;
     uint8_t color;
-}Brick;
+} Brick;
 
 typedef struct {
     uint16_t radius;
@@ -34,7 +34,7 @@ typedef struct {
     int16_t vy;
     uint8_t power;
     uint16_t speed;
-}Ball;
+} Ball;
 
 typedef struct {
     Sprite* sprite;
