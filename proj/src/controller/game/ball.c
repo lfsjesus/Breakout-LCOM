@@ -1,7 +1,7 @@
 #include "ball.h"
 
 extern vbe_mode_info_t modeinfo;
-extern Brick bricks[100];
+extern Brick bricks[120];
 extern Paddle mainPaddle;
 
 void collision_board(Ball* ball) {
@@ -39,8 +39,12 @@ void change_ball_pos(Ball* ball) {
     collision_board(ball);
     for (int i = 0; i < 100; i++) {
     Brick* actual = &bricks[i];
-    if (actual->width == 0)
+    if (actual->sprite == NULL) {
         continue;
+    }
+    if (actual->sprite->width == 0) {
+        continue;
+    }
     collision_brick(ball, actual);
     }
 }
@@ -52,14 +56,14 @@ void collision_brick(Ball* ball, Brick* brick) {
     int16_t ballMaxY = ball->y + ball->radius;
 
     int16_t brickMinX = brick->x;
-    int16_t brickMaxX = brick->x + brick->width;
+    int16_t brickMaxX = brick->x + brick->sprite->width;
     int16_t brickMinY = brick->y;
-    int16_t brickMaxY = brick->y + brick->height;
+    int16_t brickMaxY = brick->y + brick->sprite->height;
 
     if (ballMaxX >= brickMinX && ballMinX <= brickMaxX && ballMaxY >= brickMinY && ballMinY <= brickMaxY) {
         // Calculate the center of the brick
-        int16_t brickCenterX = brickMinX + brick->width / 2;
-        int16_t brickCenterY = brickMinY + brick->height / 2;
+        int16_t brickCenterX = brickMinX + brick->sprite->width / 2;
+        int16_t brickCenterY = brickMinY + brick->sprite->height / 2;
 
         // Calculate the distance between the ball's center and the brick's center
         int16_t distanceX = ball->x - brickCenterX;
@@ -84,8 +88,6 @@ void collision_brick(Ball* ball, Brick* brick) {
             ball->vy = -ball->vy;
         }
 
-        brick->color++;
-        brick->color %= 2;
         increasePoints();
     }
     

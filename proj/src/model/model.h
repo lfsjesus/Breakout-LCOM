@@ -14,18 +14,17 @@
 #include "xpm/ball.xpm"
 #include "../model/sprite.h"
 #include "../model/maps/map1.c"
+#include "xpm/bricks.h"
 
 void setup_sprites();
 void destroy_sprites();
 void setup_bricks();
 
 typedef struct {
+    Sprite* sprite;
     uint16_t x;
     uint16_t y;
-    uint16_t width;
-    uint16_t height;
     uint8_t hp;
-    uint8_t color;
 } Brick;
 
 typedef struct {
