@@ -38,11 +38,11 @@
 
 // INTERRUPT IDENTIFICATION REGISTER  - IIR
 
-#define IIR_INT BIT(0) // 1 if interrupt pending
-#define IIR_PRIO_RLS BIT(0) | BIT(1) // Receiver Line Status
-#define IIR_PRIO_RDA BIT(1)   // Reived? Data Available
-#define IIR_PRIO_CTO BIT(1) || BIT(2) // Character Timeout
-#define IIR_PRIO_THRE BIT(0) // Trasmitter Holding Register Empty
+#define IIR_INT BIT(0) // 1 if no interrupt pending
+#define IIR_PRIO_RLS BIT(1) | BIT(2) // Receiver Line Status
+#define IIR_PRIO_RDA BIT(2)    // Reived Data Available
+#define IIR_PRIO_CTO BIT(2) || BIT(3) // Character Timeout
+#define IIR_PRIO_THRE BIT(1) // Trasmitter Holding Register Empty
 #define IIR_PRIO_MS 0 // Modem Status
 
 
