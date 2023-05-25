@@ -4,13 +4,14 @@
 #include "controller/keyboard_mouse/mouse.h"
 #include "controller/timer/i8254.h"
 #include "controller/game/game.h"
+#include "controller/serialPort/serialport.h"
 
 extern SystemState systemState;
 
 int (main)(int argc, char *argv[]) {
   lcf_set_language("EN-US");
-  lcf_trace_calls("/SAhome/lcom/labs/g4-main/proj/src/debug/trace.txt");
-  lcf_log_output("/AAhome/lcom/labs/g4-main/proj/src/debug/output.txt");
+  lcf_trace_calls("/home/lcom/labs/g4-main/proj/src/debug/trace.txt");
+  lcf_log_output("/home/lcom/labs/gitlab/g4/proj/src/debug/output.txt");
   if (lcf_start(argc, argv)) return 1;
   lcf_cleanup();
   return 0;
@@ -25,6 +26,8 @@ int setup() {
 
   // Inicialização do modo gráfico
   if ( set_graphics_mode(0x115) != 0) return 1;
+
+  if (sp_setup() != 0)  return 1;
   setup_bricks();
   // Inicialização dos sprites
   setup_sprites();
@@ -34,7 +37,7 @@ int setup() {
   if (keyboard_subscribe_int(&hook_id_helper) != 0) return 1;
   if (mouse_subscribe_int(&hook_id_helper) != 0) return 1;
   //if (rtc_subscribe_interrupts() != 0) return 1;
-
+  if (sp_subscribe_int(&hook_id_helper) != 0) return 1;
   // Ativar stream-mode e report de dados do rato
   if (mouse_config(ENABLE_STREAM_MODE) != 0) return 1;
   if (mouse_config(ENABLE_DATA_REPORT) != 0) return 1;
@@ -57,7 +60,7 @@ int teardown() {
   if (keyboard_unsubscribe_int() != 0) return 1;
   if (mouse_unsubscribe_int() != 0) return 1;
   //if (rtc_unsubscribe_interrupts() != 0) return 1;
-
+  if (sp_unsubscribe_int() != 0) return 1;
   // Desativar o report de dados do rato
   if (mouse_config(DISABLE_DATA_REPORT) != 0) return 1;
 
@@ -82,6 +85,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
           if (msg.m_notify.interrupts & BIT(TIMER0_IRQ))   update_timer_state();    //troca buffers
           if (msg.m_notify.interrupts & BIT(KEYBOARD_IRQ)) update_keyboard_state(); 
           if (msg.m_notify.interrupts & BIT(MOUSE_IRQ))    update_mouse_state();
+          if (msg.m_notify.interrupts & BIT(COM1_IRQ))  update_sp_state();
           break;
           //if (msg.m_notify.interrupts & RTC_IRQ)      update_rtc_state(); 
         }

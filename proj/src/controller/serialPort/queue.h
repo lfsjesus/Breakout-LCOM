@@ -16,7 +16,7 @@
 
 
 typedef struct {
-    int front, back, size;
+    uint8_t front, back, size;
     unsigned capacity;
     int* array;
 }Queue;

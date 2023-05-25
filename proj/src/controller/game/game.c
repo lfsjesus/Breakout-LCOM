@@ -69,6 +69,13 @@ void update_timer_state() {
     draw_new_frame();
 }
 
+void update_sp_state() {
+    sp_ih();
+    uint8_t byte = pop(get_queue());
+    
+    printf("%c\n", byte);
+    
+    }
 
 void refresh_buttons_state() {
     if (mouse_info.left_click) {

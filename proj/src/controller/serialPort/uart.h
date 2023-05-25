@@ -39,9 +39,10 @@
 // INTERRUPT IDENTIFICATION REGISTER  - IIR
 
 #define IIR_INT BIT(0) // 1 if no interrupt pending
+#define IIR_INT_ID BIT(1) | BIT(2) | BIT(3) // bit id mask
 #define IIR_PRIO_RLS BIT(1) | BIT(2) // Receiver Line Status
 #define IIR_PRIO_RDA BIT(2)    // Reived Data Available
-#define IIR_PRIO_CTO BIT(2) || BIT(3) // Character Timeout
+#define IIR_PRIO_CTO BIT(2) | BIT(3) // FIFO Character Timeout
 #define IIR_PRIO_THRE BIT(1) // Trasmitter Holding Register Empty
 #define IIR_PRIO_MS 0 // Modem Status
 
@@ -51,7 +52,7 @@
 #define IER_RDA BIT(0)  // Enables the Received Data Available Interrupt
 #define IER_THRE BIT(1) // Enables the THR empty Interrupt
 #define IER_RLS BIT(2)  // Enables the Receiver Line Status interrupt(change in the LSR bits(1-4))
-#define IER_MS BIR(3)   // Enables the Modem Status interrupts  
+#define IER_MS BIT(3)   // Enables the Modem Status interrupts  
 
 
 // FIFO Control Register - FCR

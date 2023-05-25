@@ -2,7 +2,7 @@
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <src/controller/serialPort/queue.h>
+#include "queue.h"
 
 // function to create a queue
 // of given capacity.
@@ -22,49 +22,50 @@ Queue* createQueue(unsigned capacity) {
 
 // Queue is full when size becomes
 // equal to the capacity
-int isFull( Queue* queue){
+bool isFull( Queue* queue){
 	return (queue->size == queue->capacity);
 }
 
 // Queue is empty when size is 0
-int isEmpty(Queue* queue){
+bool isEmpty(Queue* queue){
 	return (queue->size == 0);
 }
 
 // Function to add an item to the queue.
 // It changes rear and size
-void enqueue(Queue* queue, int item) {
+bool push(Queue* queue, uint8_t element) {
 	if (isFull(queue))
-		return;
+		return false;
 	queue->back = (queue->back + 1)
 				% queue->capacity;
-	queue->array[queue->back] = item;
+	queue->array[queue->back] = element;
 	queue->size = queue->size + 1;
-	printf("%d enqueued to queue\n", item);
+	printf("%d enqueued to queue\n", element);
+	return true;
 }
 
 // Function to remove an item from queue.
 // It changes front and size
-int dequeue(Queue* queue) {
+uint8_t pop(Queue* queue) {
 	if (isEmpty(queue))
-		return INT_MIN;
-	int item = queue->array[queue->front];
+		return 0;
+	int element = queue->array[queue->front];
 	queue->front = (queue->front + 1)
 				% queue->capacity;
 	queue->size = queue->size - 1;
-	return item;
+	return element;
 }
 
 
-int front(Queue* queue){
+uint8_t front(Queue* queue){
 	if (isEmpty(queue))
-		return INT_MIN;
+		return 0;
 	return queue->array[queue->front];
 }
 
-int back(Queue* queue) {
+uint8_t back(Queue* queue) {
 	if (isEmpty(queue))
-		return INT_MIN;
+		return 0;
 	return queue->array[queue->back];
 }
 

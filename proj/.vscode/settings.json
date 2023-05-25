@@ -18,6 +18,10 @@
     "keyboard.h": "c",
     "brick.h": "c",
     "ball.h": "c",
-    "lcf.h": "c"
+    "lcf.h": "c",
+    "view.h": "c",
+    "serialport.h": "c",
+    "game.h": "c",
+    "util.h": "c"
   },
 }

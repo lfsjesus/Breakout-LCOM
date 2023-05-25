@@ -9,10 +9,11 @@ PROG=proj
 .PATH: ${.CURDIR}/model/
 .PATH: ${.CURDIR}/view/
 .PATH: ${.CURDIR}/controller/game
+.PATH: ${.CURDIR}/controller/serialPort
 
 
 # Ficheiros ".c" a compilar. Têm de estar contidos nas pastas indicadas no passo anterior.
-SRCS = 	main.c timer.c utils.c graphics.c kbc.c keyboard.c mouse.c view.c sprite.c model.c ball.c brick.c paddle.c game.c
+SRCS = 	main.c timer.c utils.c graphics.c kbc.c keyboard.c mouse.c view.c sprite.c model.c ball.c brick.c paddle.c game.c serialport.c queue.c
 
 # Flags de compilação
 CFLAGS += -pedantic -D_LCOM_OPTIMIZED_ -O2
