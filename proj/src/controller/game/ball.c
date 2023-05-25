@@ -1,11 +1,10 @@
 #include "ball.h"
 
 extern vbe_mode_info_t modeinfo;
-extern Brick bricks[100];
+extern Brick bricks[120];
 extern Paddle mainPaddle;
 
 void collision_board(Ball* ball) {
-  
     int screenWidth = modeinfo.XResolution;
     int screenHeight = modeinfo.YResolution;
     int x = ball->x;
@@ -36,16 +35,18 @@ void collision_board(Ball* ball) {
 }
 
 void change_ball_pos(Ball* ball) {
-    collision_board(ball);
     collision_paddle(ball, &mainPaddle);
+    collision_board(ball);
     for (int i = 0; i < 100; i++) {
     Brick* actual = &bricks[i];
-    if (actual->width == 0)
+    if (actual->sprite == NULL) {
         continue;
-    collision_brick(ball, actual);
-
     }
-
+    if (actual->sprite->width == 0) {
+        continue;
+    }
+    collision_brick(ball, actual);
+    }
 }
 
 void collision_brick(Ball* ball, Brick* brick) {
@@ -55,19 +56,18 @@ void collision_brick(Ball* ball, Brick* brick) {
     int16_t ballMaxY = ball->y + ball->radius;
 
     int16_t brickMinX = brick->x;
-    int16_t brickMaxX = brick->x + brick->width;
+    int16_t brickMaxX = brick->x + brick->sprite->width;
     int16_t brickMinY = brick->y;
-    int16_t brickMaxY = brick->y + brick->height;
+    int16_t brickMaxY = brick->y + brick->sprite->height;
 
     if (ballMaxX >= brickMinX && ballMinX <= brickMaxX && ballMaxY >= brickMinY && ballMinY <= brickMaxY) {
         // Calculate the center of the brick
-        int16_t brickCenterX = brickMinX + brick->width / 2;
-        int16_t brickCenterY = brickMinY + brick->height / 2;
+        int16_t brickCenterX = brickMinX + brick->sprite->width / 2;
+        int16_t brickCenterY = brickMinY + brick->sprite->height / 2;
 
         // Calculate the distance between the ball's center and the brick's center
         int16_t distanceX = ball->x - brickCenterX;
         int16_t distanceY = ball->y - brickCenterY;
-
 
         // Check which side of the brick the ball collided with
         if (abs(distanceX) >= abs(distanceY)) {
@@ -88,9 +88,9 @@ void collision_brick(Ball* ball, Brick* brick) {
             ball->vy = -ball->vy;
         }
 
-        brick->color++;
-        brick->color %= 2;
+        increasePoints();
     }
+    
 }
 
 void collision_paddle(Ball* ball, Paddle* paddle) {
@@ -108,34 +108,9 @@ void collision_paddle(Ball* ball, Paddle* paddle) {
 
     // Check for collision between the ball and paddle
     if (ball_right >= paddle_left && ball_left <= paddle_right && ball_bottom >= paddle_top && ball_top <= paddle_bottom) {
-        // Calculate the center of the paddle
-        uint16_t paddleCenterX = paddle_left + paddle->sprite->width / 2;
-        uint16_t paddleCenterY = paddle_top + paddle->sprite->height / 2;
-
-        // Calculate the distance between the ball's center and the paddle's center
-        int16_t distanceX = ball->x - paddleCenterX;
-        int16_t distanceY = ball->y - paddleCenterY;
-
-        // Check which side of the paddle the ball collided with
-        if (abs(distanceX) >= abs(distanceY)) {
-            // Collided horizontally
-            if (distanceX > 0) {
-                ball->x = paddle_right + ball->radius;
-            } else {
-                ball->x = paddle_left - ball->radius;
-            }
-            ball->vx = -ball->vx;
-        } else {
-            // Collided vertically
-            if (distanceY > 0) {
-                ball->y = paddle_bottom + ball->radius;
-            } else {
-                ball->y = paddle_top - ball->radius;
-            }
-            ball->vy = -ball->vy;
-        }
+        // Reverse the ball's vertical velocity
+        ball->vy = -ball->vy;
     }
-
-
 }
+
   

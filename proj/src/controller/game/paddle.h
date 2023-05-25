@@ -10,4 +10,10 @@
 
 void movePaddle(Paddle* paddle);
 
+void increasePoints();
+
+int getPoints();
+
+int getLives();
+
 #endif

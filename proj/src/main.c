@@ -25,9 +25,11 @@ int setup() {
   if (set_frame_buffer(0x115) != 0) return 1;
 
   // Inicialização do modo gráfico
+
   if ( set_graphics_mode(0x115) != 0) return 1;
 
   if (sp_setup() != 0)  return 1;
+
   setup_bricks();
   // Inicialização dos sprites
   setup_sprites();

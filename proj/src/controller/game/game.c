@@ -63,7 +63,13 @@ void update_mouse_state() {
 }
 
 void update_timer_state() {
-    change_ball_pos(&mainBall);
+    switch (gameState) {
+        case GAME:
+            change_ball_pos(&mainBall);
+            break;
+        default:
+            break;
+    }
     vg_set_start();
     clear_screen();
     draw_new_frame();

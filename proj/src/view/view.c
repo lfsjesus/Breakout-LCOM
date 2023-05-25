@@ -3,7 +3,7 @@
 
 extern MouseInfo mouse_info;
 extern Ball mainBall;
-extern Brick bricks[100];
+extern Brick bricks[120];
 extern Paddle mainPaddle;
 
 extern GameState gameState;
@@ -15,6 +15,7 @@ extern Sprite *button_multiplayer;
 extern Sprite *button_leaderboard;
 extern Sprite *button_settings;
 extern Sprite *paddle;
+extern Sprite *heart;
 
 int draw_sprite_xpm(Sprite *sprite, int x, int y) {
   uint16_t height = sprite->height;
@@ -45,7 +46,7 @@ void draw_menu() {
 }
 
 void draw_ball() {
-  vg_draw_rectangle(mainBall.x, mainBall.y, mainBall.radius, mainBall.radius, 0xFFFFFF);
+  draw_sprite_xpm(mainBall.sprite, mainBall.x, mainBall.y);
 }
 
 void draw_paddle() {
@@ -53,14 +54,11 @@ void draw_paddle() {
 }
 
 void draw_bricks() {
-  int colors[2] = {0xFF0000, 0x0000FF};
-  vg_draw_rectangle(bricks[0].x, bricks[0].y, bricks[0].width, bricks[0].height, colors[bricks[0].color]);
-
-  for (int i = 0; i < 100; i++) {
-    if (bricks[i].width == 0)
-      break;
-
-    vg_draw_rectangle(bricks[i].x, bricks[i].y, bricks[i].width, bricks[i].height, colors[bricks[i].color]);
+  for (int i = 0; i < 120; i++) {
+    if (bricks[i].sprite == NULL) {
+      continue;
+    }
+    draw_sprite_xpm(bricks[i].sprite, bricks[i].x, bricks[i].y);
   }
 }
 
@@ -80,14 +78,55 @@ void draw_new_frame() {
     break;
   
   case GAME:
+    draw_points();
+    draw_lives();
     draw_paddle();
     draw_bricks();
     draw_ball();
+    
     break;
   default:
     break;
   }
 
+}
+
+void draw_points() {
+  int points = getPoints();
+  
+  int spacing = 31;
+  int i = 3; 
+
+  for (int j = 0; j < 4; j++) {
+    uint16_t digit = points % 10;
+    points /= 10;
+    draw_sprite_xpm(create_sprite_xpm(digits[digit]), i * spacing, 0); 
+    i--;
+  }
+}
+
+void draw_text(char *text, int x, int y) {
+  int spacing = 31;
+  int i = 0;
+
+  while (text[i] != '\0') {
+    if (text[i] == ' ')
+      x += spacing;
+    else {
+    draw_sprite_xpm(create_sprite_xpm(alphabet[text[i] - 'A']), x + i * spacing, y);
+    }
+    i++;
+  }
+}
+
+void draw_lives() {
+  int lives = getLives();
+  int spacing = 65;
+  int startX = 800 - (lives * spacing);
+
+  for (int i = 0; i < lives; i++) {
+    draw_sprite_xpm(heart, startX + i * spacing, 0);
+  }
 }
 
 void clear_screen() {
