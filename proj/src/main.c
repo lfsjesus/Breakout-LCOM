@@ -9,8 +9,8 @@ extern SystemState systemState;
 
 int (main)(int argc, char *argv[]) {
   lcf_set_language("EN-US");
-  lcf_trace_calls("/SAhome/lcom/labs/g4-main/proj/src/debug/trace.txt");
-  lcf_log_output("/AAhome/lcom/labs/g4-main/proj/src/debug/output.txt");
+  lcf_trace_calls("");
+  lcf_log_output("");
   if (lcf_start(argc, argv)) return 1;
   lcf_cleanup();
   return 0;
@@ -24,7 +24,7 @@ int setup() {
   if (set_frame_buffer(0x115) != 0) return 1;
 
   // Inicialização do modo gráfico
-  if ( set_graphics_mode(0x115) != 0) return 1;
+  if (set_graphics_mode(0x115) != 0) return 1;
   setup_bricks();
   // Inicialização dos sprites
   setup_sprites();

@@ -10,6 +10,8 @@
 #include "xpm/leaderboard_button.xpm"
 #include "xpm/settings_button.xpm"
 #include "xpm/paddle.xpm"
+#include "xpm/heart.xpm"
+#include "xpm/ball.xpm"
 #include "../model/sprite.h"
 #include "../model/maps/map1.c"
 
@@ -27,6 +29,7 @@ typedef struct {
 } Brick;
 
 typedef struct {
+    Sprite* sprite;
     uint16_t radius;
     uint16_t x;
     uint16_t y;

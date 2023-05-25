@@ -8,8 +8,10 @@ Sprite* button_singleplayer;
 Sprite* button_multiplayer;
 Sprite* button_leaderboard;
 Sprite* button_settings;
+Sprite* heart;
+Sprite* ball;
 
-Ball mainBall = {15, 500, 500, 5, 10, 1, 5};
+Ball mainBall = {NULL, 10, 500, 500, 5, 10, 1, 5};
 
 Paddle mainPaddle = {NULL, 350, 550};
 
@@ -24,13 +26,19 @@ void setup_sprites() {
     button_leaderboard = create_sprite_xpm((xpm_map_t) leaderboard_button_xpm);
     button_settings = create_sprite_xpm((xpm_map_t) settings_button_xpm);
     mainPaddle.sprite = create_sprite_xpm((xpm_map_t) paddle_xpm);
+    heart = create_sprite_xpm((xpm_map_t) heart_xpm);
+    mainBall.sprite = create_sprite_xpm((xpm_map_t) ball_xpm);
 }
 
 void destroy_sprites() {
     destroy_sprite(mouse);
     destroy_sprite(background);
-
-
+    destroy_sprite(button_singleplayer);
+    destroy_sprite(button_multiplayer);
+    destroy_sprite(button_leaderboard);
+    destroy_sprite(button_settings);
+    destroy_sprite(mainPaddle.sprite);
+    destroy_sprite(heart);
 }
 
 void setup_bricks() {
@@ -61,6 +69,7 @@ void setup_bricks() {
          }
         }
 }
+
 
 
 
