@@ -64,7 +64,7 @@ void draw_paddle() {
 void draw_bricks() {
   for (int i = 0; i < 12; i++) {
     for (int j = 0; j < 10; j++) {
-      if (bricks[i][j].sprite == NULL)
+      if (bricks[i][j].sprite == NULL && bricks[i][j].hp == 0)
         continue;
 
       if (bricks[i][j].hp == 2) {
@@ -75,7 +75,7 @@ void draw_bricks() {
         bricks[i][j].sprite = blueBrickDamaged;
       }
 
-      else if (bricks[i][j].hp == 4) {
+      else if (bricks[i][j].hp == 5) {
         bricks[i][j].sprite = greenBrick;
       }
 
@@ -83,11 +83,11 @@ void draw_bricks() {
         bricks[i][j].sprite = greenBrickDamaged;
       }
 
-      else if (bricks[i][j].hp == 6) {
+      else if (bricks[i][j].hp == 9) {
         bricks[i][j].sprite = redBrick;
       }
 
-      else if (bricks[i][j].hp == 5) {
+      else if (bricks[i][j].hp == 6) {
         bricks[i][j].sprite = redBrickDamaged;
       }
 

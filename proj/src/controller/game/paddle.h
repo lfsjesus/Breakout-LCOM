@@ -8,12 +8,18 @@
 #include "../keyboard_mouse/mouse.h"
 #include "../video/graphics.h"
 
-void movePaddle(Paddle* paddle);
+void move_paddle(Paddle* paddle);
 
-void increasePoints();
+void increase_points();
+
+void reset_points();
 
 int getPoints();
 
 int getLives();
+
+void decreaseLives();
+
+void reset_paddle(Paddle* paddle);
 
 #endif

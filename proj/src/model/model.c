@@ -16,13 +16,11 @@ Sprite* blueBrickDamaged;
 Sprite* greenBrickDamaged;
 Sprite* redBrickDamaged;
 
-Ball mainBall = {NULL, 10, 500, 500, 5, 10, 1, 5};
+Ball mainBall = {NULL, 10, 500, 500, 5, 10, 1, 4};
 
 Paddle mainPaddle = {NULL, 350, 550};
 
 Brick bricks[12][10];
-
-int brick_counter = 0;
 
 void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
@@ -70,31 +68,29 @@ void setup_bricks() {
             if (map1[i][j] == ' ') {
                 continue;
             }
-            bricks[i][j].x = j * width;
+            bricks[i][j].x = j * (width + 4) + 10;
             bricks[i][j].y = i * height + start_y + padding;
 
             if (map1[i][j] == 'X') {
                 bricks[i][j].hp = 2;
-                bricks[i][j].sprite = create_sprite_xpm((xpm_map_t) bricks_xpm[0]);
                 brick_counter++;
             }
 
             else if (map1[i][j] == 'B') {
-                bricks[i][j].hp = 4;
-                bricks[i][j].sprite = create_sprite_xpm((xpm_map_t) bricks_xpm[2]);
+                bricks[i][j].hp = 5;
                 brick_counter++;
             }
 
             else if (map1[i][j] == 'A') {
-                bricks[i][j].hp = 6;
-                bricks[i][j].sprite = create_sprite_xpm((xpm_map_t) bricks_xpm[4]);
+                bricks[i][j].hp = 9;
                 brick_counter++;
             }
-
-            
         }
     }
+}
 
+int getBrickCounter() {
+    return brick_counter;
 }
 
 

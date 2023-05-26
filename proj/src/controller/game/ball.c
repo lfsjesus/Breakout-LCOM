@@ -10,9 +10,9 @@ void collision_board(Ball* ball) {
     int minScreenX = 0;
     int minScreenY = 60;
 
-    int16_t ballMinX = ball->x - ball->radius;
+    int16_t ballMinX = ball->x - 1;
     int16_t ballMaxX = ball->x + ball->radius;
-    int16_t ballMinY = ball->y - ball->radius;
+    int16_t ballMinY = ball->y - 1;
     int16_t ballMaxY = ball->y + ball->radius;
 
     if (ballMinX <= minScreenX) {
@@ -24,17 +24,29 @@ void collision_board(Ball* ball) {
     } else if (ballMaxY >= screenHeight) {
         ball->vy = -ball->vy;
     }
+
+    // if somehow the ball gets out of the screen, put it back in
+    if (ballMinX < minScreenX) {
+        ball->x = minScreenX + ball->radius;
+    } else if (ballMaxX > screenWidth) {
+        ball->x = screenWidth - ball->radius;
+    } else if (ballMinY < minScreenY) {
+        ball->y = minScreenY + ball->radius;
+    } else if (ballMaxY > screenHeight) {
+        ball->y = screenHeight - ball->radius;
+    }
 }
 
 void change_ball_pos(Ball* ball) {
+    collision_board(ball); 
     collision_paddle(ball, &mainPaddle);
-    collision_board(ball);
     for (int i = 0; i < 12; i++) {
         for (int j = 0; j < 10; j++) {
             if (bricks[i][j].sprite == NULL) continue;
             collision_brick(ball, &bricks[i][j]);
         }
-    }
+    }   
+
     ball->x += ball->vx;
     ball->y += ball->vy;    
 }
@@ -60,10 +72,9 @@ void collision_brick(Ball* ball, Brick* brick) {
             ball->vx = -ball->vx;
             ball->vy = -ball->vy;
         }
-        increasePoints();
+        increase_points();
         decrease_hp(brick);
-    }
-
+    }    
 }
 
 
@@ -73,21 +84,40 @@ void collision_paddle(Ball* ball, Paddle* paddle) {
     int16_t paddleMinY = paddle->y;
     int16_t paddleMaxY = paddle->y + paddle->sprite->height;
 
-    int16_t ballMinX = ball->x - ball->radius;
-    int16_t ballMaxX = ball->x + ball->radius;
-    int16_t ballMinY = ball->y - ball->radius;
-    int16_t ballMaxY = ball->y + ball->radius;
+    int16_t ballMinX = ball->x - 1;
+    int16_t ballMaxX = ball->x + 2 * ball->radius;
+    int16_t ballMinY = ball->y - 1;
+    int16_t ballMaxY = ball->y + 2 * ball->radius;
 
     if (ballMinX <= paddleMaxX && ballMaxX >= paddleMinX && ballMinY <= paddleMaxY && ballMaxY >= paddleMinY) {
         if (ball->x >= paddleMinX && ball->x <= paddleMaxX) {
             ball->vy = -ball->vy;
         } else if (ball->y >= paddleMinY && ball->y <= paddleMaxY) {
             ball->vx = -ball->vx;
+
         } else {
             ball->vx = -ball->vx;
             ball->vy = -ball->vy;
         }
+
+        // Check if the ball is stuck inside the paddle
+        if (ball->y > paddleMinY && ballMinY < paddleMaxY) {
+            // Move the ball to the correct position outside the paddle
+            if (ball->y < paddle->y) {
+                ball->y = paddle->y - ball->radius;
+            } else {
+                ball->y = paddleMaxY + ball->radius;
+            }
+        }
+
     }
+}
+
+void reset_ball(Ball* ball) {
+    ball->x = 500;
+    ball->y = 500;
+    ball->vx = 5;
+    ball->vy = 10;
 }
 
   

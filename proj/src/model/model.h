@@ -44,5 +44,8 @@ typedef struct {
     uint16_t y;
 } Paddle;
 
+static int brick_counter = 0;
+
+int getBrickCounter();
 
 #endif

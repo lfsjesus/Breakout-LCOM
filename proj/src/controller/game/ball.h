@@ -16,6 +16,6 @@ void collision_brick(Ball* ball, Brick* brick);
 
 void collision_paddle(Ball* ball, Paddle* paddle);
 
-int16_t clamp(int16_t value, int16_t min, int16_t max);
+void reset_ball(Ball* ball);
 
 #endif
