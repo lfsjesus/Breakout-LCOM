@@ -38,6 +38,7 @@ void update_keyboard_state() {
     default:
         switch (scancode){
         case ESC_BK_CODE:
+            reset_game();
             gameState = START;
         default:
             send_byte(0);
@@ -58,7 +59,9 @@ void update_mouse_state() {
             refresh_buttons_state();
             break;
         case GAME:
-            movePaddle(&mainPaddle);
+            collision_paddle(&mainBall, &mainPaddle);
+            move_paddle(&mainPaddle);
+            collision_paddle(&mainBall, &mainPaddle);
             break;
         default:
             break;
@@ -69,6 +72,9 @@ void update_timer_state() {
     switch (gameState) {
         case GAME:
             change_ball_pos(&mainBall);
+            if (getBrickCounter() == 0) {
+                gameState = START;
+            }
             break;
         default:
             break;
@@ -101,4 +107,11 @@ void refresh_buttons_state() {
             gameState = SETTINGS;
         }
     }
+}
+
+void reset_game() {
+    reset_ball(&mainBall);
+    reset_paddle(&mainPaddle);
+    reset_points();
+    setup_bricks();
 }

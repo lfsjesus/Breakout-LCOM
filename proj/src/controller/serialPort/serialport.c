@@ -33,8 +33,7 @@ void (sp_ih)() {
         if (read_lsr(&lsr) != 0)  return; 
         while (!isFull(queue) && (lsr & LSR_ReceiverData)) {
           read_byte();
-        if (read_lsr(&lsr)!= 0) return;
-      
+          if (read_lsr(&lsr)!= 0) return;
       }
     }
   }

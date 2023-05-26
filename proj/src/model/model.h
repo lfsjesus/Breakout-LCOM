@@ -13,7 +13,7 @@
 #include "xpm/heart.xpm"
 #include "xpm/ball.xpm"
 #include "../model/sprite.h"
-#include "../model/maps/map1.c"
+#include "../model/maps/maps.h"
 #include "xpm/bricks.h"
 
 void setup_sprites();
@@ -21,7 +21,7 @@ void destroy_sprites();
 void setup_bricks();
 
 typedef struct {
-    Sprite* sprite;
+    Sprite* sprite; 
     uint16_t x;
     uint16_t y;
     uint8_t hp;
@@ -44,5 +44,8 @@ typedef struct {
     uint16_t y;
 } Paddle;
 
+static int brick_counter = 0;
+
+int getBrickCounter();
 
 #endif

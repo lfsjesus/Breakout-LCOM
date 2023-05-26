@@ -3,7 +3,7 @@
 
 extern MouseInfo mouse_info;
 extern Ball mainBall;
-extern Brick bricks[120];
+extern Brick bricks[12][10];
 extern Paddle mainPaddle;
 
 extern GameState gameState;
@@ -16,6 +16,12 @@ extern Sprite *button_leaderboard;
 extern Sprite *button_settings;
 extern Sprite *paddle;
 extern Sprite *heart;
+extern Sprite* blueBrick;
+extern Sprite* greenBrick;
+extern Sprite* redBrick;
+extern Sprite* blueBrickDamaged;
+extern Sprite* greenBrickDamaged;
+extern Sprite* redBrickDamaged;
 
 int draw_sprite_xpm(Sprite *sprite, int x, int y) {
   uint16_t height = sprite->height;
@@ -26,8 +32,10 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y) {
       current_color = sprite->colors[w + h * width];
       if (current_color == TRANSPARENT)
         continue;
-      if (vg_draw_pixel(x + w, y + h, current_color) != 0)
+      if (x + w >= modeinfo.XResolution || y + h >= modeinfo.YResolution)
         return 1;
+      memcpy(frame_buffer + buffer_index * frame_size + (modeinfo.XResolution * (y + h) + (x + w)) * bytes_per_pixel, &sprite->colors[w + h * width], bytes_per_pixel);
+
     }
   }
   return 0;
@@ -54,11 +62,37 @@ void draw_paddle() {
 }
 
 void draw_bricks() {
-  for (int i = 0; i < 120; i++) {
-    if (bricks[i].sprite == NULL) {
-      continue;
+  for (int i = 0; i < 12; i++) {
+    for (int j = 0; j < 10; j++) {
+      if (bricks[i][j].sprite == NULL && bricks[i][j].hp == 0)
+        continue;
+
+      if (bricks[i][j].hp == 2) {
+        bricks[i][j].sprite = blueBrick;
+      }
+
+      else if (bricks[i][j].hp == 1) {
+        bricks[i][j].sprite = blueBrickDamaged;
+      }
+
+      else if (bricks[i][j].hp == 5) {
+        bricks[i][j].sprite = greenBrick;
+      }
+
+      else if (bricks[i][j].hp == 3) {
+        bricks[i][j].sprite = greenBrickDamaged;
+      }
+
+      else if (bricks[i][j].hp == 9) {
+        bricks[i][j].sprite = redBrick;
+      }
+
+      else if (bricks[i][j].hp == 6) {
+        bricks[i][j].sprite = redBrickDamaged;
+      }
+
+      draw_sprite_xpm(bricks[i][j].sprite, bricks[i][j].x, bricks[i][j].y);
     }
-    draw_sprite_xpm(bricks[i].sprite, bricks[i].x, bricks[i].y);
   }
 }
 

@@ -29,5 +29,6 @@ void update_mouse_state();
 void update_timer_state();
 void update_sp_state();
 void refresh_buttons_state();
+void reset_game();
 
 #endif

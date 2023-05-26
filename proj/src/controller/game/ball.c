@@ -1,116 +1,123 @@
 #include "ball.h"
 
 extern vbe_mode_info_t modeinfo;
-extern Brick bricks[120];
+extern Brick bricks[12][10];
 extern Paddle mainPaddle;
 
 void collision_board(Ball* ball) {
     int screenWidth = modeinfo.XResolution;
     int screenHeight = modeinfo.YResolution;
-    int x = ball->x;
-    int y = ball->y;
-    x += ball->vx;
-    y -= ball->vy;
-    
-    if (x < 0) {
-        x = 0;
-        ball->vx *= -1;
-    } 
-    else if (x + ball->radius > screenWidth) {
-        x = screenWidth - ball->radius;
-        ball->vx *= -1;
+    int minScreenX = 0;
+    int minScreenY = 60;
+
+    int16_t ballMinX = ball->x - 1;
+    int16_t ballMaxX = ball->x + ball->radius;
+    int16_t ballMinY = ball->y - 1;
+    int16_t ballMaxY = ball->y + ball->radius;
+
+    if (ballMinX <= minScreenX) {
+        ball->vx = -ball->vx;
+    } else if (ballMaxX >= screenWidth) {
+        ball->vx = -ball->vx;
+    } else if (ballMinY <= minScreenY) {
+        ball->vy = -ball->vy;
+    } else if (ballMaxY >= screenHeight) {
+        ball->vy = -ball->vy;
     }
 
-    if (y < 0) {
-        y = 0;
-        ball->vy *= -1;
+    // if somehow the ball gets out of the screen, put it back in
+    if (ballMinX < minScreenX) {
+        ball->x = minScreenX + ball->radius;
+    } else if (ballMaxX > screenWidth) {
+        ball->x = screenWidth - ball->radius;
+    } else if (ballMinY < minScreenY) {
+        ball->y = minScreenY + ball->radius;
+    } else if (ballMaxY > screenHeight) {
+        ball->y = screenHeight - ball->radius;
     }
-    else if (y + ball->radius > screenHeight) {
-        y = screenHeight - ball->radius;
-        ball->vy *= -1;
-    }
-
-    ball->x = x;
-    ball->y = y;
 }
 
 void change_ball_pos(Ball* ball) {
+    collision_board(ball); 
     collision_paddle(ball, &mainPaddle);
-    collision_board(ball);
-    for (int i = 0; i < 100; i++) {
-    Brick* actual = &bricks[i];
-    if (actual->sprite == NULL) {
-        continue;
-    }
-    if (actual->sprite->width == 0) {
-        continue;
-    }
-    collision_brick(ball, actual);
-    }
+    for (int i = 0; i < 12; i++) {
+        for (int j = 0; j < 10; j++) {
+            if (bricks[i][j].sprite == NULL) continue;
+            collision_brick(ball, &bricks[i][j]);
+        }
+    }   
+
+    ball->x += ball->vx;
+    ball->y += ball->vy;    
 }
 
 void collision_brick(Ball* ball, Brick* brick) {
-    int16_t ballMinX = ball->x - ball->radius;
-    int16_t ballMaxX = ball->x + ball->radius;
-    int16_t ballMinY = ball->y - ball->radius;
-    int16_t ballMaxY = ball->y + ball->radius;
 
     int16_t brickMinX = brick->x;
     int16_t brickMaxX = brick->x + brick->sprite->width;
     int16_t brickMinY = brick->y;
     int16_t brickMaxY = brick->y + brick->sprite->height;
 
-    if (ballMaxX >= brickMinX && ballMinX <= brickMaxX && ballMaxY >= brickMinY && ballMinY <= brickMaxY) {
-        // Calculate the center of the brick
-        int16_t brickCenterX = brickMinX + brick->sprite->width / 2;
-        int16_t brickCenterY = brickMinY + brick->sprite->height / 2;
+    int16_t ballMinX = ball->x - ball->radius;
+    int16_t ballMaxX = ball->x + ball->radius;
+    int16_t ballMinY = ball->y - ball->radius;
+    int16_t ballMaxY = ball->y + ball->radius;
 
-        // Calculate the distance between the ball's center and the brick's center
-        int16_t distanceX = ball->x - brickCenterX;
-        int16_t distanceY = ball->y - brickCenterY;
-
-        // Check which side of the brick the ball collided with
-        if (abs(distanceX) >= abs(distanceY)) {
-            // Collided horizontally
-            if (distanceX > 0) {
-                ball->x = brickMaxX + ball->radius;
-            } else {
-                ball->x = brickMinX - ball->radius;
-            }
+    if (ballMinX <= brickMaxX && ballMaxX >= brickMinX && ballMinY <= brickMaxY && ballMaxY >= brickMinY) {
+        if (ball->x >= brickMinX && ball->x <= brickMaxX) {
+            ball->vy = -ball->vy;
+        } else if (ball->y >= brickMinY && ball->y <= brickMaxY) {
             ball->vx = -ball->vx;
         } else {
-            // Collided vertically
-            if (distanceY > 0) {
-                ball->y = brickMaxY + ball->radius;
-            } else {
-                ball->y = brickMinY - ball->radius;
-            }
+            ball->vx = -ball->vx;
+            ball->vy = -ball->vy;
+        }
+        increase_points();
+        decrease_hp(brick);
+    }    
+}
+
+
+void collision_paddle(Ball* ball, Paddle* paddle) {
+    int16_t paddleMinX = paddle->x;
+    int16_t paddleMaxX = paddle->x + paddle->sprite->width;
+    int16_t paddleMinY = paddle->y;
+    int16_t paddleMaxY = paddle->y + paddle->sprite->height;
+
+    int16_t ballMinX = ball->x - 1;
+    int16_t ballMaxX = ball->x + 2 * ball->radius;
+    int16_t ballMinY = ball->y - 1;
+    int16_t ballMaxY = ball->y + 2 * ball->radius;
+
+    if (ballMinX <= paddleMaxX && ballMaxX >= paddleMinX && ballMinY <= paddleMaxY && ballMaxY >= paddleMinY) {
+        if (ball->x >= paddleMinX && ball->x <= paddleMaxX) {
+            ball->vy = -ball->vy;
+        } else if (ball->y >= paddleMinY && ball->y <= paddleMaxY) {
+            ball->vx = -ball->vx;
+
+        } else {
+            ball->vx = -ball->vx;
             ball->vy = -ball->vy;
         }
 
-        increasePoints();
+        // Check if the ball is stuck inside the paddle
+        if (ball->y > paddleMinY && ballMinY < paddleMaxY) {
+            // Move the ball to the correct position outside the paddle
+            if (ball->y < paddle->y) {
+                ball->y = paddle->y - ball->radius;
+            } else {
+                ball->y = paddleMaxY + ball->radius;
+            }
+        }
+
     }
-    
 }
 
-void collision_paddle(Ball* ball, Paddle* paddle) {
-    // Calculate the coordinates of the ball's bounding box
-    uint16_t ball_left = ball->x - ball->radius;
-    uint16_t ball_right = ball->x + ball->radius;
-    uint16_t ball_top = ball->y - ball->radius;
-    uint16_t ball_bottom = ball->y + ball->radius;
-
-    // Calculate the coordinates of the paddle's bounding box
-    uint16_t paddle_left = paddle->x;
-    uint16_t paddle_right = paddle->x + paddle->sprite->width;
-    uint16_t paddle_top = paddle->y;
-    uint16_t paddle_bottom = paddle->y + paddle->sprite->height;
-
-    // Check for collision between the ball and paddle
-    if (ball_right >= paddle_left && ball_left <= paddle_right && ball_bottom >= paddle_top && ball_top <= paddle_bottom) {
-        // Reverse the ball's vertical velocity
-        ball->vy = -ball->vy;
-    }
+void reset_ball(Ball* ball) {
+    ball->x = 500;
+    ball->y = 500;
+    ball->vx = 5;
+    ball->vy = 10;
 }
 
   

@@ -16,4 +16,6 @@ void collision_brick(Ball* ball, Brick* brick);
 
 void collision_paddle(Ball* ball, Paddle* paddle);
 
+void reset_ball(Ball* ball);
+
 #endif

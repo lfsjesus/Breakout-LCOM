@@ -5,6 +5,7 @@
 #include "stdio.h"
 #include "../../model/model.h"
 
-void change_hp(Brick* brick);
+void decrease_hp(Brick* brick);
+void destroy_brick(Brick* brick);
 
 #endif
