@@ -22,4 +22,6 @@ void decreaseLives();
 
 void reset_paddle(Paddle* paddle);
 
+void move_paddle_and_ball(Paddle* paddle, Ball* ball);
+
 #endif

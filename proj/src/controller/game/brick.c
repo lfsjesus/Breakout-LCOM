@@ -4,14 +4,12 @@
 void decrease_hp(Brick* brick) {
   brick->hp -= 1;
   if (brick->hp == 0) {
-    brick->sprite = NULL;    
+    brick->sprite = NULL;   
+    decrementBrickCounter();
   }
 
 }
 
-void destroy_brick(Brick* brick) {
-  destroy_sprite(brick->sprite);
-}
 
 
 

@@ -55,6 +55,8 @@ void update_mouse_state() {
         case START: 
             refresh_buttons_state();
             break;
+        case INIT:
+            move_paddle_and_ball(&mainPaddle, &mainBall);
         case GAME:
             collision_paddle(&mainBall, &mainPaddle);
             move_paddle(&mainPaddle);
@@ -67,10 +69,22 @@ void update_mouse_state() {
 
 void update_timer_state() {
     switch (gameState) {
+        case START:
+            reset_ball(&mainBall);
+            break;
+        case INIT:
+            if (mouse_info.right_click) gameState = GAME;
+            break;
         case GAME:
             change_ball_pos(&mainBall);
             if (getBrickCounter() == 0) {
                 gameState = START;
+                reset_game();
+            }
+            if (check_game_lost(&mainBall, &mainPaddle)) {
+                gameState = INIT;
+                reset_paddle(&mainPaddle);
+                reset_ball(&mainBall);
             }
             break;
         default:
@@ -85,7 +99,7 @@ void update_timer_state() {
 void refresh_buttons_state() {
     if (mouse_info.left_click) {
         if (mouse_info.x >= 150 && mouse_info.x <= 150 + 206 && mouse_info.y >= 290 && mouse_info.y <= 290 + 63) {
-            gameState = GAME;
+            gameState = INIT;
         }
         else if (mouse_info.x >= 444 && mouse_info.x <= 444 + 206 && mouse_info.y >= 290 && mouse_info.y <= 290 + 63) {
             gameState = GAME;

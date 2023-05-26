@@ -17,6 +17,7 @@ typedef enum {
 
 typedef enum {
     START,
+    INIT,
     GAME,
     SCORE,
     SETTINGS,

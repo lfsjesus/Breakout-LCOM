@@ -111,13 +111,14 @@ void draw_new_frame() {
     vg_draw_rectangle(100, 100, 10, 10, 0x00FF00);
     break;
   
+  case INIT:
+    draw_instruction();
   case GAME:
     draw_points();
     draw_lives();
     draw_paddle();
     draw_bricks();
     draw_ball();
-    
     break;
   default:
     break;
@@ -139,15 +140,21 @@ void draw_points() {
   }
 }
 
-void draw_text(char *text, int x, int y) {
-  int spacing = 31;
+void draw_instruction() {
+  draw_text("MOVE AND SHOOT", 200, 470);
+}
+
+void draw_text(char *text, uint16_t x, uint16_t y) {
   int i = 0;
 
   while (text[i] != '\0') {
-    if (text[i] == ' ')
-      x += spacing;
+    if (text[i] != ' ') {
+      Sprite* letter = get_char(text[i]);
+      draw_sprite_xpm(letter, x, y);
+      x += letter->width;
+    }
     else {
-    draw_sprite_xpm(create_sprite_xpm(alphabet[text[i] - 'A']), x + i * spacing, y);
+      x += 10;
     }
     i++;
   }

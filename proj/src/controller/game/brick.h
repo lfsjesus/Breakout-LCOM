@@ -6,6 +6,6 @@
 #include "../../model/model.h"
 
 void decrease_hp(Brick* brick);
-void destroy_brick(Brick* brick);
+
 
 #endif

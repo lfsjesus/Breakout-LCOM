@@ -15,6 +15,7 @@
 #include "../model/sprite.h"
 #include "../model/maps/maps.h"
 #include "xpm/bricks.h"
+#include "xpm/font/font.h"
 
 void setup_sprites();
 void destroy_sprites();
@@ -47,5 +48,7 @@ typedef struct {
 static int brick_counter = 0;
 
 int getBrickCounter();
+
+void decrementBrickCounter();
 
 #endif

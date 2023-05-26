@@ -1,3 +1,5 @@
+#ifndef FONT_H
+#define FONT_H
 #include "A.xpm"
 #include "ampersand.xpm"
 #include "asciicircum.xpm"
@@ -66,6 +68,14 @@
 #include "Z.xpm"
 #include "zero.xpm"
 #include "../../../controller/video/graphics.h"
+#include "../../sprite.h"
 
 static xpm_map_t digits[10] = {zero, one, two, three, four, five, six, seven, eight, nine};
 static xpm_map_t alphabet[] = {A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z};
+static Sprite* alphabet_sprites[26];
+
+void init_alphabet_sprites();
+void destroy_alphabet_sprites();
+Sprite* get_char(char c);
+
+#endif

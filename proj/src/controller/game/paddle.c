@@ -29,6 +29,12 @@ void move_paddle(Paddle* paddle) {
     }
 }
 
+void move_paddle_and_ball(Paddle* paddle, Ball* ball) {
+    move_paddle(paddle);
+    ball->x = paddle->x + paddle->sprite->width / 2 - ball->sprite->width / 2;
+    ball->y = paddle->y - ball->sprite->height;
+}
+
 void increase_points() {
     playerPoints++;
 }

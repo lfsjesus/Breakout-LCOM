@@ -49,6 +49,8 @@ void change_ball_pos(Ball* ball) {
 
     ball->x += ball->vx;
     ball->y += ball->vy;    
+
+    check_game_lost(ball, &mainPaddle);
 }
 
 void collision_brick(Ball* ball, Brick* brick) {
@@ -113,9 +115,17 @@ void collision_paddle(Ball* ball, Paddle* paddle) {
     }
 }
 
+bool check_game_lost(Ball* ball, Paddle* paddle) {
+    if (ball->y == modeinfo.YResolution - ball->radius) {
+        decreaseLives();
+        return true;
+    }
+    return false;
+}
+
 void reset_ball(Ball* ball) {
-    ball->x = 500;
-    ball->y = 500;
+    ball->x = (mainPaddle.x + (mainPaddle.sprite->width / 2 - ball->radius));
+    ball->y = (mainPaddle.y - ball->sprite->height);
     ball->vx = 5;
     ball->vy = 10;
 }

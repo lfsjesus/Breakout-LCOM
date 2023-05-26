@@ -16,7 +16,7 @@ Sprite* blueBrickDamaged;
 Sprite* greenBrickDamaged;
 Sprite* redBrickDamaged;
 
-Ball mainBall = {NULL, 10, 500, 500, 5, 10, 1, 4};
+Ball mainBall = {NULL, 10, 500, 500, 4, 9, 1, 5};
 
 Paddle mainPaddle = {NULL, 350, 550};
 
@@ -38,6 +38,7 @@ void setup_sprites() {
     blueBrickDamaged = create_sprite_xpm((xpm_map_t) bricks_xpm[1]);
     greenBrickDamaged = create_sprite_xpm((xpm_map_t) bricks_xpm[3]);
     redBrickDamaged = create_sprite_xpm((xpm_map_t) bricks_xpm[5]);
+    init_alphabet_sprites();
 }
 
 void destroy_sprites() {
@@ -56,6 +57,7 @@ void destroy_sprites() {
     destroy_sprite(blueBrickDamaged);
     destroy_sprite(greenBrickDamaged);
     destroy_sprite(redBrickDamaged);
+    destroy_alphabet_sprites();
 }
 
 void setup_bricks() {
@@ -91,6 +93,10 @@ void setup_bricks() {
 
 int getBrickCounter() {
     return brick_counter;
+}
+
+void decrementBrickCounter() {
+    brick_counter--;
 }
 
 
