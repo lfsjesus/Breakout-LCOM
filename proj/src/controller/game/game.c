@@ -31,7 +31,6 @@ void update_keyboard_state() {
             gameState = SCORE;
             break;
         default:
-            send_byte(0);
             break;
     }
         break;

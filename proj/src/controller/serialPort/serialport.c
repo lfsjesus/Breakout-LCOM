@@ -51,11 +51,10 @@ int (read_lsr) (uint8_t* lsr) {
 }
 
 int (send_byte) (uint8_t* byte) {
-  printf("Here\n");
   uint8_t lsr;
   if (util_sys_inb(COM1_ADDR + LSR, &lsr) != 0)  return 1;
   if (lsr & LSR_THRempty) {
-    if (sys_outb(COM1_ADDR + THR, (uint32_t)byte) == 0) { printf("%d sent\n", *byte); return 0;}
+    if (sys_outb(COM1_ADDR + THR, (uint32_t)byte) == 0) {printf("Sending Byte\n"); return 0;}
   }
   printf("error");
   return 1;
