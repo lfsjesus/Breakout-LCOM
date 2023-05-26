@@ -3,7 +3,7 @@
 
 extern MouseInfo mouse_info;
 extern Ball mainBall;
-extern Brick bricks[120];
+extern Brick bricks[12][10];
 extern Paddle mainPaddle;
 
 extern GameState gameState;
@@ -56,11 +56,12 @@ void draw_paddle() {
 }
 
 void draw_bricks() {
-  for (int i = 0; i < 120; i++) {
-    if (bricks[i].sprite == NULL) {
-      continue;
+  for (int i = 0; i < 12; i++) {
+    for (int j = 0; j < 10; j++) {
+      if (bricks[i][j].sprite == NULL)
+        continue;
+      draw_sprite_xpm(bricks[i][j].sprite, bricks[i][j].x, bricks[i][j].y);
     }
-    draw_sprite_xpm(bricks[i].sprite, bricks[i].x, bricks[i].y);
   }
 }
 

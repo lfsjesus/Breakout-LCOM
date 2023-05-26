@@ -21,7 +21,7 @@ void destroy_sprites();
 void setup_bricks();
 
 typedef struct {
-    Sprite* sprite;
+    Sprite* sprite; 
     uint16_t x;
     uint16_t y;
     uint8_t hp;
