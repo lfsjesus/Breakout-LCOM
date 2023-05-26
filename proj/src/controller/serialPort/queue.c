@@ -40,7 +40,7 @@ bool push(Queue* queue, uint8_t element) {
 				% queue->capacity;
 	queue->array[queue->back] = element;
 	queue->size = queue->size + 1;
-	printf("%d enqueued to queue\n", element);
+	printf("%d enqueued\n", element);
 	return true;
 }
 

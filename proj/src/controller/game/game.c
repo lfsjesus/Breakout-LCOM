@@ -30,6 +30,9 @@ void update_keyboard_state() {
         case S_BK_CODE:
             gameState = SCORE;
             break;
+        default:
+            send_byte(0);
+            break;
     }
         break;
 
@@ -38,6 +41,7 @@ void update_keyboard_state() {
         case ESC_BK_CODE:
             gameState = START;
         default:
+            send_byte(0);
             break;
         }
         break;
