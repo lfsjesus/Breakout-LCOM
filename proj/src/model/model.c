@@ -9,6 +9,12 @@ Sprite* button_leaderboard;
 Sprite* button_settings;
 Sprite* heart;
 Sprite* ball;
+Sprite* blueBrick;
+Sprite* greenBrick;
+Sprite* redBrick;
+Sprite* blueBrickDamaged;
+Sprite* greenBrickDamaged;
+Sprite* redBrickDamaged;
 
 Ball mainBall = {NULL, 10, 500, 500, 5, 10, 1, 5};
 
@@ -28,6 +34,12 @@ void setup_sprites() {
     mainPaddle.sprite = create_sprite_xpm((xpm_map_t) paddle_xpm);
     heart = create_sprite_xpm((xpm_map_t) heart_xpm);
     mainBall.sprite = create_sprite_xpm((xpm_map_t) ball_xpm);
+    blueBrick = create_sprite_xpm((xpm_map_t) bricks_xpm[0]);
+    greenBrick = create_sprite_xpm((xpm_map_t) bricks_xpm[2]);
+    redBrick = create_sprite_xpm((xpm_map_t) bricks_xpm[4]);
+    blueBrickDamaged = create_sprite_xpm((xpm_map_t) bricks_xpm[1]);
+    greenBrickDamaged = create_sprite_xpm((xpm_map_t) bricks_xpm[3]);
+    redBrickDamaged = create_sprite_xpm((xpm_map_t) bricks_xpm[5]);
 }
 
 void destroy_sprites() {
@@ -39,6 +51,13 @@ void destroy_sprites() {
     destroy_sprite(button_settings);
     destroy_sprite(mainPaddle.sprite);
     destroy_sprite(heart);
+    destroy_sprite(mainBall.sprite);
+    destroy_sprite(blueBrick);
+    destroy_sprite(greenBrick);
+    destroy_sprite(redBrick);
+    destroy_sprite(blueBrickDamaged);
+    destroy_sprite(greenBrickDamaged);
+    destroy_sprite(redBrickDamaged);
 }
 
 void setup_bricks() {
@@ -55,16 +74,24 @@ void setup_bricks() {
             bricks[i][j].y = i * height + start_y + padding;
 
             if (map1[i][j] == 'X') {
-                bricks[i][j].hp = 1;
+                bricks[i][j].hp = 2;
                 bricks[i][j].sprite = create_sprite_xpm((xpm_map_t) bricks_xpm[0]);
                 brick_counter++;
             }
 
-            else if (map1[i][j] == 'A') {
-                bricks[i][j].hp = 3;
+            else if (map1[i][j] == 'B') {
+                bricks[i][j].hp = 4;
                 bricks[i][j].sprite = create_sprite_xpm((xpm_map_t) bricks_xpm[2]);
                 brick_counter++;
             }
+
+            else if (map1[i][j] == 'A') {
+                bricks[i][j].hp = 6;
+                bricks[i][j].sprite = create_sprite_xpm((xpm_map_t) bricks_xpm[4]);
+                brick_counter++;
+            }
+
+            
         }
     }
 

@@ -61,7 +61,7 @@ void collision_brick(Ball* ball, Brick* brick) {
             ball->vy = -ball->vy;
         }
         increasePoints();
-        brick->sprite = NULL;
+        decrease_hp(brick);
     }
 
 }

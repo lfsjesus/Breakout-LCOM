@@ -13,7 +13,7 @@
 #include "xpm/heart.xpm"
 #include "xpm/ball.xpm"
 #include "../model/sprite.h"
-#include "../model/maps/map1.c"
+#include "../model/maps/maps.h"
 #include "xpm/bricks.h"
 
 void setup_sprites();

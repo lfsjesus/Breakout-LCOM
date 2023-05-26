@@ -16,6 +16,12 @@ extern Sprite *button_leaderboard;
 extern Sprite *button_settings;
 extern Sprite *paddle;
 extern Sprite *heart;
+extern Sprite* blueBrick;
+extern Sprite* greenBrick;
+extern Sprite* redBrick;
+extern Sprite* blueBrickDamaged;
+extern Sprite* greenBrickDamaged;
+extern Sprite* redBrickDamaged;
 
 int draw_sprite_xpm(Sprite *sprite, int x, int y) {
   uint16_t height = sprite->height;
@@ -60,6 +66,31 @@ void draw_bricks() {
     for (int j = 0; j < 10; j++) {
       if (bricks[i][j].sprite == NULL)
         continue;
+
+      if (bricks[i][j].hp == 2) {
+        bricks[i][j].sprite = blueBrick;
+      }
+
+      else if (bricks[i][j].hp == 1) {
+        bricks[i][j].sprite = blueBrickDamaged;
+      }
+
+      else if (bricks[i][j].hp == 4) {
+        bricks[i][j].sprite = greenBrick;
+      }
+
+      else if (bricks[i][j].hp == 3) {
+        bricks[i][j].sprite = greenBrickDamaged;
+      }
+
+      else if (bricks[i][j].hp == 6) {
+        bricks[i][j].sprite = redBrick;
+      }
+
+      else if (bricks[i][j].hp == 5) {
+        bricks[i][j].sprite = redBrickDamaged;
+      }
+
       draw_sprite_xpm(bricks[i][j].sprite, bricks[i][j].x, bricks[i][j].y);
     }
   }
