@@ -26,8 +26,10 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y) {
       current_color = sprite->colors[w + h * width];
       if (current_color == TRANSPARENT)
         continue;
-      if (vg_draw_pixel(x + w, y + h, current_color) != 0)
+      if (x + w >= modeinfo.XResolution || y + h >= modeinfo.YResolution)
         return 1;
+      memcpy(frame_buffer + buffer_index * frame_size + (modeinfo.XResolution * (y + h) + (x + w)) * bytes_per_pixel, &sprite->colors[w + h * width], bytes_per_pixel);
+
     }
   }
   return 0;
