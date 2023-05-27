@@ -41,7 +41,7 @@ void update_keyboard_state() {
             reset_game();
             gameState = START;
         default:
-            send_byte(0);
+            send_byte(0x00);
             break;
         }
         break;
@@ -88,7 +88,7 @@ void update_sp_state() {
     sp_ih();
     uint8_t byte = pop(get_queue());
     
-    printf("%c\n", byte);
+    printf("%d\n", byte);
     
     }
 
