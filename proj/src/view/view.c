@@ -12,10 +12,6 @@ extern GameState gameState;
 
 extern Sprite *mouse;
 extern Sprite *background;
-extern Sprite *button_singleplayer;
-extern Sprite *button_multiplayer;
-extern Sprite *button_leaderboard;
-extern Sprite *button_settings;
 extern Sprite *paddle;
 extern Sprite *heart;
 extern Sprite* blueBrick;
@@ -45,14 +41,6 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y) {
 
 void draw_mouse() {
   draw_sprite_xpm(mouse, mouse_info.x, mouse_info.y);
-}
-
-void draw_menu() {
-  draw_sprite_xpm(button_singleplayer, 150, 290);
-  draw_sprite_xpm(button_multiplayer, 444, 290);
-  draw_sprite_xpm(button_leaderboard, 150, 390);
-  draw_sprite_xpm(button_settings, 444, 390);
-
 }
 
 void draw_ball() {
@@ -106,7 +94,6 @@ void draw_bricks() {
 void draw_new_frame() {
   switch (gameState){
   case START:
-    draw_menu();
     draw_mouse();
     break;
   

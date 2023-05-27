@@ -3,10 +3,6 @@
 
 Sprite* mouse;
 Sprite* background;
-Sprite* button_singleplayer;
-Sprite* button_multiplayer;
-Sprite* button_leaderboard;
-Sprite* button_settings;
 Sprite* heart;
 Sprite* ball;
 Sprite* extraBallSprite;
@@ -31,10 +27,6 @@ Brick bricks[12][10];
 void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
     background = create_sprite_xpm((xpm_map_t) menu_background_xpm);
-    button_singleplayer = create_sprite_xpm((xpm_map_t) singleplayer_button_xpm);
-    button_multiplayer = create_sprite_xpm((xpm_map_t) multiplayer_button_xpm);
-    button_leaderboard = create_sprite_xpm((xpm_map_t) leaderboard_button_xpm);
-    button_settings = create_sprite_xpm((xpm_map_t) settings_button_xpm);
     mainPaddle.sprite = create_sprite_xpm((xpm_map_t) paddle_xpm);
     heart = create_sprite_xpm((xpm_map_t) heart_xpm);
     mainBall.sprite = create_sprite_xpm((xpm_map_t) ball_xpm);
@@ -54,10 +46,6 @@ void setup_sprites() {
 void destroy_sprites() {
     destroy_sprite(mouse);
     destroy_sprite(background);
-    destroy_sprite(button_singleplayer);
-    destroy_sprite(button_multiplayer);
-    destroy_sprite(button_leaderboard);
-    destroy_sprite(button_settings);
     destroy_sprite(mainPaddle.sprite);
     destroy_sprite(heart);
     destroy_sprite(mainBall.sprite);

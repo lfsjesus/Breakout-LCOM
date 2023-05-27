@@ -119,16 +119,16 @@ void update_timer_state() {
 
 void refresh_buttons_state() {
     if (mouse_info.left_click) {
-        if (mouse_info.x >= 150 && mouse_info.x <= 150 + 206 && mouse_info.y >= 290 && mouse_info.y <= 290 + 63) {
+        if (mouse_info.x >= 100 && mouse_info.x <= 380 && mouse_info.y >= 250 && mouse_info.y <= 350) {
             gameState = INIT;
         }
-        else if (mouse_info.x >= 444 && mouse_info.x <= 444 + 206 && mouse_info.y >= 290 && mouse_info.y <= 290 + 63) {
+        else if (mouse_info.x >= 420 && mouse_info.x <= 700 && mouse_info.y >= 250 && mouse_info.y <= 350) {
             gameState = GAME;
         }
-        else if (mouse_info.x >= 150 && mouse_info.x <= 150 + 206 && mouse_info.y >= 390 && mouse_info.y <= 390 + 63) {
+        else if (mouse_info.x >= 100 && mouse_info.x <= 280 && mouse_info.y >= 350 && mouse_info.y <= 450) {
             gameState = SCORE;
         }
-        else if (mouse_info.x >= 444 && mouse_info.x <= 444 + 206 && mouse_info.y >= 390 && mouse_info.y <= 390 + 63) {
+        else if (mouse_info.x >= 420 && mouse_info.x <= 700 && mouse_info.y >= 350 && mouse_info.y <= 450) {
             gameState = SETTINGS;
         }
     }

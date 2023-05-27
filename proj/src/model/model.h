@@ -5,10 +5,6 @@
 #include <lcom/lcf.h>
 #include "xpm/mouse.xpm"
 #include "xpm/menu_background.xpm"
-#include "xpm/singleplayer_button.xpm"
-#include "xpm/multiplayer_button.xpm"
-#include "xpm/leaderboard_button.xpm"
-#include "xpm/settings_button.xpm"
 #include "xpm/paddle.xpm"
 #include "xpm/heart.xpm"
 #include "xpm/ball.xpm"

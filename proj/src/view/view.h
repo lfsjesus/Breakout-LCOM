@@ -13,8 +13,6 @@
 
 void draw_mouse();
 
-void draw_menu();
-
 void draw_ball();
 
 void draw_bricks();
