@@ -10,10 +10,11 @@ extern PowerUp powerUps[3];
 
 extern GameState gameState;
 
-extern Sprite *mouse;
-extern Sprite *background;
-extern Sprite *paddle;
-extern Sprite *heart;
+extern Sprite* settings_backgrounds[6];
+extern Sprite* mouse;
+extern Sprite* background;
+extern Sprite* paddle;
+extern Sprite* heart;
 extern Sprite* blueBrick;
 extern Sprite* greenBrick;
 extern Sprite* redBrick;
@@ -98,7 +99,9 @@ void draw_new_frame() {
     break;
   
   case SETTINGS:
-     vg_draw_rectangle(100, 100, 10, 10, 0xFF0000);
+    draw_setting_screen();
+    if (get_control_device() == MOUSE)
+      draw_mouse();  
     break;
   
   case SCORE:
@@ -120,6 +123,10 @@ void draw_new_frame() {
     break;
   }
 
+}
+
+void draw_setting_screen() {
+  draw_sprite_xpm(settings_backgrounds[get_current_setting()], 0, 0);
 }
 
 void draw_points() {

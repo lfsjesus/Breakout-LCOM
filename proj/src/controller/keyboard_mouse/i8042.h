@@ -13,6 +13,9 @@
 #define ESC_MK_CODE 0x01
 #define ESC_BK_CODE 0x81
 
+#define ENTER_MK_CODE 0x1C
+#define ENTER_BK_CODE 0x9C
+
 #define S_MK_CODE 0x1F
 #define S_BK_CODE 0x9F
 

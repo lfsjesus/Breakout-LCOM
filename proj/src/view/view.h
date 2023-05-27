@@ -23,6 +23,8 @@ void draw_lives();
 
 void draw_active_powerups();
 
+void draw_setting_screen();
+
 void draw_instruction();
 
 void draw_text(char *text, uint16_t x, uint16_t y);
