@@ -9,6 +9,8 @@ GameState gameState = START;
 
 extern vbe_mode_info_t mode_info;
 extern MouseInfo mouse_info;
+MouseInfo guest_mouse_info;
+
 
 extern Paddle mainPaddle;
 extern Ball mainBall;

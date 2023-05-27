@@ -4,6 +4,11 @@
 static int sp_hook_id = COM1_IRQ;
 static Queue* queue;
 
+static uint8_t mouse_packet[4];
+extern MouseInfo guest_mouse_info;
+
+
+
 int (sp_subscribe_int) (uint8_t *bit_no) {
   (*bit_no) = sp_hook_id;
   return sys_irqsetpolicy(COM1_IRQ, IRQ_REENABLE | IRQ_EXCLUSIVE, &sp_hook_id);
@@ -66,6 +71,28 @@ int (read_byte) () {
     return 1;
   push(queue, c);
 
+  return 0;
+}
+
+int (sp_playing_byte) (uint8_t byte) {
+  int n_bytes = 0;
+  if (byte == GAMEOVER_BYTE) 
+    //change gameState and return
+    return 0;
+  while (n_bytes  < 4) {
+    sp_ih();
+    byte = pop(get_queue());  //posso alterar o arg?
+    mouse_packet[n_bytes] = byte;
+    n_bytes++;
+  }
+  sp_parse_mouse_packet();
+}
+
+int (sp_parse_mouse_packet) () {
+  uint16_t x = (((uint16_t) mouse_packet[0]) << 8) | ((uint16_t) mouse_packet[1]);
+  uint16_t y = (((uint16_t) mouse_packet[2]) << 8) | ((uint16_t) mouse_packet[3]);
+  guest_mouse_info.x = x;
+  guest_mouse_info.y = y;
   return 0;
 }
 

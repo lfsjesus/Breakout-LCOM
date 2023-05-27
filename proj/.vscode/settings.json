@@ -22,6 +22,7 @@
     "view.h": "c",
     "serialport.h": "c",
     "game.h": "c",
-    "util.h": "c"
+    "util.h": "c",
+    "stdio.h": "c"
   },
 }

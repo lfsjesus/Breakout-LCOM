@@ -40,7 +40,7 @@
 
 #define IIR_INT BIT(0) // 1 if no interrupt pending
 #define IIR_INT_ID BIT(1) | BIT(2) | BIT(3) // bit id mask
-#define IIR_PRIO_RLS BIT(1) | BIT(2) // Receiver Line Status
+#define IIR_PRIO_RLS BIT(1) | BIT(2) //  Receiver Line Status
 #define IIR_PRIO_RDA BIT(2)    // Reived Data Available
 #define IIR_PRIO_CTO BIT(2) | BIT(3) // FIFO Character Timeout
 #define IIR_PRIO_THRE BIT(1) // Trasmitter Holding Register Empty
@@ -60,3 +60,10 @@
 #define FCR_EB BIT(0)  //Enables both FIFO's
 #define FCR_CR BIT(1)  //Clears all bytes in Receiver FIFO
 #define FCR_CX BIT(2)  //Clears all bytes in the XMIT FIFO
+
+
+// processed Bytes
+
+#define PACKET_BYTE 0x00 // 
+#define GAMEOVER_BYTE 0x01
+
