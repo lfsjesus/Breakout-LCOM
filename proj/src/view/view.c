@@ -2,9 +2,13 @@
 #include <lcom/lcf.h>
 
 extern MouseInfo mouse_info;
+extern MouseInfo guest_mouse_info;
 extern Ball mainBall;
+extern Ball extraBall;
 extern Brick bricks[12][10];
 extern Paddle mainPaddle;
+extern Paddle guestPaddle;
+extern PowerUp powerUps[3];
 
 extern GameState gameState;
 
@@ -57,8 +61,17 @@ void draw_ball() {
   draw_sprite_xpm(mainBall.sprite, mainBall.x, mainBall.y);
 }
 
+void draw_extra_ball() {
+  if (extraBall.sprite != NULL)
+    draw_sprite_xpm(extraBall.sprite, extraBall.x, extraBall.y);
+}
+
 void draw_paddle() {
   draw_sprite_xpm(mainPaddle.sprite, mainPaddle.x, mainPaddle.y);
+}
+
+void draw_guest_paddle() {
+  draw_sprite_xpm(mainPaddle.sprite, guestPaddle.x, guestPaddle.y);
 }
 
 void draw_bricks() {
@@ -111,13 +124,17 @@ void draw_new_frame() {
     vg_draw_rectangle(100, 100, 10, 10, 0x00FF00);
     break;
   
+  case INIT:
+    draw_instruction();
   case GAME:
     draw_points();
     draw_lives();
     draw_paddle();
     draw_bricks();
     draw_ball();
-    
+    draw_extra_ball();
+    draw_active_powerups();
+    draw_guest_paddle();
     break;
   default:
     break;
@@ -139,15 +156,21 @@ void draw_points() {
   }
 }
 
-void draw_text(char *text, int x, int y) {
-  int spacing = 31;
+void draw_instruction() {
+  draw_text("MOVE AND SHOOT", 200, 470);
+}
+
+void draw_text(char *text, uint16_t x, uint16_t y) {
   int i = 0;
 
   while (text[i] != '\0') {
-    if (text[i] == ' ')
-      x += spacing;
+    if (text[i] != ' ') {
+      Sprite* letter = get_char(text[i]);
+      draw_sprite_xpm(letter, x, y);
+      x += letter->width;
+    }
     else {
-    draw_sprite_xpm(create_sprite_xpm(alphabet[text[i] - 'A']), x + i * spacing, y);
+      x += 10;
     }
     i++;
   }
@@ -160,6 +183,14 @@ void draw_lives() {
 
   for (int i = 0; i < lives; i++) {
     draw_sprite_xpm(heart, startX + i * spacing, 0);
+  }
+}
+
+void draw_active_powerups() {
+  for (int i = 0; i < 3; i++) {
+    if (powerUps[i].active) {
+      draw_sprite_xpm(powerUps[i].sprite, powerUps[i].x, powerUps[i].y);
+    }
   }
 }
 

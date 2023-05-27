@@ -14,8 +14,9 @@ int (keyboard_unsubscribe_int)() {
 }
 
 void (kbc_ih)() {
-  if (read_output(IN_OUT_BUF, &scancode, 0) != OK)
+  if (read_output(IN_OUT_BUF, &scancode, 0) != OK) {
     printf("Could not read Output Buffer\n");
+  }
 }
 
 int (keyboard_restore)() {

@@ -10,7 +10,7 @@ extern SystemState systemState;
 
 int (main)(int argc, char *argv[]) {
   lcf_set_language("EN-US");
-  lcf_trace_calls("/home/lcom/labs/g4-main/proj/src/debug/trace.txt");
+  lcf_trace_calls("");
   lcf_log_output("/home/lcom/labs/gitlab/g4/proj/src/debug/output.txt");
   if (lcf_start(argc, argv)) return 1;
   lcf_cleanup();
@@ -33,6 +33,7 @@ int setup() {
   setup_bricks();
   // Inicialização dos sprites
   setup_sprites();
+  setup_powerups();
   uint8_t hook_id_helper;
   // Ativação das interrupções dos dispositivos
   if (timer_subscribe_int(&hook_id_helper) != 0) return 1;
