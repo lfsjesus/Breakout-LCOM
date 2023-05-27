@@ -7,6 +7,7 @@
 #include "../../model/model.h"
 #include "brick.h"
 #include "paddle.h"
+#include "powerup.h"
 
 void change_ball_pos(Ball* ball);
 
@@ -14,10 +15,16 @@ void collision_board(Ball* ball);
 
 void collision_brick(Ball* ball, Brick* brick);
 
+void collision_extra_ball(Ball* ball, Ball* extraBall);
+
 void collision_paddle(Ball* ball, Paddle* paddle);
 
-bool check_game_lost(Ball* bal, Paddle* paddle);
+bool check_ball_out(Ball* bal, Paddle* paddle);
 
 void reset_ball(Ball* ball);
+
+void add_ball(Ball* mainBall, Ball* newBall);
+
+void disable_extra_ball(Ball* ball);
 
 #endif

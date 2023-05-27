@@ -28,6 +28,7 @@ int setup() {
   setup_bricks();
   // Inicialização dos sprites
   setup_sprites();
+  setup_powerups();
   uint8_t hook_id_helper;
   // Ativação das interrupções dos dispositivos
   if (timer_subscribe_int(&hook_id_helper) != 0) return 1;

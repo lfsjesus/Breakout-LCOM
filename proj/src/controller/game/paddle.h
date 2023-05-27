@@ -24,6 +24,8 @@ int getLives();
 
 void decreaseLives();
 
+void increaseLives();
+
 void reset_paddle(Paddle* paddle);
 
 void reset_lives();

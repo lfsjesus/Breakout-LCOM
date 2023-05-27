@@ -3,8 +3,10 @@
 
 extern MouseInfo mouse_info;
 extern Ball mainBall;
+extern Ball extraBall;
 extern Brick bricks[12][10];
 extern Paddle mainPaddle;
+extern PowerUp powerUps[3];
 
 extern GameState gameState;
 
@@ -55,6 +57,11 @@ void draw_menu() {
 
 void draw_ball() {
   draw_sprite_xpm(mainBall.sprite, mainBall.x, mainBall.y);
+}
+
+void draw_extra_ball() {
+  if (extraBall.sprite != NULL)
+    draw_sprite_xpm(extraBall.sprite, extraBall.x, extraBall.y);
 }
 
 void draw_paddle() {
@@ -119,6 +126,8 @@ void draw_new_frame() {
     draw_paddle();
     draw_bricks();
     draw_ball();
+    draw_extra_ball();
+    draw_active_powerups();
     break;
   default:
     break;
@@ -167,6 +176,14 @@ void draw_lives() {
 
   for (int i = 0; i < lives; i++) {
     draw_sprite_xpm(heart, startX + i * spacing, 0);
+  }
+}
+
+void draw_active_powerups() {
+  for (int i = 0; i < 3; i++) {
+    if (powerUps[i].active) {
+      draw_sprite_xpm(powerUps[i].sprite, powerUps[i].x, powerUps[i].y);
+    }
   }
 }
 

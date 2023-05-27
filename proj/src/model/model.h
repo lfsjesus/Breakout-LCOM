@@ -12,14 +12,19 @@
 #include "xpm/paddle.xpm"
 #include "xpm/heart.xpm"
 #include "xpm/ball.xpm"
+#include "xpm/extra_ball.xpm"
 #include "../model/sprite.h"
 #include "../model/maps/maps.h"
 #include "xpm/bricks.h"
+#include "xpm/ball_power.xpm"
+#include "xpm/block_power.xpm"
+#include "xpm/life_power.xpm"
 #include "xpm/font/font.h"
 
 void setup_sprites();
 void destroy_sprites();
 void setup_bricks();
+void setup_powerups();
 
 typedef struct {
     Sprite* sprite; 
@@ -45,6 +50,14 @@ typedef struct {
     uint16_t y;
 } Paddle;
 
+typedef struct {
+    Sprite* sprite;
+    uint16_t x;
+    uint16_t y;
+    uint8_t type;
+    bool active;
+} PowerUp;
+
 typedef enum {
     MOUSE,
     KEYBOARD,
@@ -55,5 +68,7 @@ static int brick_counter = 0;
 int getBrickCounter();
 
 void decrementBrickCounter();
+
+
 
 #endif

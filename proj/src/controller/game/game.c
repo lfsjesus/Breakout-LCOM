@@ -3,6 +3,7 @@
 
 extern uint8_t scancode;
 extern uint8_t packet_counter;
+extern uint32_t counter; // Timer counter
 
 SystemState systemState = RUNNING;
 GameState gameState = START;
@@ -13,6 +14,7 @@ extern MouseInfo mouse_info;
 
 extern Paddle mainPaddle;
 extern Ball mainBall;
+extern Ball extraBall;
 
 void update_keyboard_state() {
     (kbc_ih)();
@@ -78,18 +80,33 @@ void update_timer_state() {
             if (controlDevice == KEYBOARD) move_paddle_and_ball(&mainPaddle, &mainBall);
             break;
         case GAME:
+            timer_int_handler();
             if (controlDevice == KEYBOARD) move_paddle(&mainPaddle); // to avoid scancode waiting
             change_ball_pos(&mainBall);
-            if (getBrickCounter() == 0) {
-                gameState = START;
-                reset_game();
-            }
-            if (check_game_lost(&mainBall, &mainPaddle)) {
+            if (check_ball_out(&mainBall, &mainPaddle)) {
+                decreaseLives(&mainBall, &mainPaddle);
                 gameState = INIT;
                 reset_paddle(&mainPaddle);
                 reset_ball(&mainBall);
             }
 
+            if (extra_ball_active()) {
+                change_ball_pos(&extraBall);
+                if (check_ball_out(&extraBall, &mainPaddle)) {
+                    disable_extra_ball(&extraBall);
+                }
+            }
+            
+            if (getBrickCounter() == 0 || getLives(&mainPaddle) == 0) {
+                gameState = START;
+                reset_game();
+            }
+            if (counter / 60 == 10) {
+                drop_random_powerup();
+                counter = 0;
+            }
+            move_active_powerups();
+            
             break;
         default:
             break;

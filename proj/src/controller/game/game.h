@@ -8,6 +8,7 @@
 #include "paddle.h"
 #include "ball.h"
 #include "brick.h"
+#include "powerup.h"
 #include "../../view/view.h"
 
 typedef enum {

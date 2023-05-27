@@ -74,6 +74,10 @@ void decreaseLives() {
     lives--;
 }
 
+void increaseLives() {
+    lives++;
+}
+
 void reset_paddle(Paddle* paddle) {
     paddle->x = 350;
     paddle->y = 550;

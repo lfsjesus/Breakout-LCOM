@@ -7,5 +7,6 @@
 
 void decrease_hp(Brick* brick);
 
+void destroy_red_bricks();
 
 #endif

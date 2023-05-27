@@ -9,16 +9,22 @@ Sprite* button_leaderboard;
 Sprite* button_settings;
 Sprite* heart;
 Sprite* ball;
+Sprite* extraBallSprite;
 Sprite* blueBrick;
 Sprite* greenBrick;
 Sprite* redBrick;
 Sprite* blueBrickDamaged;
 Sprite* greenBrickDamaged;
 Sprite* redBrickDamaged;
+Sprite* ballPowerUpSprite;
+Sprite* blockPowerUpSprite;
+Sprite* lifePowerUpSprite;
 
 Ball mainBall = {NULL, 10, 500, 500, 4, 9, 1, 5};
 
 Paddle mainPaddle = {NULL, 350, 550};
+
+PowerUp powerUps[3] = {{NULL, 0, 0, 1, false}, {NULL, 0, 0, 2, false}, {NULL, 0, 0, 3, false}};
 
 Brick bricks[12][10];
 
@@ -38,6 +44,10 @@ void setup_sprites() {
     blueBrickDamaged = create_sprite_xpm((xpm_map_t) bricks_xpm[1]);
     greenBrickDamaged = create_sprite_xpm((xpm_map_t) bricks_xpm[3]);
     redBrickDamaged = create_sprite_xpm((xpm_map_t) bricks_xpm[5]);
+    ballPowerUpSprite = create_sprite_xpm((xpm_map_t) ball_power_xpm);
+    blockPowerUpSprite = create_sprite_xpm((xpm_map_t) block_power_xpm);
+    lifePowerUpSprite = create_sprite_xpm((xpm_map_t) life_power_xpm);
+    extraBallSprite = create_sprite_xpm((xpm_map_t) extra_ball_xpm);
     init_alphabet_sprites();
 }
 
@@ -57,6 +67,9 @@ void destroy_sprites() {
     destroy_sprite(blueBrickDamaged);
     destroy_sprite(greenBrickDamaged);
     destroy_sprite(redBrickDamaged);
+    destroy_sprite(ballPowerUpSprite);
+    destroy_sprite(blockPowerUpSprite);
+    destroy_sprite(lifePowerUpSprite);
     destroy_alphabet_sprites();
 }
 
@@ -89,6 +102,12 @@ void setup_bricks() {
             }
         }
     }
+}
+
+void setup_powerups() {
+    powerUps[0].sprite = ballPowerUpSprite;
+    powerUps[1].sprite = blockPowerUpSprite;
+    powerUps[2].sprite = lifePowerUpSprite;
 }
 
 int getBrickCounter() {

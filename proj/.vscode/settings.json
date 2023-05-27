@@ -18,6 +18,7 @@
     "keyboard.h": "c",
     "brick.h": "c",
     "ball.h": "c",
-    "lcf.h": "c"
+    "lcf.h": "c",
+    "powerup.h": "c"
   },
 }
