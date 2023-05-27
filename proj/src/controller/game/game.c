@@ -6,6 +6,7 @@ extern uint8_t packet_counter;
 
 SystemState systemState = RUNNING;
 GameState gameState = START;
+ControlDevice controlDevice =  MOUSE;
 
 extern vbe_mode_info_t mode_info;
 extern MouseInfo mouse_info;
@@ -74,8 +75,10 @@ void update_timer_state() {
             break;
         case INIT:
             if (mouse_info.right_click) gameState = GAME;
+            if (controlDevice == KEYBOARD) move_paddle_and_ball(&mainPaddle, &mainBall);
             break;
         case GAME:
+            if (controlDevice == KEYBOARD) move_paddle(&mainPaddle); // to avoid scancode waiting
             change_ball_pos(&mainBall);
             if (getBrickCounter() == 0) {
                 gameState = START;
@@ -86,6 +89,7 @@ void update_timer_state() {
                 reset_paddle(&mainPaddle);
                 reset_ball(&mainBall);
             }
+
             break;
         default:
             break;
@@ -117,5 +121,6 @@ void reset_game() {
     reset_ball(&mainBall);
     reset_paddle(&mainPaddle);
     reset_points();
+    reset_lives();
     setup_bricks();
 }

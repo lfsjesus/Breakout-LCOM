@@ -50,7 +50,6 @@ void change_ball_pos(Ball* ball) {
     ball->x += ball->vx;
     ball->y += ball->vy;    
 
-    check_game_lost(ball, &mainPaddle);
 }
 
 void collision_brick(Ball* ball, Brick* brick) {

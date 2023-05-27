@@ -10,6 +10,10 @@
 
 void move_paddle(Paddle* paddle);
 
+void mouse_move_paddle(Paddle* paddle);
+
+void move_paddle_and_ball(Paddle* paddle, Ball* ball);
+
 void increase_points();
 
 void reset_points();
@@ -22,6 +26,6 @@ void decreaseLives();
 
 void reset_paddle(Paddle* paddle);
 
-void move_paddle_and_ball(Paddle* paddle, Ball* ball);
+void reset_lives();
 
 #endif

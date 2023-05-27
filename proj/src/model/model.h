@@ -45,6 +45,11 @@ typedef struct {
     uint16_t y;
 } Paddle;
 
+typedef enum {
+    MOUSE,
+    KEYBOARD,
+} ControlDevice;
+
 static int brick_counter = 0;
 
 int getBrickCounter();
