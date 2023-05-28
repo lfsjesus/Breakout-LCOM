@@ -65,6 +65,7 @@ void reset_powerups() {
   for (int i = 0; i < 3; i++) {
     powerUps[i].active = false;
   }
+  disable_extra_ball(&extraBall);
 }
 
 

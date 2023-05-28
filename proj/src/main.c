@@ -26,7 +26,7 @@ int setup() {
 
   // Inicialização do modo gráfico
   if (set_graphics_mode(0x115) != 0) return 1;
-  setup_bricks();
+  setup_bricks(map1);
   // Inicialização dos sprites
   setup_sprites();
   setup_paddle(4);

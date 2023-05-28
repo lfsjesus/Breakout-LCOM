@@ -17,7 +17,10 @@ extern Paddle mainPaddle;
 extern Ball mainBall;
 extern Ball extraBall;
 
-uint8_t current_setting = 0; // Value between 0 and 5
+uint8_t current_setting = 0; // Value between 0 and 5 (settings' screens)
+
+char** levels[3] = {map1, map2, map3};
+static int current_level = 0;
 
 uint8_t get_current_setting() {
     return current_setting;
@@ -151,10 +154,6 @@ void refresh_buttons_state() {
 }
 
 void update_settings_state() {
-    /*
-    Havia um problema antes quando nao confirmavamos o controlDevice antes de chamar a função. Como 
-    é feito em cada int do mouse, o controlDevice era alterado para KEYBOARD e depois imediatamente para MOUSE porque o keyboard nao enviava nada.
-    */
     setup_ball(current_setting);
     setup_paddle(current_setting);
     settings_change_control_device();
@@ -212,7 +211,8 @@ void settings_change_control_device() {
 }
 
 void singleplayer_handler() {
-    if (controlDevice == KEYBOARD) move_paddle(&mainPaddle); // to avoid scancode waiting
+    if (controlDevice == KEYBOARD) move_paddle(&mainPaddle); // Avoids delay when using keyboard
+
     change_ball_pos(&mainBall);
     if (check_ball_out(&mainBall, &mainPaddle)) {
         decreaseLives(&mainBall, &mainPaddle);
@@ -227,12 +227,29 @@ void singleplayer_handler() {
             disable_extra_ball(&extraBall);
         }
     }
-    
-    if (getBrickCounter() == 0 || getLives(&mainPaddle) == 0) {
-        add_leaderboard_record(1, getPoints(), &rtc_time);
+
+    if (getLives(&mainPaddle) == 0) {
+        add_leaderboard_record(current_level, getPoints(), &rtc_time);
         gameState = START;
         reset_game();
     }
+    else if (getBrickCounter() == 0) {
+        if (current_level == 2) {
+            add_leaderboard_record(current_level, getPoints(), &rtc_time);
+            current_level = 0;
+            reset_game();
+        }
+        else {
+            current_level++;
+            reset_ball(&mainBall);
+            reset_paddle(&mainPaddle);
+            reset_lives();
+            counter = 0;
+            reset_powerups();
+            setup_bricks(levels[current_level]);
+        }
+    }
+
     if (counter / 60 == 10) {
         drop_random_powerup();
         counter = 0;
@@ -247,5 +264,7 @@ void reset_game() {
     reset_lives();
     counter = 0;
     reset_powerups();
-    setup_bricks();
+    current_level = 0;
+    setup_bricks(levels[current_level]);
+    gameState = START;
 }

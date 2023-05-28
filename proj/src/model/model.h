@@ -28,7 +28,7 @@
 
 void setup_sprites();
 void destroy_sprites();
-void setup_bricks();
+void setup_bricks(char* map[12]);
 void setup_powerups();
 void setup_ball(uint8_t n);
 void setup_paddle(uint8_t n);

@@ -22,12 +22,12 @@ void leaderboard_fill() {
         return;
     }
 
-    char line[100]; // Adjust the buffer size as per your needs
+    char line[100];
 
     // Read records from the file
-    entriesFilled = 0; // Reset the entriesFilled count
+    entriesFilled = 0;
     while (entriesFilled < MAX_RECORDS && fgets(line, sizeof(line), file) != NULL) {
-        sscanf(line, "%d |          %04d |    %02hhu:%02hhu | %02hhu/%02hhu/%hu",
+        sscanf(line, "%d |          %04d |    %02hhu:%02hhu | %02hhu/%02hhu/%hhu",
                &records[entriesFilled].level, &records[entriesFilled].score,
                &records[entriesFilled].time_info.hours, &records[entriesFilled].time_info.minutes,
                &records[entriesFilled].time_info.day, &records[entriesFilled].time_info.month,
@@ -57,7 +57,7 @@ void add_leaderboard_record(int level, int score, rtc_time_info *time_info) {
     leaderboard_fill();
 
     // Check if the new record is better than any existing record or if there's space to add it
-    int insertIndex = -1; // Index where the new record should be inserted (-1 indicates no insertion)
+    int insertIndex = -1; 
 
     // Iterate through the existing records to find the insertion index
     for (int i = 0; i < entriesFilled; i++) {
@@ -65,12 +65,9 @@ void add_leaderboard_record(int level, int score, rtc_time_info *time_info) {
             (level == records[i].level && score > records[i].score) ||
             (level == records[i].level && score == records[i].score && compare_time(time_info, &records[i].time_info) < 0)) {
             insertIndex = i;
-            break; // Found the insertion index, no need to continue
+            break; 
         }
     }
-
-    printf("Insert index: %d\n", insertIndex);
-    printf("Entries filled: %d\n", entriesFilled);
 
     if (insertIndex == -1 && entriesFilled < MAX_RECORDS) {
         insertIndex = entriesFilled;
@@ -89,7 +86,7 @@ void add_leaderboard_record(int level, int score, rtc_time_info *time_info) {
     records[insertIndex].level = level;
     records[insertIndex].score = score;
     records[insertIndex].time_info = *time_info;
-    sprintf(records[insertIndex].row_content, "%d |          %04d |    %02hhu:%02hhu | %02hhu/%02hhu/%hu\n",
+    sprintf(records[insertIndex].row_content, "%d |          %04d |    %02hhu:%02hhu | %02hhu/%02hhu/%hhu\n",
             level, score, time_info->hours, time_info->minutes, time_info->day, time_info->month, time_info->year);
 
     

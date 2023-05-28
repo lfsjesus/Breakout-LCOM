@@ -87,30 +87,30 @@ void destroy_sprites() {
     destroy_number_sprites();
 }
 
-void setup_bricks() {
+void setup_bricks(char* map[12]) {
     int width = 75;
     int height = 37;
     int padding = 50;
     int start_y = 40;
     for (int i = 0; i < 12; i++) {
         for (int j = 0; j < 10; j++) {
-            if (map1[i][j] == ' ') {
+            if (map[i][j] == ' ') {
                 continue;
             }
             bricks[i][j].x = j * (width + 4) + 10;
             bricks[i][j].y = i * height + start_y + padding;
 
-            if (map1[i][j] == 'X') {
+            if (map[i][j] == 'X') {
                 bricks[i][j].hp = 2;
                 brick_counter++;
             }
 
-            else if (map1[i][j] == 'B') {
+            else if (map[i][j] == 'B') {
                 bricks[i][j].hp = 5;
                 brick_counter++;
             }
 
-            else if (map1[i][j] == 'A') {
+            else if (map[i][j] == 'A') {
                 bricks[i][j].hp = 9;
                 brick_counter++;
             }
@@ -149,9 +149,5 @@ int getBrickCounter() {
 void decrementBrickCounter() {
     brick_counter--;
 }
-
-
-
-
 
 
