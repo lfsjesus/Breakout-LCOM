@@ -34,14 +34,15 @@ void update_keyboard_state() {
             case ESC_BK_CODE:
                 systemState = EXIT;
                 break;
-            case P_BK_CODE:
-                gameState = GAME;
+            case ONE_BK_CODE:
+                gameState = INIT;
                 break;
-            case H_BK_CODE:
+            case TWO_BK_CODE:
+                break;
+            case THREE_BK_CODE:
+                break;
+            case FOUR_BK_CODE:
                 gameState = SETTINGS;
-                break;
-            case S_BK_CODE:
-                gameState = SCORE;
                 break;
         }
         break;
@@ -98,8 +99,18 @@ void update_timer_state() {
             reset_ball(&mainBall);
             break;
         case INIT:
-            if (mouse_info.right_click) gameState = GAME;
-            if (controlDevice == KEYBOARD) move_paddle_and_ball(&mainPaddle, &mainBall);
+            if (controlDevice == KEYBOARD) {
+                move_paddle_and_ball(&mainPaddle, &mainBall);
+                if (scancode == SPACE_BK_CODE) {
+                    gameState = GAME;
+                }
+            }
+            else {
+                if (mouse_info.right_click) {
+                    gameState = GAME;
+                }
+            }
+
             break;
         case GAME:
             timer_int_handler();

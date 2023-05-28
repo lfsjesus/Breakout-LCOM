@@ -95,7 +95,9 @@ void draw_bricks() {
 void draw_new_frame() {
   switch (gameState){
     case START:
-      draw_mouse();
+      if (get_control_device() == MOUSE) {
+        draw_mouse();
+      }
       break;
     case SETTINGS:
       draw_setting_screen();
