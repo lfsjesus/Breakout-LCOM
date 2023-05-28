@@ -10,8 +10,14 @@
 
 
 int (mouse_config)(uint8_t control_word);
+/**
+ * @brief Subscribes mouse interrupts
+ */
 int (mouse_subscribe_int)(uint8_t *bit_no);
 void (mouse_ih)();
+/**
+ * @brief Unsubscribes mouse interrupts
+ */
 int (mouse_unsubscribe_int)();
 int (mouse_sync)();
 int (mouse_process_packet)();

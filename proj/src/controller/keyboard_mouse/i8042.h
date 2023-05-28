@@ -72,7 +72,24 @@
 #define NACK 0xFE
 
 /* FUNCTIONS */
+/**
+ * @brief Reads the status register
+ * @param status pointer to the status
+ * @return int - 0 on success, 1 on failure
+ */
 int read_status_register(uint8_t* status);
+/**
+ * @brief Reads the output (10 attempts)
+ * @param port 
+ * @param byte 
+ * @param mouse 
+ * @return int - 0 on success, 1 on failure
+ */
 int read_output(uint8_t port, uint8_t* byte, uint8_t mouse);
+/**
+ * @brief Tries to read the output (3 attempts)
+ * @param port 
+ * @param commandByte 
+ * @return int - 0 on success, 1 on failure
+ */
 int write_kbc_command(uint8_t port, uint8_t commandByte);
-
