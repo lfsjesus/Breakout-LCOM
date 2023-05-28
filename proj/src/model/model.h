@@ -109,7 +109,6 @@ static int brick_counter = 0;
 
 /**
  * @brief Gets the current number of bricks in the game
- * 
  * @return int - current number of bricks in the game
  */
 int getBrickCounter();
