@@ -6,7 +6,7 @@ extern uint8_t packet_counter;
 extern uint32_t counter; // Timer counter
 
 SystemState systemState = RUNNING;
-GameState gameState = START;
+AppState gameState = START;
 ControlDevice controlDevice = MOUSE;
 
 extern vbe_mode_info_t mode_info;
@@ -83,7 +83,7 @@ void update_mouse_state() {
             break;
         case INIT:
             move_paddle_and_ball(&mainPaddle, &mainBall);
-        case GAME:
+        case SINGLEPLAYER:
             collision_paddle(&mainBall, &mainPaddle);
             move_paddle(&mainPaddle);
             collision_paddle(&mainBall, &mainPaddle);
@@ -108,17 +108,17 @@ void update_timer_state() {
             if (controlDevice == KEYBOARD) {
                 move_paddle_and_ball(&mainPaddle, &mainBall);
                 if (scancode == SPACE_BK_CODE) {
-                    gameState = GAME;
+                    gameState = SINGLEPLAYER;
                 }
             }
             else {
                 if (mouse_info.right_click) {
-                    gameState = GAME;
+                    gameState = SINGLEPLAYER;
                 }
             }
 
             break;
-        case GAME:
+        case SINGLEPLAYER:
             timer_int_handler();
             singleplayer_handler();
             update_rtc_state(); 
@@ -141,9 +141,9 @@ void refresh_buttons_state() {
             gameState = INIT;
         }
         else if (mouse_info.x >= 420 && mouse_info.x <= 700 && mouse_info.y >= 250 && mouse_info.y <= 350) {
-            gameState = GAME;
+            gameState = SINGLEPLAYER;
         }
-        else if (mouse_info.x >= 100 && mouse_info.x <= 280 && mouse_info.y >= 350 && mouse_info.y <= 450) {
+        else if (mouse_info.x >= 100 && mouse_info.x <= 380 && mouse_info.y >= 350 && mouse_info.y <= 450) {
             gameState = LEADERBOARD;
             leaderboard_fill();
         }
@@ -180,22 +180,27 @@ void settings_keyboard_state() {
 
 void settings_mouse_state() {
     if (mouse_info.right_click) {
-        if (mouse_info.x >= 106 && mouse_info.x <= 170 && mouse_info.y >= 260 && mouse_info.y <= 320) {
+        // Button 1
+        if (mouse_info.x >= 106 && mouse_info.x <= 251 && mouse_info.y >= 260 && mouse_info.y <= 320) {
             current_setting = 0;
         }
-        else if (mouse_info.x >= 332 && mouse_info.x <= 396 && mouse_info.y >= 260 && mouse_info.y <= 320) {
+        else if (mouse_info.x >= 252 && mouse_info.x <= 396 && mouse_info.y >= 260 && mouse_info.y <= 320) {
             current_setting = 1;
         }
-        else if (mouse_info.x >= 406 && mouse_info.x <= 470 && mouse_info.y >= 260 && mouse_info.y <= 320) {
+
+        // Button 2
+        else if (mouse_info.x >= 406 && mouse_info.x <= 551 && mouse_info.y >= 260 && mouse_info.y <= 320) {
             current_setting = 2;
         }
-        else if (mouse_info.x >= 634 && mouse_info.x <= 698 && mouse_info.y >= 260 && mouse_info.y <= 320) {
+        else if (mouse_info.x >= 552 && mouse_info.x <= 698 && mouse_info.y >= 260 && mouse_info.y <= 320) {
             current_setting = 3;
         }
-        else if (mouse_info.x >= 246 && mouse_info.x <= 310 && mouse_info.y >= 402 && mouse_info.y <= 462) {
+
+        // Button 3
+        else if (mouse_info.x >= 246 && mouse_info.x <= 391 && mouse_info.y >= 402 && mouse_info.y <= 462) {
             current_setting = 4;            
         }
-        else if (mouse_info.x >= 470 && mouse_info.x <= 534 && mouse_info.y >= 402 && mouse_info.y <= 462) {
+        else if (mouse_info.x >= 392 && mouse_info.x <= 534 && mouse_info.y >= 402 && mouse_info.y <= 462) {
             current_setting = 5;
         }
     }

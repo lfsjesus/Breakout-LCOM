@@ -29,5 +29,4 @@ unsigned buffer_index;
 unsigned bytes_per_pixel;
 unsigned frame_size;
 
-
 #endif

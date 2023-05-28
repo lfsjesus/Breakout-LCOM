@@ -1,7 +1,9 @@
 #include "leaderboard.h"
 #include <lcom/lcf.h>
 
-#define SAVE_PATH "/home/lcom/labs/g4_proj/proj/src/data/leaderboard.txt" // Change this to your own path
+// Change this to your own path
+#define SAVE_PATH "/home/lcom/labs/g4_proj/proj/src/data/leaderboard.txt" 
+
 #define MAX_RECORDS 5
 
 static int entriesFilled = 0;

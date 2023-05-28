@@ -17,57 +17,55 @@ int (main)(int argc, char *argv[]) {
   return 0;
 }
 
-int setup() {
-  // Atualização da frequência
+int init() {
+  // Frequency set
   if (timer_set_frequency(0, 60) != OK) return 1;
 
-  // Inicialização dos buffers de vídeo (double buffering)
+  // video buffers init
   if (set_frame_buffer(0x115) != OK) return 1;
-
-  // Inicialização do modo gráfico
   if (set_graphics_mode(0x115) != 0) return 1;
+
   setup_bricks(map1);
-  // Inicialização dos sprites
   setup_sprites();
   setup_paddle(4);
   setup_ball(2);
   setup_powerups();
-  uint8_t hook_id_helper;
-  // Ativação das interrupções dos dispositivos
-  if (timer_subscribe_int(&hook_id_helper) != OK) return 1;
-  if (keyboard_subscribe_int(&hook_id_helper) != OK) return 1;
-  if (mouse_subscribe_int(&hook_id_helper) != OK) return 1;
 
-  // Ativar stream-mode e report de dados do rato
+  // Interrupts Enabling 
+  uint8_t aux_bitno;
+  if (timer_subscribe_int(&aux_bitno) != OK) return 1;
+  if (keyboard_subscribe_int() != OK) return 1;
+  if (mouse_subscribe_int() != OK) return 1;
+
+  // Mouse config
   if (mouse_config(ENABLE_STREAM_MODE) != OK) return 1;
   if (mouse_config(ENABLE_DATA_REPORT) != OK) return 1;
 
-  // Setup RTC (não vão ser usadas interrupções)
+  // RTC Setup (no need for interrupts)
   rtc_config();
 
   return OK;
 }
 
 int teardown() {
-  // Volta ao modo de texto
+  // back to text mode
   if (vg_exit() != OK) return 1;
 
-  // Destruição dos sprites
   destroy_sprites();
 
-  // Desativa todas as interrupções
+  // Disable interrupts
   if (timer_unsubscribe_int() != 0) return 1;
   if (keyboard_unsubscribe_int() != 0) return 1;
   if (mouse_unsubscribe_int() != 0) return 1;
 
-  // Desativar o report de dados do rato
+  // Disable mouse report
   if (mouse_config(DISABLE_DATA_REPORT) != 0) return 1;
 
   return OK;
 }
 
 int (proj_main_loop)(int argc, char *argv[]) {
-  setup();
+  init();
   int ipc_status;
   message msg;
   while (systemState == RUNNING) {
@@ -80,10 +78,15 @@ int (proj_main_loop)(int argc, char *argv[]) {
     if (is_ipc_notify(ipc_status)) {
       switch(_ENDPOINT_P(msg.m_source)) {
         case HARDWARE: 
-          //printf("Interrupt: %d\n", msg.m_notify.interrupts);
-          if (msg.m_notify.interrupts & BIT(TIMER0_IRQ))   update_timer_state();    // Troca de buffer
-          if (msg.m_notify.interrupts & BIT(KEYBOARD_IRQ)) update_keyboard_state(); 
-          if (msg.m_notify.interrupts & BIT(MOUSE_IRQ))    update_mouse_state();
+          if (msg.m_notify.interrupts & BIT(TIMER0_IRQ)) {
+            update_timer_state(); 
+          }
+          if (msg.m_notify.interrupts & BIT(KEYBOARD_IRQ)) {
+            update_keyboard_state(); 
+          }
+          if (msg.m_notify.interrupts & BIT(MOUSE_IRQ)) {
+            update_mouse_state();
+          }
           break;
         }
     }

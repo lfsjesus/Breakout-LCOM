@@ -21,11 +21,11 @@ typedef enum {
 typedef enum {
     START,
     INIT,
-    GAME,
+    SINGLEPLAYER,
     LEADERBOARD,
     SETTINGS,
     END
-} GameState;
+} AppState;
 
 void update_keyboard_state();
 void update_mouse_state();

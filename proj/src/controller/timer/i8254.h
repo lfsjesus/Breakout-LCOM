@@ -51,6 +51,7 @@
 #define TIMER_RB_STATUS_ BIT(4)
 #define TIMER_RB_SEL(n)  BIT((n) + 1)
 
+int (timer_subscribe_int)(uint8_t *bit_no);
 /**@}*/
 
 #endif /* _LCOM_I8254_H */

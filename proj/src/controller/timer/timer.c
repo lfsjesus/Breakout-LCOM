@@ -9,7 +9,7 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   uint8_t config;
   if (timer_get_conf(timer, &config) != OK)
     return !OK;
-  
+
   // Now we need a new config for the timer
   uint8_t control_word = ((TIMER_SEL0 + timer) << 6) | TIMER_LSB_MSB | (config & 0x0F);
 
@@ -53,31 +53,5 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
   if (util_sys_inb(TIMER_0 + timer, st) != OK)
     return !OK;
 
-  return OK;
-
-}
-
-int (timer_display_conf)(uint8_t timer, uint8_t st,
-                        enum timer_status_field field) {
-
-  union timer_status_field_val conf;
-  
-  switch (field) {
-    case tsf_all:
-      conf.byte = st;
-      break;
-    case tsf_initial:
-      conf.in_mode = (st & (BIT(4) | BIT(5))) >> 4;
-      break;
-    case tsf_mode:
-      conf.count_mode = (st & (BIT(1) | BIT(2) | BIT(3))) >> 1;
-      break;
-    case tsf_base:
-      conf.bcd = st & BIT(0);
-      break;
-  }
-
-  if (timer_print_config(timer, field, conf) != OK)
-    return !OK;
   return OK;
 }

@@ -1,6 +1,7 @@
 #include "ball.h"
 
 extern vbe_mode_info_t modeinfo;
+
 extern Brick bricks[12][10];
 extern Paddle mainPaddle;
 extern Ball extraBall;
@@ -92,16 +93,14 @@ void collision_paddle(Ball* ball, Paddle* paddle) {
             ball->vy = -ball->vy;
         }
 
-        // Check if the ball is stuck inside the paddle
+        // Ins the ball is stuck inside the paddle
         if (ball->y > paddleMinY && ballMinY < paddleMaxY) {
-            // Move the ball to the correct position outside the paddle
             if (ball->y < paddle->y) {
                 ball->y = paddle->y - ball->radius;
             } else {
                 ball->y = paddleMaxY + ball->radius;
             }
         }
-
     }
 }
 
@@ -127,14 +126,12 @@ void collision_extra_ball(Ball* ball, Ball* extraBall) {
             extraBall->vy = -extraBall->vy;
         }
     }
-
 }
 
 bool check_ball_out(Ball* ball, Paddle* paddle) {
     if (ball->y >= modeinfo.YResolution - ball->sprite->height - 2) {
         return true;
     }
-
     return false;
 }
 

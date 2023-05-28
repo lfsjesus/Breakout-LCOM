@@ -8,7 +8,7 @@ extern Brick bricks[12][10];
 extern Paddle mainPaddle;
 extern PowerUp powerUps[3];
 
-extern GameState gameState;
+extern AppState gameState;
 
 extern Sprite* settings_backgrounds[6];
 extern Sprite* leaderboard;
@@ -96,15 +96,9 @@ void draw_bricks() {
 void draw_new_frame() {
   switch (gameState){
     case START:
-      if (get_control_device() == MOUSE) {
-        draw_mouse();
-      }
       break;
     case SETTINGS:
       draw_setting_screen();
-      if (get_control_device() == MOUSE) {
-        draw_mouse();  
-      }
       break;
     case LEADERBOARD:
       draw_leaderboard_screen();
@@ -112,7 +106,7 @@ void draw_new_frame() {
       break;
     case INIT:
       draw_instruction();
-    case GAME:
+    case SINGLEPLAYER:
       draw_points();
       draw_lives();
       draw_paddle();
@@ -123,6 +117,9 @@ void draw_new_frame() {
       break;
     default:
       break;
+  }
+  if (get_control_device() == MOUSE) {
+    draw_mouse();  
   }
 }
 
@@ -155,10 +152,8 @@ void draw_instruction() {
 
 void draw_text(char *text, uint16_t x, uint16_t y) {
   int i = 0;
-
-
+  
   while (text[i] != '\0') {
-    // has to be between A and Z
     if (text[i] >= 'A' && text[i] <= 'Z') {
       Sprite* letter = get_char(text[i]);
       draw_sprite_xpm(letter, x, y);

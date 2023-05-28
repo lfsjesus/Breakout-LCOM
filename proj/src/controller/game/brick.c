@@ -11,8 +11,8 @@ void decrease_hp(Brick* brick) {
   }
 }
 
-// bricks with hp between 6 and 9, reduce 4 hp
 void destroy_red_bricks() {
+  // Power up that removes 4 hp to red bricks
   for (int i = 0; i < 12; i++) {
     for (int j = 0; j < 10; j++) {
       if (bricks[i][j].hp > 6 && bricks[i][j].hp <= 9) {
