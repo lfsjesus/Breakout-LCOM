@@ -60,7 +60,8 @@ void draw_paddle() {
 }
 
 void draw_guest_paddle() {
-  draw_sprite_xpm(mainPaddle.sprite, guestPaddle.x, guestPaddle.y);
+  draw_sprite_xpm(mainPaddle.sprite, guest_mouse_info.x, guestPaddle.y);
+  //printf("GUEST-> %d; %d\n", guest_mouse_info.x, guest_mouse_info.y);
 }
 
 void draw_bricks() {

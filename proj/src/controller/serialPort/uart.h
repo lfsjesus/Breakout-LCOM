@@ -64,6 +64,6 @@
 
 // processed Bytes
 
-#define PACKET_BYTE 0x00 // 
-#define GAMEOVER_BYTE 0x01
+#define PACKET_BYTE 0xFF // 
+#define GAMEOVER_BYTE 0xFD
 

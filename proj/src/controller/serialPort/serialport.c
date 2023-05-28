@@ -21,22 +21,22 @@ int (sp_setup) () {
   queue = createQueue(100);
   uint8_t ier;
   if (util_sys_inb(COM1_ADDR + IER, &ier) != 0) return 1;  //Ler IER
-  ier &= 0xF0;                                // Limpar as configurações
-  ier |= IER_RDA;                             // Inicializar IER com Read DataAvailable
-  if (sys_outb(COM1_ADDR + IER, (uint32_t)ier) != 0) return 1; //Escrever IER
+  ier &= 0xF0;                                           // Limpar as configurações
+  ier |= IER_RDA;                                    // Inicializar IER com Read DataAvailable
+  if (sys_outb(COM1_ADDR + IER, ier) != 0) return 1;   //Escrever IER
+  printf("SP Setup\n");
   return 0;
   }
 
 void (sp_ih)() {
+  printf("handler\n");
   uint8_t iir, lsr;
   if (util_sys_inb(COM1_ADDR + IIR, &iir)!= 0) //  read IIR
     return;
 
 
   if(!(iir & IIR_INT)) {    // Se houver interrupção
-    printf("INTERRUPT!!!!\n");
       if(iir & IIR_INT_ID == IIR_PRIO_CTO) {  // FIFO charcter Timeout
-        printf("CTO\n");
         if (read_lsr(&lsr) != 0)  return; 
         while (!isFull(queue) && (lsr & LSR_ReceiverData)) {
           read_byte();
@@ -57,14 +57,13 @@ int (read_lsr) (uint8_t* lsr) {
 }
 
 int (send_byte) (uint8_t byte) {
-  uint8_t lsr, attempts = 10;
+  uint8_t lsr, attempts = 20;
   while (attempts > 0) {
 
     if (util_sys_inb(COM1_ADDR + LSR, &lsr) != 0)  return 1;
     if (lsr & LSR_THRempty) {
-      if (sys_outb(COM1_ADDR + THR, byte) == 0) {return 0;}
+      return sys_outb(COM1_ADDR + THR, byte);
     }
-    attempts--;
   }
   printf("sending byte error\n");
   return 1;
@@ -99,11 +98,12 @@ int (sp_read_packet) () {
     uint8_t byte;
     while (n_bytes < 4) {
       sp_ih();
-      byte = pop(get_queue());  //posso alterar o arg?
+      byte = pop(get_queue());
       mouse_packet[n_bytes] = byte;
       n_bytes++;
     }
     sp_parse_mouse_packet();
+    printf("Mouse_packet Read\n");
     return 0;
 }
 
@@ -128,6 +128,7 @@ int (send_mouse_packet) (MouseInfo mouse_info) {
   if (send_byte(yMSB) != 0) { return 1;}
   if (send_byte(yLSB) != 0) { return 1;}
 
+  printf("----------- Sent Mouse Packet --------\n");
   return 0;
 }
 

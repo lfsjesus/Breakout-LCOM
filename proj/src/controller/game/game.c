@@ -11,7 +11,7 @@ ControlDevice controlDevice = MOUSE;
 
 extern vbe_mode_info_t mode_info;
 extern MouseInfo mouse_info;
-MouseInfo guest_mouse_info;
+MouseInfo guest_mouse_info = {0, 0, 350, 20};
 
 
 extern Paddle mainPaddle;
@@ -73,14 +73,15 @@ void update_mouse_state() {
     if (packet_counter == 3) {
         sync_mouse_info();
     }
+
     switch (gameState) {
         case START: 
             refresh_buttons_state();
             break;
         case INIT:
+            send_mouse_packet(mouse_info);
             move_paddle_and_ball(&mainPaddle, &mainBall);
         case GAME:
-            send_mouse_packet(mouse_info);
             collision_paddle(&mainBall, &mainPaddle);
             move_paddle(&mainPaddle);
             collision_paddle(&mainBall, &mainPaddle);
@@ -130,8 +131,7 @@ void update_timer_state() {
 void update_sp_state() {
     sp_ih();
     uint8_t byte = pop(get_queue());
-    if (gameState == GAME)
-        sp_read_playing_byte(byte);
+    sp_read_playing_byte(byte);
 
     }
 
