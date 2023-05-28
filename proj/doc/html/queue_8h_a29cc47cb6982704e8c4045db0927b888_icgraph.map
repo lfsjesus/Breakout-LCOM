@@ -1,0 +1,11 @@
+<map id="isEmpty" name="isEmpty">
+<area shape="rect" id="node1" title=" " alt="" coords="787,80,856,106"/>
+<area shape="rect" id="node2" href="$queue_8c.html#a192fd3b9c9d70c9316c8c94e1ffc99d5" title=" " alt="" coords="690,5,739,31"/>
+<area shape="rect" id="node3" href="$queue_8c.html#af339653f1c1e891a7699b21c0a4c3d2c" title=" " alt="" coords="691,55,738,80"/>
+<area shape="rect" id="node4" href="$queue_8c.html#ab0a7af1151628d3b2580f6da46706fce" title=" " alt="" coords="693,156,736,182"/>
+<area shape="rect" id="node5" href="$serialport_8c.html#a51d5429745f7f3fb829541308efd6484" title="clears both Receiving and Transmiting FIFO" alt="" coords="522,105,642,131"/>
+<area shape="rect" id="node7" href="$game_8c.html#a20f2e60644e274c6174042672460ddde" title=" " alt="" coords="162,155,279,180"/>
+<area shape="rect" id="node9" href="$serialport_8c.html#a91ff41b0bbfe1c11ce1b0a618475f896" title="reads a full mouse packet" alt="" coords="525,155,639,180"/>
+<area shape="rect" id="node6" href="$serialport_8c.html#abb5b6b934d407c3026b08a3a930f3e30" title="processes the byte read accordingly during multiplayer game" alt="" coords="327,155,474,180"/>
+<area shape="rect" id="node8" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,155,114,180"/>
+</map>

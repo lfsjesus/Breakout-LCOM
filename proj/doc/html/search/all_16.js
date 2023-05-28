@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['y_0',['y',['../struct_mouse_info.html#aa7a6bd8f32f999e498fbd703482b3d6f',1,'MouseInfo::y()'],['../struct_brick.html#a72ddf1a826b08ef7ab3185592f88d0cf',1,'Brick::y()'],['../struct_ball.html#a04b86072ac312de607552544d27c7a5a',1,'Ball::y()'],['../struct_paddle.html#a0afe8f8c3399b4ac7c1a4eceda3af917',1,'Paddle::y()'],['../struct_power_up.html#a3aae9be71750a1bd53d0ba1c860398b7',1,'PowerUp::y()']]],
-  ['year_1',['year',['../structrtc__time__info.html#aecb53e73147d4dc5aea75ff80a9d9664',1,'rtc_time_info']]],
-  ['year_2',['YEAR',['../rtc_8h.html#a5871356500f559add06ea81d60331b1b',1,'rtc.h']]]
+  ['x_0',['x',['../struct_mouse_info.html#adb99988f306f351395685c70bba1fde0',1,'MouseInfo::x()'],['../struct_brick.html#ad3d2137b109ab97a2034fe1f27b297d3',1,'Brick::x()'],['../struct_ball.html#ad08924534755897288502a1fac360b62',1,'Ball::x()'],['../struct_paddle.html#aa990d21a0e56017f4ed84b646a00c7f3',1,'Paddle::x()'],['../struct_power_up.html#afc53dd0a9a1a68f8ea21a60f9141dee8',1,'PowerUp::x()']]]
 ];

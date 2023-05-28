@@ -1,0 +1,7 @@
+<map id="read_byte" name="read_byte">
+<area shape="rect" id="node1" title="reads byte from RBR register" alt="" coords="5,55,84,80"/>
+<area shape="rect" id="node2" href="$queue_8c.html#a25897dd8dc27d857546b0d3f81058d8c" title=" " alt="" coords="141,5,190,31"/>
+<area shape="rect" id="node4" href="$serialport_8c.html#aa078e540a7187163ee055cd9146418e8" title="reads the Line Status Register" alt="" coords="132,55,199,80"/>
+<area shape="rect" id="node5" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="247,80,337,106"/>
+<area shape="rect" id="node3" href="$queue_8c.html#a3f2350d97e2b928dece5642ebfc1d173" title=" " alt="" coords="266,5,318,31"/>
+</map>

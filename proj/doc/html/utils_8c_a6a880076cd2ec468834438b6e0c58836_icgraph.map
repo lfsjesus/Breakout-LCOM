@@ -1,6 +1,8 @@
 <map id="util_get_MSB" name="util_get_MSB">
-<area shape="rect" id="node1" title=" " alt="" coords="435,5,535,31"/>
-<area shape="rect" id="node2" href="$timer_8c.html#af2c04fa8e97ffa748fd3f612886a92a7" title=" " alt="" coords="248,5,387,31"/>
-<area shape="rect" id="node3" href="$main_8c.html#a05848de25ac2dbec233935058a1d24b4" title=" " alt="" coords="162,5,200,31"/>
-<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,31"/>
+<area shape="rect" id="node1" title=" " alt="" coords="541,31,641,56"/>
+<area shape="rect" id="node2" href="$serialport_8c.html#afea4b915abeb7716b1309174c10277f0" title="writes a mouse_packet to the THR register" alt="" coords="352,5,493,31"/>
+<area shape="rect" id="node5" href="$timer_8c.html#af2c04fa8e97ffa748fd3f612886a92a7" title=" " alt="" coords="353,55,492,80"/>
+<area shape="rect" id="node3" href="$game_8c.html#aa577e78e2462033d486b5d8fa64c7bec" title="Updates states according to mouse usage." alt="" coords="162,5,304,31"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,31,114,56"/>
+<area shape="rect" id="node6" href="$main_8c.html#a05848de25ac2dbec233935058a1d24b4" title=" " alt="" coords="214,55,252,80"/>
 </map>

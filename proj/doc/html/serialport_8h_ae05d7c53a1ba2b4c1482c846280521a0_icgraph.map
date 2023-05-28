@@ -1,0 +1,6 @@
+<map id="send_byte" name="send_byte">
+<area shape="rect" id="node1" title="writes byte to THR register" alt="" coords="541,5,623,31"/>
+<area shape="rect" id="node2" href="$serialport_8c.html#afea4b915abeb7716b1309174c10277f0" title="writes a mouse_packet to the THR register" alt="" coords="352,5,493,31"/>
+<area shape="rect" id="node3" href="$game_8c.html#aa577e78e2462033d486b5d8fa64c7bec" title="Updates states according to mouse usage." alt="" coords="162,5,304,31"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,31"/>
+</map>

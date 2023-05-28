@@ -13,5 +13,5 @@ var searchData=
   ['mouse_10',['mouse',['../model_8c.html#af03a383fdcfdf7501006a5c8d68be42b',1,'mouse():&#160;model.c'],['../view_8c.html#af03a383fdcfdf7501006a5c8d68be42b',1,'mouse():&#160;model.c']]],
   ['mouse_5fbytes_11',['mouse_bytes',['../mouse_8c.html#addea07e4cbaf9574f38de24dcf0bf3cb',1,'mouse.c']]],
   ['mouse_5finfo_12',['mouse_info',['../game_8c.html#a343e4f854a0c3e5001228e209c5f025e',1,'mouse_info():&#160;mouse.c'],['../mouse_8c.html#a343e4f854a0c3e5001228e209c5f025e',1,'mouse_info():&#160;mouse.c'],['../view_8c.html#a343e4f854a0c3e5001228e209c5f025e',1,'mouse_info():&#160;mouse.c']]],
-  ['mouse_5fpacket_13',['mouse_packet',['../paddle_8c.html#a3b2e64ffb96c650d6525c99be01c7331',1,'mouse_packet():&#160;mouse.c'],['../mouse_8c.html#a3b2e64ffb96c650d6525c99be01c7331',1,'mouse_packet():&#160;mouse.c']]]
+  ['mouse_5fpacket_13',['mouse_packet',['../paddle_8c.html#a3b2e64ffb96c650d6525c99be01c7331',1,'mouse_packet():&#160;mouse.c'],['../mouse_8c.html#a3b2e64ffb96c650d6525c99be01c7331',1,'mouse_packet():&#160;mouse.c'],['../serialport_8c.html#abc92ce663466f46fc3158f3f4ebb344a',1,'mouse_packet():&#160;serialport.c']]]
 ];

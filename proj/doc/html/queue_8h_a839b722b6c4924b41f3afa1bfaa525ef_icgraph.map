@@ -1,0 +1,6 @@
+<map id="createQueue" name="createQueue">
+<area shape="rect" id="node1" title=" " alt="" coords="370,5,466,31"/>
+<area shape="rect" id="node2" href="$serialport_8c.html#a13c01867b9c145b09c600ffe7521455b" title="enables serial port interrupts on Received Data Available and initializes the receiving queue" alt="" coords="248,5,322,31"/>
+<area shape="rect" id="node3" href="$main_8c.html#a05848de25ac2dbec233935058a1d24b4" title=" " alt="" coords="162,5,200,31"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,31"/>
+</map>

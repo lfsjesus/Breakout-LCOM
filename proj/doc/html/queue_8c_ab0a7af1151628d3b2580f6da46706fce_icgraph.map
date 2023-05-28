@@ -1,0 +1,8 @@
+<map id="pop" name="pop">
+<area shape="rect" id="node1" title=" " alt="" coords="690,56,732,82"/>
+<area shape="rect" id="node2" href="$serialport_8c.html#a51d5429745f7f3fb829541308efd6484" title="clears both Receiving and Transmiting FIFO" alt="" coords="522,56,642,82"/>
+<area shape="rect" id="node4" href="$game_8c.html#a20f2e60644e274c6174042672460ddde" title=" " alt="" coords="162,56,279,82"/>
+<area shape="rect" id="node6" href="$serialport_8c.html#a91ff41b0bbfe1c11ce1b0a618475f896" title="reads a full mouse packet" alt="" coords="525,7,639,32"/>
+<area shape="rect" id="node3" href="$serialport_8c.html#abb5b6b934d407c3026b08a3a930f3e30" title="processes the byte read accordingly during multiplayer game" alt="" coords="327,5,474,31"/>
+<area shape="rect" id="node5" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,56,114,82"/>
+</map>

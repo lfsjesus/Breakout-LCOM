@@ -1,0 +1,7 @@
+<map id="send_mouse_packet" name="send_mouse_packet">
+<area shape="rect" id="node1" title="writes a mouse_packet to the THR register" alt="" coords="5,55,147,80"/>
+<area shape="rect" id="node2" href="$serialport_8c.html#ae05d7c53a1ba2b4c1482c846280521a0" title="writes byte to THR register" alt="" coords="204,5,285,31"/>
+<area shape="rect" id="node4" href="$utils_8c.html#a81621440b3d65680979425e39aa8c789" title=" " alt="" coords="197,55,292,80"/>
+<area shape="rect" id="node5" href="$utils_8c.html#a6a880076cd2ec468834438b6e0c58836" title=" " alt="" coords="195,104,294,130"/>
+<area shape="rect" id="node3" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="342,5,432,31"/>
+</map>

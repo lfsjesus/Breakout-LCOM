@@ -1,0 +1,8 @@
+<map id="sp_ih" name="sp_ih">
+<area shape="rect" id="node1" title="reads a byte from the RBR register" alt="" coords="5,107,58,132"/>
+<area shape="rect" id="node2" href="$queue_8c.html#a3f2350d97e2b928dece5642ebfc1d173" title=" " alt="" coords="366,5,419,31"/>
+<area shape="rect" id="node3" href="$serialport_8c.html#abce16153d673a3aa53f56971430ad2eb" title="reads byte from RBR register" alt="" coords="106,81,184,107"/>
+<area shape="rect" id="node5" href="$serialport_8c.html#aa078e540a7187163ee055cd9146418e8" title="reads the Line Status Register" alt="" coords="232,132,299,158"/>
+<area shape="rect" id="node6" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="347,132,438,158"/>
+<area shape="rect" id="node4" href="$queue_8c.html#a25897dd8dc27d857546b0d3f81058d8c" title=" " alt="" coords="241,31,290,56"/>
+</map>

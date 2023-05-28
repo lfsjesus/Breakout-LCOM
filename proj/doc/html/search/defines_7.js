@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['kbc_5fread_5fcmd_0',['KBC_READ_CMD',['../i8042_8h.html#a595a5cad2d3c793963da50865b2c1b47',1,'i8042.h']]],
-  ['kbc_5fwrite_5fcmd_1',['KBC_WRITE_CMD',['../i8042_8h.html#aaa62a6987753a109d2f7a609ce8b7334',1,'i8042.h']]],
-  ['kbd_5fenable_5fint_2',['KBD_ENABLE_INT',['../i8042_8h.html#acf07f310afe5dc074dacd55c708b0c4c',1,'i8042.h']]],
-  ['keyboard_5firq_3',['KEYBOARD_IRQ',['../i8042_8h.html#a2d17911b50c0aeebb2e3325c5b36d4f2',1,'i8042.h']]]
+  ['h_5fbk_5fcode_0',['H_BK_CODE',['../i8042_8h.html#a7064add04cd2b6723fd24a6f8157314d',1,'i8042.h']]],
+  ['h_5fmk_5fcode_1',['H_MK_CODE',['../i8042_8h.html#a523e268497dcfa3577f16d4d7658da76',1,'i8042.h']]],
+  ['hours_2',['HOURS',['../rtc_8h.html#a212d0f839f6f7ca43ccde311f93d5892',1,'rtc.h']]]
 ];

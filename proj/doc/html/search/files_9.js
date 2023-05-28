@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['sprite_2ec_0',['sprite.c',['../sprite_8c.html',1,'']]],
-  ['sprite_2eh_1',['sprite.h',['../sprite_8h.html',1,'']]]
+  ['rtc_2ec_0',['rtc.c',['../rtc_8c.html',1,'']]],
+  ['rtc_2eh_1',['rtc.h',['../rtc_8h.html',1,'']]]
 ];

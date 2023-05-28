@@ -1,52 +1,52 @@
 <map id="proj_main_loop" name="proj_main_loop">
-<area shape="rect" id="node1" title=" " alt="" coords="5,1024,114,1050"/>
-<area shape="rect" id="node2" href="$main_8c.html#a05848de25ac2dbec233935058a1d24b4" title=" " alt="" coords="221,603,259,628"/>
-<area shape="rect" id="node23" href="$main_8c.html#abdcc0cd526b667641db5dc072cc162c4" title=" " alt="" coords="203,129,277,155"/>
-<area shape="rect" id="node28" href="$game_8c.html#aacf177f660c44528fc3926b3cd69fb88" title="Updates states according to keyboard usage." alt="" coords="162,1024,318,1050"/>
-<area shape="rect" id="node35" href="$game_8c.html#aa577e78e2462033d486b5d8fa64c7bec" title="Updates states according to mouse usage." alt="" coords="169,1301,311,1327"/>
-<area shape="rect" id="node44" href="$game_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates states according to timer." alt="" coords="174,1672,306,1698"/>
-<area shape="rect" id="node3" href="$keyboard_8c.html#aa23b07fa2192ce772fe143de1bc99695" title="Subscribes keyboard interrupts." alt="" coords="373,577,531,603"/>
-<area shape="rect" id="node4" href="$mouse_8c.html#a850e22e760722ec65c9fa5d3f5aa23ce" title="configures the mouse" alt="" coords="401,203,503,228"/>
-<area shape="rect" id="node7" href="$mouse_8c.html#a08895a8a691590216c1e72bbf1b2d333" title="Subscribes mouse interrupts." alt="" coords="380,627,524,652"/>
-<area shape="rect" id="node8" href="$rtc_8c.html#ae90692a7bc8bfad938b5e01aa19543ea" title=" " alt="" coords="413,479,491,504"/>
-<area shape="rect" id="node11" href="$graphics_8c.html#a55bb0148c696baca125c2c03bd585ae5" title="Builds the phisical and virtual frame buffer." alt="" coords="393,676,512,702"/>
-<area shape="rect" id="node12" href="$graphics_8c.html#a29e12d989ec405e661e02556aa1a12d9" title="Changes the mode to graphics mode." alt="" coords="385,725,519,751"/>
-<area shape="rect" id="node13" href="$model_8c.html#ae2c6a7a14abdfec0566ce83295ccce7c" title="Set up the ball object for the game." alt="" coords="617,949,697,975"/>
-<area shape="rect" id="node14" href="$model_8c.html#ad71d452a81792e39bdc70d6dbf346a90" title="Set the up bricks object." alt="" coords="792,1475,888,1500"/>
-<area shape="rect" id="node15" href="$model_8c.html#a1ae84809c7f2659c7aca7f5392613adb" title="Set up the paddle object for the game." alt="" coords="608,429,706,455"/>
-<area shape="rect" id="node16" href="$model_8c.html#ac392001a0453d1e49ad35b065554eb4b" title="Set up all the powerups for the game." alt="" coords="394,775,510,800"/>
-<area shape="rect" id="node17" href="$model_8c.html#a834200084177d31e41dd9b28754a3312" title="Set up all sprite object." alt="" coords="403,301,502,327"/>
-<area shape="rect" id="node21" href="$timer_8c.html#af2c04fa8e97ffa748fd3f612886a92a7" title=" " alt="" coords="383,824,522,850"/>
-<area shape="rect" id="node22" href="$group__i8254.html#gac57a7e1140a7e00ad95ac5488d2a671b" title=" " alt="" coords="385,528,519,554"/>
-<area shape="rect" id="node5" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="612,129,702,155"/>
-<area shape="rect" id="node6" href="$kbc_8c.html#a4822f96183ff9c6373060b217700c1d1" title="Tries to read the output (3 attempts)" alt="" coords="586,179,728,204"/>
-<area shape="rect" id="node9" href="$rtc_8c.html#ad887ae657d7170fc8a5c4870a17dab71" title=" " alt="" coords="618,479,696,504"/>
-<area shape="rect" id="node10" href="$rtc_8c.html#a05f8a643eaa3f15f433fcf21639090a0" title=" " alt="" coords="616,1275,698,1300"/>
-<area shape="rect" id="node18" href="$sprite_8c.html#acb93792ebc27a32413e0b31624c6d9b1" title="Builds a sprite with a XPM with colors in direct mode." alt="" coords="776,277,904,303"/>
-<area shape="rect" id="node19" href="$font_8c.html#ab67c79e0a214404edb8d9574302f000e" title="initializes letter sprites" alt="" coords="587,228,727,254"/>
-<area shape="rect" id="node20" href="$font_8c.html#af2747cb79a86ee423297970e88165c82" title="initializes number sprimtes" alt="" coords="590,277,724,303"/>
-<area shape="rect" id="node24" href="$model_8c.html#a8fdbc6c7bfca3ef4a8800a3cdc19d932" title="Destroys all the sprite objects Important to use this before ending the game loop." alt="" coords="397,104,507,130"/>
-<area shape="rect" id="node25" href="$keyboard_8c.html#a32cc4de66854f8a7bd909e7aa8b901ed" title="Unsubscribes keyboard interrupts." alt="" coords="366,153,538,179"/>
-<area shape="rect" id="node26" href="$mouse_8c.html#a3ecf823d80520009ae5e0d76ae40a3c3" title="Unsubscribes mouse interrupts." alt="" coords="373,5,531,31"/>
-<area shape="rect" id="node27" href="$timer_8c.html#afabd21de449be154dd65d5fdb2d8045d" title=" " alt="" coords="378,55,526,80"/>
-<area shape="rect" id="node29" href="$keyboard_8c.html#aea970a154161a35f6894898a092ed70a" title="Reads the output buffer." alt="" coords="423,925,482,951"/>
-<area shape="rect" id="node30" href="$leaderboard_8c.html#a0490b1f8637d0d36b255b93ac016ff25" title="Fetches the leaderboard.txt file to fill game&#39;s leaderboard." alt="" coords="603,1151,711,1176"/>
-<area shape="rect" id="node31" href="$game_8c.html#a6be2f294a4d060a7a6e445016a151100" title="Resets the game (ball, paddle, bricks, lives and points)" alt="" coords="612,1475,702,1500"/>
-<area shape="rect" id="node33" href="$game_8c.html#a65ac0aa0a8eeab6a0935ebbde97e5aff" title="Sets the settings according to key pressed in the keyboard." alt="" coords="371,975,534,1000"/>
-<area shape="rect" id="node34" href="$game_8c.html#a5db742ccada40ef765f6e6b4e242a962" title="Sets up the game according to the settings." alt="" coords="378,1024,527,1050"/>
-<area shape="rect" id="node32" href="$ball_8c.html#a95d33fc3d7290242b72731dc4524fe2c" title="Resets the ball." alt="" coords="801,1625,879,1651"/>
-<area shape="rect" id="node36" href="$ball_8c.html#a9cf82bc750b719b1aa5570ec123d0ba8" title="Handles ball&#45;paddle collisions." alt="" coords="396,1376,509,1402"/>
-<area shape="rect" id="node37" href="$mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="When interrupt handler is called, reads a new byte from the mouse." alt="" coords="414,1425,491,1451"/>
-<area shape="rect" id="node38" href="$mouse_8c.html#ab67a6d470a43ba2ddb2d19e1d4f32320" title="Evaluates the mouse_bytes array and acts accordingly." alt="" coords="405,1475,500,1500"/>
-<area shape="rect" id="node39" href="$paddle_8c.html#a13a51e741b552975b15c22cfa98ed36f" title="Checks if paddle should be moved with keyboard or mouse and handles it accordingly." alt="" coords="608,1524,706,1550"/>
-<area shape="rect" id="node40" href="$paddle_8c.html#a0b86cef063fb878032d6c999bffa1e77" title="Moves paddle and ball according to the paddle." alt="" coords="376,1524,529,1550"/>
-<area shape="rect" id="node41" href="$game_8c.html#a579e50623674c04eea7e20a6d3bad602" title="Updates states according to mouse clicks." alt="" coords="379,1225,526,1251"/>
-<area shape="rect" id="node42" href="$game_8c.html#ab88162058d4ecf603e7b9c0a664d12d5" title="Sets the settings accoring to mouse usage." alt="" coords="378,1176,527,1202"/>
-<area shape="rect" id="node43" href="$mouse_8c.html#a68dbff952658b38121693949e3abae64" title="Syncronizes the information from the mouse." alt="" coords="391,1327,514,1352"/>
-<area shape="rect" id="node45" href="$view_8c.html#a4953d1edcbbfc7e420c423ded1d5621a" title="Clears the screen." alt="" coords="405,1672,500,1698"/>
-<area shape="rect" id="node46" href="$view_8c.html#a8fe6fe827e29e6b0cb98cda00dc38355" title="Draws the frame according to the game state." alt="" coords="392,1773,512,1799"/>
-<area shape="rect" id="node47" href="$game_8c.html#a0a6313b337713e89579587af280c3b10" title="Handles the single player game mode." alt="" coords="383,1623,522,1648"/>
-<area shape="rect" id="node48" href="$timer_8c.html#a91a2072306c68353712a6b771287dc2c" title=" " alt="" coords="392,1823,512,1848"/>
-<area shape="rect" id="node49" href="$game_8c.html#a1a2176ba0e79afd72c7bc2bf91b978f3" title="Updates RTC info when needed." alt="" coords="393,1573,511,1599"/>
-<area shape="rect" id="node50" href="$graphics_8c.html#a149b83afa4c646ca8f63f5fb36759e8b" title="Defines where the VRAM starts." alt="" coords="406,1872,499,1898"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,1020,114,1046"/>
+<area shape="rect" id="node2" href="$main_8c.html#a05848de25ac2dbec233935058a1d24b4" title=" " alt="" coords="428,625,467,651"/>
+<area shape="rect" id="node18" href="$main_8c.html#abdcc0cd526b667641db5dc072cc162c4" title=" " alt="" coords="411,153,485,179"/>
+<area shape="rect" id="node24" href="$game_8c.html#aacf177f660c44528fc3926b3cd69fb88" title="Updates states according to keyboard usage." alt="" coords="162,868,318,894"/>
+<area shape="rect" id="node31" href="$game_8c.html#aa577e78e2462033d486b5d8fa64c7bec" title="Updates states according to mouse usage." alt="" coords="169,1145,311,1171"/>
+<area shape="rect" id="node41" href="$game_8c.html#a20f2e60644e274c6174042672460ddde" title=" " alt="" coords="181,1717,299,1743"/>
+<area shape="rect" id="node47" href="$game_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates states according to timer." alt="" coords="174,1467,306,1492"/>
+<area shape="rect" id="node3" href="$keyboard_8c.html#aa23b07fa2192ce772fe143de1bc99695" title="Subscribes keyboard interrupts." alt="" coords="584,301,743,327"/>
+<area shape="rect" id="node4" href="$mouse_8c.html#a850e22e760722ec65c9fa5d3f5aa23ce" title="configures the mouse" alt="" coords="612,252,715,278"/>
+<area shape="rect" id="node5" href="$mouse_8c.html#a08895a8a691590216c1e72bbf1b2d333" title="Subscribes mouse interrupts." alt="" coords="591,351,736,376"/>
+<area shape="rect" id="node6" href="$rtc_8c.html#ae90692a7bc8bfad938b5e01aa19543ea" title=" " alt="" coords="624,400,703,426"/>
+<area shape="rect" id="node7" href="$graphics_8c.html#a55bb0148c696baca125c2c03bd585ae5" title="Builds the phisical and virtual frame buffer." alt="" coords="604,449,723,475"/>
+<area shape="rect" id="node8" href="$graphics_8c.html#a29e12d989ec405e661e02556aa1a12d9" title="Changes the mode to graphics mode." alt="" coords="596,499,731,524"/>
+<area shape="rect" id="node9" href="$model_8c.html#ae2c6a7a14abdfec0566ce83295ccce7c" title="Set up the ball object for the game." alt="" coords="623,896,704,922"/>
+<area shape="rect" id="node10" href="$model_8c.html#ad71d452a81792e39bdc70d6dbf346a90" title="Set the up bricks object." alt="" coords="798,1291,893,1316"/>
+<area shape="rect" id="node11" href="$model_8c.html#a1ae84809c7f2659c7aca7f5392613adb" title="Set up the paddle object for the game." alt="" coords="614,945,713,971"/>
+<area shape="rect" id="node12" href="$model_8c.html#ac392001a0453d1e49ad35b065554eb4b" title="Set up all the powerups for the game." alt="" coords="605,600,722,626"/>
+<area shape="rect" id="node13" href="$model_8c.html#a834200084177d31e41dd9b28754a3312" title="Set up all sprite object." alt="" coords="614,649,713,675"/>
+<area shape="rect" id="node14" href="$serialport_8c.html#a13c01867b9c145b09c600ffe7521455b" title="enables serial port interrupts on Received Data Available and initializes the receiving queue" alt="" coords="626,699,701,724"/>
+<area shape="rect" id="node15" href="$serialport_8c.html#a9a12920f3599af907d786ddda7c42ab3" title="Subscribes Serial Port interrupts." alt="" coords="604,748,723,774"/>
+<area shape="rect" id="node16" href="$timer_8c.html#af2c04fa8e97ffa748fd3f612886a92a7" title=" " alt="" coords="594,797,733,823"/>
+<area shape="rect" id="node17" href="$group__i8254.html#gac57a7e1140a7e00ad95ac5488d2a671b" title=" " alt="" coords="596,847,731,872"/>
+<area shape="rect" id="node19" href="$model_8c.html#a8fdbc6c7bfca3ef4a8800a3cdc19d932" title="Destroys all the sprite objects Important to use this before ending the game loop." alt="" coords="608,203,719,228"/>
+<area shape="rect" id="node20" href="$keyboard_8c.html#a32cc4de66854f8a7bd909e7aa8b901ed" title="Unsubscribes keyboard interrupts." alt="" coords="577,5,750,31"/>
+<area shape="rect" id="node21" href="$mouse_8c.html#a3ecf823d80520009ae5e0d76ae40a3c3" title="Unsubscribes mouse interrupts." alt="" coords="584,55,743,80"/>
+<area shape="rect" id="node22" href="$serialport_8c.html#afa8147a99cb0c6dd96b3672a85fa5580" title="Unsubscribes Serial Port interrupts." alt="" coords="597,104,730,130"/>
+<area shape="rect" id="node23" href="$timer_8c.html#afabd21de449be154dd65d5fdb2d8045d" title=" " alt="" coords="589,153,738,179"/>
+<area shape="rect" id="node25" href="$keyboard_8c.html#aea970a154161a35f6894898a092ed70a" title="Reads the output buffer." alt="" coords="418,793,477,819"/>
+<area shape="rect" id="node26" href="$leaderboard_8c.html#a0490b1f8637d0d36b255b93ac016ff25" title="Fetches the leaderboard.txt file to fill game&#39;s leaderboard." alt="" coords="609,995,718,1020"/>
+<area shape="rect" id="node27" href="$game_8c.html#a6be2f294a4d060a7a6e445016a151100" title="Resets the game (ball, paddle, bricks, lives and points)" alt="" coords="619,1291,708,1316"/>
+<area shape="rect" id="node29" href="$game_8c.html#a65ac0aa0a8eeab6a0935ebbde97e5aff" title="Sets the settings according to key pressed in the keyboard." alt="" coords="366,744,529,770"/>
+<area shape="rect" id="node30" href="$game_8c.html#a5db742ccada40ef765f6e6b4e242a962" title="Sets up the game according to the settings." alt="" coords="373,843,522,868"/>
+<area shape="rect" id="node28" href="$ball_8c.html#a95d33fc3d7290242b72731dc4524fe2c" title="Resets the ball." alt="" coords="807,1441,884,1467"/>
+<area shape="rect" id="node32" href="$ball_8c.html#a9cf82bc750b719b1aa5570ec123d0ba8" title="Handles ball&#45;paddle collisions." alt="" coords="391,1195,504,1220"/>
+<area shape="rect" id="node33" href="$mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="When interrupt handler is called, reads a new byte from the mouse." alt="" coords="409,1244,486,1270"/>
+<area shape="rect" id="node34" href="$mouse_8c.html#ab67a6d470a43ba2ddb2d19e1d4f32320" title="Evaluates the mouse_bytes array and acts accordingly." alt="" coords="400,1293,495,1319"/>
+<area shape="rect" id="node35" href="$paddle_8c.html#a13a51e741b552975b15c22cfa98ed36f" title="Checks if paddle should be moved with keyboard or mouse and handles it accordingly." alt="" coords="614,1340,713,1366"/>
+<area shape="rect" id="node36" href="$paddle_8c.html#a0b86cef063fb878032d6c999bffa1e77" title="Moves paddle and ball according to the paddle." alt="" coords="371,1392,524,1418"/>
+<area shape="rect" id="node37" href="$game_8c.html#a579e50623674c04eea7e20a6d3bad602" title="Updates states according to mouse clicks." alt="" coords="374,995,521,1020"/>
+<area shape="rect" id="node38" href="$serialport_8c.html#afea4b915abeb7716b1309174c10277f0" title="writes a mouse_packet to the THR register" alt="" coords="377,1145,518,1171"/>
+<area shape="rect" id="node39" href="$game_8c.html#ab88162058d4ecf603e7b9c0a664d12d5" title="Sets the settings accoring to mouse usage." alt="" coords="373,1343,522,1368"/>
+<area shape="rect" id="node40" href="$mouse_8c.html#a68dbff952658b38121693949e3abae64" title="Syncronizes the information from the mouse." alt="" coords="386,1096,509,1122"/>
+<area shape="rect" id="node42" href="$serialport_8c.html#af30de409909665c927214e3778e12f8f" title="returns the receiving queue" alt="" coords="407,1641,488,1667"/>
+<area shape="rect" id="node43" href="$queue_8c.html#ab0a7af1151628d3b2580f6da46706fce" title=" " alt="" coords="824,1717,867,1743"/>
+<area shape="rect" id="node44" href="$serialport_8c.html#a51d5429745f7f3fb829541308efd6484" title="clears both Receiving and Transmiting FIFO" alt="" coords="604,1743,723,1768"/>
+<area shape="rect" id="node45" href="$serialport_8c.html#af36885f3a76f83885f4562feb8d4bd74" title="reads a byte from the RBR register" alt="" coords="422,1844,474,1870"/>
+<area shape="rect" id="node46" href="$serialport_8c.html#abb5b6b934d407c3026b08a3a930f3e30" title="processes the byte read accordingly during multiplayer game" alt="" coords="374,1743,521,1768"/>
+<area shape="rect" id="node48" href="$view_8c.html#a4953d1edcbbfc7e420c423ded1d5621a" title="Clears the screen." alt="" coords="400,1543,495,1568"/>
+<area shape="rect" id="node49" href="$view_8c.html#a8fe6fe827e29e6b0cb98cda00dc38355" title="Draws the frame according to the game state." alt="" coords="388,1592,508,1618"/>
+<area shape="rect" id="node50" href="$game_8c.html#a0a6313b337713e89579587af280c3b10" title="Handles the single player game mode." alt="" coords="378,1441,517,1467"/>
 </map>

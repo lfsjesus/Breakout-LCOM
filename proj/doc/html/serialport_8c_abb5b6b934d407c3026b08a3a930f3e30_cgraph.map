@@ -1,0 +1,15 @@
+<map id="sp_read_playing_byte" name="sp_read_playing_byte">
+<area shape="rect" id="node1" title="processes the byte read accordingly during multiplayer game" alt="" coords="5,81,153,107"/>
+<area shape="rect" id="node2" href="$serialport_8c.html#a51d5429745f7f3fb829541308efd6484" title="clears both Receiving and Transmiting FIFO" alt="" coords="201,56,320,82"/>
+<area shape="rect" id="node5" href="$serialport_8c.html#a91ff41b0bbfe1c11ce1b0a618475f896" title="reads a full mouse packet" alt="" coords="204,107,317,132"/>
+<area shape="rect" id="node3" href="$queue_8c.html#a29cc47cb6982704e8c4045db0927b888" title=" " alt="" coords="587,5,656,31"/>
+<area shape="rect" id="node4" href="$queue_8c.html#ab0a7af1151628d3b2580f6da46706fce" title=" " alt="" coords="430,56,472,82"/>
+<area shape="rect" id="node6" href="$serialport_8c.html#af30de409909665c927214e3778e12f8f" title="returns the receiving queue" alt="" coords="411,107,492,132"/>
+<area shape="rect" id="node7" href="$serialport_8c.html#af36885f3a76f83885f4562feb8d4bd74" title="reads a byte from the RBR register" alt="" coords="425,157,477,183"/>
+<area shape="rect" id="node13" href="$serialport_8c.html#a3792ea90ce67a34b45bb1843109203e7" title="parses the mouse_packet read into a struct" alt="" coords="368,207,534,232"/>
+<area shape="rect" id="node8" href="$queue_8c.html#a3f2350d97e2b928dece5642ebfc1d173" title=" " alt="" coords="843,81,895,107"/>
+<area shape="rect" id="node9" href="$serialport_8c.html#abce16153d673a3aa53f56971430ad2eb" title="reads byte from RBR register" alt="" coords="582,157,661,183"/>
+<area shape="rect" id="node11" href="$serialport_8c.html#aa078e540a7187163ee055cd9146418e8" title="reads the Line Status Register" alt="" coords="709,208,776,234"/>
+<area shape="rect" id="node12" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="824,208,914,234"/>
+<area shape="rect" id="node10" href="$queue_8c.html#a25897dd8dc27d857546b0d3f81058d8c" title=" " alt="" coords="718,107,767,132"/>
+</map>

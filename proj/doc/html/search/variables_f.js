@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['vx_0',['vx',['../struct_ball.html#aed1f84df84f15adb7a619d6bbd524fb6',1,'Ball']]],
-  ['vy_1',['vy',['../struct_ball.html#a777f3ae6670fe817e62c81176d83cb77',1,'Ball']]]
+  ['time_5finfo_0',['time_info',['../struct_leaderboard_record.html#acd1de5abce714a90ee0a827a6e83bce2',1,'LeaderboardRecord']]],
+  ['twopoints_1',['twoPoints',['../font_8h.html#a2b1efbfb4a424bcc347d8b41386a40e5',1,'font.h']]],
+  ['type_2',['type',['../struct_power_up.html#abd07267ff68ba076d2a8fea657587d91',1,'PowerUp']]]
 ];

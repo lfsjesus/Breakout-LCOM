@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['scancode_0',['scancode',['../game_8c.html#aa1de7a5557e9d96b83cf03f73c92163f',1,'scancode():&#160;keyboard.c'],['../paddle_8c.html#aa1de7a5557e9d96b83cf03f73c92163f',1,'scancode():&#160;keyboard.c'],['../keyboard_8c.html#aa1de7a5557e9d96b83cf03f73c92163f',1,'scancode():&#160;keyboard.c']]],
-  ['score_1',['score',['../struct_leaderboard_record.html#a0b5491e93b1986523a35a346601117a0',1,'LeaderboardRecord']]],
-  ['seconds_2',['seconds',['../structrtc__time__info.html#a639af66ad2310865da2bf3e940aa7936',1,'rtc_time_info']]],
-  ['settings_5fbackgrounds_3',['settings_backgrounds',['../model_8c.html#a0060dc3fef7397ef1cbd86695c8059ee',1,'settings_backgrounds():&#160;model.c'],['../view_8c.html#a0060dc3fef7397ef1cbd86695c8059ee',1,'settings_backgrounds():&#160;model.c']]],
-  ['slashsprite_4',['slashSprite',['../font_8h.html#a4e144d3f6d0c08695b0d4c8385511b10',1,'font.h']]],
-  ['sprite_5',['sprite',['../struct_brick.html#afa66997ec9d927b130a623228147e7b7',1,'Brick::sprite()'],['../struct_ball.html#a36eb901356035f1ccb849bee9b5ef37d',1,'Ball::sprite()'],['../struct_paddle.html#a98254bb0931a04cddc90033fa197efaa',1,'Paddle::sprite()'],['../struct_power_up.html#a71a31f31037fddaba5da77a33fc40c12',1,'PowerUp::sprite()']]],
-  ['systemstate_6',['systemState',['../game_8c.html#ac705089b22877f6322d09a9f0f5bdb1d',1,'systemState():&#160;game.c'],['../main_8c.html#ac705089b22877f6322d09a9f0f5bdb1d',1,'systemState():&#160;game.c']]]
+  ['radius_0',['radius',['../struct_ball.html#a10678bc70bc0879f373bb409bf0a3c2c',1,'Ball']]],
+  ['records_1',['records',['../leaderboard_8c.html#a2c8c202580d10890eb327e6ecc33c8fc',1,'leaderboard.c']]],
+  ['redbrick_2',['redBrick',['../model_8c.html#a7a4b0d0e5e7549cbfaddc1c4641fce8e',1,'redBrick():&#160;model.c'],['../view_8c.html#a7a4b0d0e5e7549cbfaddc1c4641fce8e',1,'redBrick():&#160;model.c']]],
+  ['redbrickdamaged_3',['redBrickDamaged',['../model_8c.html#a6ca0684736e239d287f8047dfab8b99f',1,'redBrickDamaged():&#160;model.c'],['../view_8c.html#a6ca0684736e239d287f8047dfab8b99f',1,'redBrickDamaged():&#160;model.c']]],
+  ['right_5fclick_4',['right_click',['../struct_mouse_info.html#a1b8d5211c0c6e4335916182f05b372e9',1,'MouseInfo']]],
+  ['row_5fcontent_5',['row_content',['../struct_leaderboard_record.html#ae0fe37f7b9ca90b8d01b27e1d59365f5',1,'LeaderboardRecord']]],
+  ['rtc_5ftime_6',['rtc_time',['../game_8c.html#a489f621258d19e0378bb583120a4516b',1,'rtc_time():&#160;rtc.c'],['../rtc_8c.html#a489f621258d19e0378bb583120a4516b',1,'rtc_time():&#160;rtc.c']]]
 ];

@@ -1,0 +1,5 @@
+<map id="sp_setup" name="sp_setup">
+<area shape="rect" id="node1" title="enables serial port interrupts on Received Data Available and initializes the receiving queue" alt="" coords="5,31,80,56"/>
+<area shape="rect" id="node2" href="$queue_8h.html#a839b722b6c4924b41f3afa1bfaa525ef" title=" " alt="" coords="128,5,223,31"/>
+<area shape="rect" id="node3" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="130,55,221,80"/>
+</map>

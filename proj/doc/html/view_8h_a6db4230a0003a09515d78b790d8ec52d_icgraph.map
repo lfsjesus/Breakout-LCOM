@@ -1,20 +1,21 @@
 <map id="draw_sprite_xpm" name="draw_sprite_xpm">
-<area shape="rect" id="node1" title="Draws sprite xpm." alt="" coords="934,280,1054,306"/>
-<area shape="rect" id="node2" href="$view_8c.html#a4953d1edcbbfc7e420c423ded1d5621a" title="Clears the screen." alt="" coords="355,131,450,157"/>
-<area shape="rect" id="node5" href="$view_8c.html#a59b0b8eecddbc21c41a7721731d4a619" title="Draws the sprite for all the powerups that are active." alt="" coords="732,54,886,79"/>
-<area shape="rect" id="node7" href="$view_8c.html#ab65a198309050e54406b233a6c9b6da3" title="Draws the sprite for the ball." alt="" coords="771,104,847,130"/>
-<area shape="rect" id="node8" href="$view_8c.html#a03b7c91662283ff68058e0affd5f0abf" title="Draws the sprites for all the bricks according to brick&#39;s HP (health&#45;points)" alt="" coords="763,155,855,181"/>
-<area shape="rect" id="node9" href="$view_8c.html#aa51f4b041d2525d6dbfde04defc02e7c" title=" " alt="" coords="753,204,865,230"/>
-<area shape="rect" id="node10" href="$view_8c.html#a191bbb0716dcc296c0a4eb586d86becc" title="Draws the sprite for the leaderboard over screen." alt="" coords="512,256,682,282"/>
-<area shape="rect" id="node11" href="$view_8c.html#aa066c3c2f9c328bc49341927c6eeb3aa" title="Draws the sprite for the lives of the player." alt="" coords="767,306,851,331"/>
-<area shape="rect" id="node12" href="$view_8c.html#a42f4903ab89aff9e3ee0206c52cf710a" title="Draws the sprite for the mouse." alt="" coords="549,358,645,383"/>
-<area shape="rect" id="node13" href="$view_8c.html#a21ec32252f9018add1e0791bd82431e7" title=" " alt="" coords="550,407,644,433"/>
-<area shape="rect" id="node14" href="$view_8c.html#ac7324359ece91c5a3470fde8bf5778f5" title="Draws the sprite for the points (all digits)" alt="" coords="551,456,643,482"/>
-<area shape="rect" id="node15" href="$view_8c.html#a3f589bf66249c3114f35ea6620211c94" title="Draws the sprite for the settings screen." alt="" coords="526,506,668,531"/>
-<area shape="rect" id="node16" href="$view_8c.html#a407acb6cf3d2c21b8c120a1e0b8e6abc" title="Draws the sprite for text." alt="" coords="770,559,848,585"/>
-<area shape="rect" id="node3" href="$game_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates states according to timer." alt="" coords="162,283,294,309"/>
-<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,283,114,309"/>
-<area shape="rect" id="node6" href="$view_8c.html#a8fe6fe827e29e6b0cb98cda00dc38355" title="Draws the frame according to the game state." alt="" coords="342,307,462,333"/>
-<area shape="rect" id="node17" href="$view_8c.html#a2057607b5b36aac44a48005ee5bfa533" title="Draws the sprite for the game instructions." alt="" coords="539,555,655,581"/>
-<area shape="rect" id="node18" href="$view_8c.html#a75838abc9205258a9073df57e3c3f567" title="Draws the sprite for the leaderboard records." alt="" coords="510,604,684,630"/>
+<area shape="rect" id="node1" title="Draws sprite xpm." alt="" coords="949,321,1069,347"/>
+<area shape="rect" id="node2" href="$view_8c.html#a4953d1edcbbfc7e420c423ded1d5621a" title="Clears the screen." alt="" coords="355,157,450,183"/>
+<area shape="rect" id="node5" href="$view_8c.html#a59b0b8eecddbc21c41a7721731d4a619" title="Draws the sprite for all the powerups that are active." alt="" coords="739,68,894,94"/>
+<area shape="rect" id="node7" href="$view_8c.html#ab65a198309050e54406b233a6c9b6da3" title="Draws the sprite for the ball." alt="" coords="778,119,855,144"/>
+<area shape="rect" id="node8" href="$view_8c.html#a03b7c91662283ff68058e0affd5f0abf" title="Draws the sprites for all the bricks according to brick&#39;s HP (health&#45;points)" alt="" coords="771,169,862,195"/>
+<area shape="rect" id="node9" href="$view_8c.html#aa51f4b041d2525d6dbfde04defc02e7c" title=" " alt="" coords="760,220,873,246"/>
+<area shape="rect" id="node10" href="$view_8c.html#a76123254bff1dc166def6351efb2c674" title=" " alt="" coords="530,271,664,296"/>
+<area shape="rect" id="node11" href="$view_8c.html#a191bbb0716dcc296c0a4eb586d86becc" title="Draws the sprite for the leaderboard over screen." alt="" coords="732,321,901,347"/>
+<area shape="rect" id="node12" href="$view_8c.html#aa066c3c2f9c328bc49341927c6eeb3aa" title="Draws the sprite for the lives of the player." alt="" coords="775,371,858,396"/>
+<area shape="rect" id="node13" href="$view_8c.html#a42f4903ab89aff9e3ee0206c52cf710a" title="Draws the sprite for the mouse." alt="" coords="549,423,645,448"/>
+<area shape="rect" id="node14" href="$view_8c.html#a21ec32252f9018add1e0791bd82431e7" title=" " alt="" coords="550,472,644,498"/>
+<area shape="rect" id="node15" href="$view_8c.html#ac7324359ece91c5a3470fde8bf5778f5" title="Draws the sprite for the points (all digits)" alt="" coords="551,521,643,547"/>
+<area shape="rect" id="node16" href="$view_8c.html#a3f589bf66249c3114f35ea6620211c94" title="Draws the sprite for the settings screen." alt="" coords="526,571,668,596"/>
+<area shape="rect" id="node17" href="$view_8c.html#a407acb6cf3d2c21b8c120a1e0b8e6abc" title="Draws the sprite for text." alt="" coords="777,624,856,650"/>
+<area shape="rect" id="node3" href="$game_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates states according to timer." alt="" coords="162,323,294,348"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,323,114,348"/>
+<area shape="rect" id="node6" href="$view_8c.html#a8fe6fe827e29e6b0cb98cda00dc38355" title="Draws the frame according to the game state." alt="" coords="342,347,462,372"/>
+<area shape="rect" id="node18" href="$view_8c.html#a2057607b5b36aac44a48005ee5bfa533" title="Draws the sprite for the game instructions." alt="" coords="539,620,655,646"/>
+<area shape="rect" id="node19" href="$view_8c.html#a75838abc9205258a9073df57e3c3f567" title="Draws the sprite for the leaderboard records." alt="" coords="510,669,684,695"/>
 </map>
