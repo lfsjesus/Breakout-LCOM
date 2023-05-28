@@ -86,12 +86,16 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a7cab2247800251ab21da3a9a04ecd8ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_leaderboard_record.html">LeaderboardRecord</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="leaderboard_8h.html#a7cab2247800251ab21da3a9a04ecd8ae">get_records</a> ()</td></tr>
+<tr class="memdesc:a7cab2247800251ab21da3a9a04ecd8ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the records object that stores all the records of the game.  <a href="leaderboard_8h.html#a7cab2247800251ab21da3a9a04ecd8ae">More...</a><br /></td></tr>
 <tr class="separator:a7cab2247800251ab21da3a9a04ecd8ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae29bb5a08de4f807fc3cae69e0071fa8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="leaderboard_8h.html#ae29bb5a08de4f807fc3cae69e0071fa8">get_entries_filled</a> ()</td></tr>
+<tr class="memdesc:ae29bb5a08de4f807fc3cae69e0071fa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of entries in the leaderboard that are filled.  <a href="leaderboard_8h.html#ae29bb5a08de4f807fc3cae69e0071fa8">More...</a><br /></td></tr>
 <tr class="separator:ae29bb5a08de4f807fc3cae69e0071fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0490b1f8637d0d36b255b93ac016ff25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="leaderboard_8h.html#a0490b1f8637d0d36b255b93ac016ff25">leaderboard_fill</a> ()</td></tr>
+<tr class="memdesc:a0490b1f8637d0d36b255b93ac016ff25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the leaderboard.txt file to fill game's leaderboard.  <a href="leaderboard_8h.html#a0490b1f8637d0d36b255b93ac016ff25">More...</a><br /></td></tr>
 <tr class="separator:a0490b1f8637d0d36b255b93ac016ff25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae515f38070422854c3c4c5edd992b144"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="leaderboard_8h.html#ae515f38070422854c3c4c5edd992b144">add_leaderboard_record</a> (int level, int score, <a class="el" href="structrtc__time__info.html">rtc_time_info</a> *time_info)</td></tr>
+<tr class="memdesc:ae515f38070422854c3c4c5edd992b144"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new record to the leaderboard table if it "fits" there or if it is better than any one.  <a href="leaderboard_8h.html#ae515f38070422854c3c4c5edd992b144">More...</a><br /></td></tr>
 <tr class="separator:ae515f38070422854c3c4c5edd992b144"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abda4142f0486576d2e0ae6164325d761"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="leaderboard_8h.html#abda4142f0486576d2e0ae6164325d761">compare_time</a> (<a class="el" href="structrtc__time__info.html">rtc_time_info</a> *time1, <a class="el" href="structrtc__time__info.html">rtc_time_info</a> *time2)</td></tr>
 <tr class="separator:abda4142f0486576d2e0ae6164325d761"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,6 +132,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Adds a new record to the leaderboard table if it "fits" there or if it is better than any one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>game level </td></tr>
+    <tr><td class="paramname">score</td><td>number of points </td></tr>
+    <tr><td class="paramname">time_info</td><td>struct that holds the current time </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -174,6 +188,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Get the number of entries in the leaderboard that are filled. </p>
+<dl class="section return"><dt>Returns</dt><dd>int: number of entries </dd></dl>
+
 </div>
 </div>
 <a id="a7cab2247800251ab21da3a9a04ecd8ae"></a>
@@ -191,6 +208,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Get the records object that stores all the records of the game. </p>
+<dl class="section return"><dt>Returns</dt><dd>LeaderboardRecord* </dd></dl>
+
 </div>
 </div>
 <a id="a0490b1f8637d0d36b255b93ac016ff25"></a>
@@ -207,6 +227,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Fetches the leaderboard.txt file to fill game's leaderboard. </p>
 
 </div>
 </div>
