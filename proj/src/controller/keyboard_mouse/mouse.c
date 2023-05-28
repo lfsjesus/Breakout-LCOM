@@ -26,8 +26,7 @@ int (mouse_config)(uint8_t control_word) {
   return OK;
 }
 
-int (mouse_subscribe_int)(uint8_t *bit_no) {
-  (*bit_no) = hook_id;
+int (mouse_subscribe_int)() {
   return sys_irqsetpolicy(MOUSE_IRQ, IRQ_REENABLE | IRQ_EXCLUSIVE, &hook_id);
 }
 
@@ -55,6 +54,7 @@ int (mouse_sync)() {
 
   return OK;
 }
+
 int (mouse_process_packet)() {
   for (unsigned i = 0; i < 3; i++) {
       mouse_packet.bytes[i] = mouse_bytes[i];

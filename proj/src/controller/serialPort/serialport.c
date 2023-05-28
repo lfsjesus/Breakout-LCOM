@@ -24,7 +24,7 @@ int (sp_setup) () {
   ier &= 0xF0;                                           // Limpar as configurações
   ier |= IER_RDA;                                    // Inicializar IER com Read DataAvailable
   if (sys_outb(COM1_ADDR + IER, ier) != 0) return 1;   //Escrever IER
-  printf("SP Setup\n");
+  printf("setup\n");
   return 0;
   }
 
@@ -59,7 +59,6 @@ int (read_lsr) (uint8_t* lsr) {
 int (send_byte) (uint8_t byte) {
   uint8_t lsr, attempts = 20;
   while (attempts > 0) {
-
     if (util_sys_inb(COM1_ADDR + LSR, &lsr) != 0)  return 1;
     if (lsr & LSR_THRempty) {
       return sys_outb(COM1_ADDR + THR, byte);
@@ -89,6 +88,8 @@ int (sp_read_playing_byte) (uint8_t byte) {
   if (byte == PACKET_BYTE) {
     sp_read_packet();
   }
+  else
+    sp_clear_queues();
   return 0;
 }
 
@@ -131,6 +132,15 @@ int (send_mouse_packet) (MouseInfo mouse_info) {
   printf("----------- Sent Mouse Packet --------\n");
   return 0;
 }
+
+int (sp_clear_queues) () {
+  while(!isEmpty(queue))
+    pop(queue);
+  if (sys_outb(COM1_ADDR + FCR, FCR_CR | FCR_CX | FCR_EB) != 0) return 1;
+  return 0;
+}
+
+
 
 
 Queue* get_queue () {

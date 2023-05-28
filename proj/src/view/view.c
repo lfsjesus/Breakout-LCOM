@@ -10,9 +10,10 @@ extern Paddle mainPaddle;
 extern Paddle guestPaddle;
 extern PowerUp powerUps[3];
 
-extern GameState gameState;
+extern AppState gameState;
 
 extern Sprite* settings_backgrounds[6];
+extern Sprite* leaderboard;
 extern Sprite* mouse;
 extern Sprite* background;
 extern Sprite* paddle;
@@ -35,7 +36,7 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y) {
         continue;
       if (x + w >= modeinfo.XResolution || y + h >= modeinfo.YResolution)
         return 1;
-      memcpy(frame_buffer + buffer_index * frame_size + (modeinfo.XResolution * (y + h) + (x + w)) * bytes_per_pixel, &sprite->colors[w + h * width], bytes_per_pixel);
+      memcpy(frame_buffer + buffer_index * frame_size + (modeinfo.XResolution * (y + h) + (x + w)) * bytes_per_pixel, &current_color, bytes_per_pixel);
 
     }
   }
@@ -103,22 +104,17 @@ void draw_new_frame() {
   switch (gameState){
 
     case START:
-      if (get_control_device() == MOUSE) {
-        draw_mouse();
-      }
       break;
     case SETTINGS:
       draw_setting_screen();
-      if (get_control_device() == MOUSE) {
-        draw_mouse();  
-      }
       break;
-    case SCORE:
-      vg_draw_rectangle(100, 100, 10, 10, 0x00FF00);
+    case LEADERBOARD:
+      draw_leaderboard_screen();
+      draw_leaderboard_records(get_records());
       break;
     case INIT:
       draw_instruction();
-    case GAME:
+    case SINGLEPLAYER:
       draw_points();
       draw_lives();
       draw_paddle();
@@ -126,10 +122,15 @@ void draw_new_frame() {
       draw_ball();
       draw_extra_ball();
       draw_active_powerups();
-      draw_guest_paddle();
       break;
+    case MULTIPLAYER:
+      draw_guest_paddle();
+      draw_paddle();
     default:
       break;
+  }
+  if (get_control_device() == MOUSE && gameState != INIT  && gameState != SINGLEPLAYER) {
+    draw_mouse();  
   }
 }
 
@@ -137,32 +138,50 @@ void draw_setting_screen() {
   draw_sprite_xpm(settings_backgrounds[get_current_setting()], 0, 0);
 }
 
+void draw_leaderboard_screen() {
+  draw_sprite_xpm(leaderboard, 0, 0);
+}
+
 void draw_points() {
   int points = getPoints();
   
-  int spacing = 31;
+  int spacing = 28;
   int i = 3; 
 
   for (int j = 0; j < 4; j++) {
     uint16_t digit = points % 10;
     points /= 10;
-    draw_sprite_xpm(create_sprite_xpm(digits[digit]), i * spacing, 0); 
+    Sprite* number = get_number(digit + '0');
+    draw_sprite_xpm(number, i * spacing, 5); 
     i--;
   }
 }
 
 void draw_instruction() {
-  draw_text("MOVE AND SHOOT", 200, 470);
+  draw_text("MOVE AND SHOOT", 250, 470);
 }
 
 void draw_text(char *text, uint16_t x, uint16_t y) {
   int i = 0;
-
+  
   while (text[i] != '\0') {
-    if (text[i] != ' ') {
+    if (text[i] >= 'A' && text[i] <= 'Z') {
       Sprite* letter = get_char(text[i]);
       draw_sprite_xpm(letter, x, y);
       x += letter->width;
+    }
+    else if (text[i] >= '0' && text[i] <= '9') {
+      Sprite* number = get_number(text[i]);
+      draw_sprite_xpm(number, x, y);
+      x += number->width;
+    }
+    else if (text[i] == ':') {
+      draw_sprite_xpm(twoPoints, x, y);
+      x += twoPoints->width;
+    }
+    else if (text[i] == '/') {
+      draw_sprite_xpm(slashSprite, x, y);
+      x += slashSprite->width;
     }
     else {
       x += 10;
@@ -170,6 +189,13 @@ void draw_text(char *text, uint16_t x, uint16_t y) {
     i++;
   }
 }
+
+void draw_leaderboard_records(LeaderboardRecord* records) {
+  for (int i = 0; i < get_entries_filled(); i++) {
+    draw_text(records[i].row_content, 150, 215 + 65 * i);    
+  }
+}
+
 
 void draw_lives() {
   int lives = getLives();

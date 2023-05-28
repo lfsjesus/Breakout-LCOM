@@ -4,6 +4,7 @@
 Sprite* mouse;
 Sprite* background;
 Sprite* settings_backgrounds[6];
+Sprite* leaderboard;
 Sprite* heart;
 Sprite* ball;
 Sprite* ball2;
@@ -20,7 +21,7 @@ Sprite* ballPowerUpSprite;
 Sprite* blockPowerUpSprite;
 Sprite* lifePowerUpSprite;
 
-Ball mainBall = {NULL, 10, 500, 500, 4, 9, 1, 5};
+Ball mainBall = {NULL, 10, 500, 500, 4, 9};
 
 Paddle mainPaddle = {NULL, 350, 550};
 
@@ -33,10 +34,6 @@ Brick bricks[12][10];
 void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
     background = create_sprite_xpm((xpm_map_t) menu_background_xpm);
-    //button_singleplayer = create_sprite_xpm((xpm_map_t) singleplayer_button_xpm);
-    //button_multiplayer = create_sprite_xpm((xpm_map_t) multiplayer_button_xpm);
-    //button_leaderboard = create_sprite_xpm((xpm_map_t) leaderboard_button_xpm);
-    //button_settings = create_sprite_xpm((xpm_map_t) settings_button_xpm);
     mainPaddle.sprite = create_sprite_xpm((xpm_map_t) paddle_xpm);
     guestPaddle.sprite = create_sprite_xpm((xpm_map_t) paddle_xpm);
     paddle = create_sprite_xpm((xpm_map_t) paddle_xpm);
@@ -60,7 +57,9 @@ void setup_sprites() {
     settings_backgrounds[3] = create_sprite_xpm((xpm_map_t) ball_option2_xpm);
     settings_backgrounds[4] = create_sprite_xpm((xpm_map_t) paddle_option1_xpm);
     settings_backgrounds[5] = create_sprite_xpm((xpm_map_t) paddle_option2_xpm);
+    leaderboard = create_sprite_xpm((xpm_map_t) leaderboard_xpm);
     init_alphabet_sprites();
+    init_number_sprites();
 }
 
 void destroy_sprites() {
@@ -87,33 +86,36 @@ void destroy_sprites() {
     destroy_sprite(settings_backgrounds[3]);
     destroy_sprite(settings_backgrounds[4]);
     destroy_sprite(settings_backgrounds[5]);
+    destroy_sprite(leaderboard);
     destroy_alphabet_sprites();
+    destroy_number_sprites();
 }
 
-void setup_bricks() {
+void setup_bricks(char* map[12]) {
+    brick_counter = 0;
     int width = 75;
     int height = 37;
     int padding = 50;
     int start_y = 40;
     for (int i = 0; i < 12; i++) {
         for (int j = 0; j < 10; j++) {
-            if (map1[i][j] == ' ') {
+            if (map[i][j] == ' ') {
                 continue;
             }
             bricks[i][j].x = j * (width + 4) + 10;
             bricks[i][j].y = i * height + start_y + padding;
 
-            if (map1[i][j] == 'X') {
+            if (map[i][j] == 'X') {
                 bricks[i][j].hp = 2;
                 brick_counter++;
             }
 
-            else if (map1[i][j] == 'B') {
+            else if (map[i][j] == 'B') {
                 bricks[i][j].hp = 5;
                 brick_counter++;
             }
 
-            else if (map1[i][j] == 'A') {
+            else if (map[i][j] == 'A') {
                 bricks[i][j].hp = 9;
                 brick_counter++;
             }
@@ -152,9 +154,5 @@ int getBrickCounter() {
 void decrementBrickCounter() {
     brick_counter--;
 }
-
-
-
-
 
 

@@ -4,6 +4,7 @@ PROG=proj
 # Indicar as pastas de todos os ficheiros a compilar.
 .PATH: ${.CURDIR}/controller/
 .PATH: ${.CURDIR}/controller/keyboard_mouse
+.PATH: ${.CURDIR}/controller/rtc
 .PATH: ${.CURDIR}/controller/timer
 .PATH: ${.CURDIR}/controller/video
 .PATH: ${.CURDIR}/model/
@@ -16,7 +17,7 @@ PROG=proj
 
 
 # Ficheiros ".c" a compilar. Têm de estar contidos nas pastas indicadas no passo anterior.
-SRCS = 	main.c timer.c utils.c graphics.c kbc.c keyboard.c mouse.c view.c sprite.c model.c ball.c brick.c paddle.c game.c serialport.c queue.c powerup.c font.c
+SRCS = 	main.c timer.c utils.c graphics.c kbc.c keyboard.c mouse.c rtc.c view.c sprite.c model.c ball.c brick.c paddle.c game.c serialport.c queue.c powerup.c font.c leaderboard.c
 
 
 # Flags de compilação

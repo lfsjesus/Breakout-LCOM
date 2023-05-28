@@ -44,7 +44,7 @@ int read_output(uint8_t port, uint8_t* byte, uint8_t mouse) {
 
       return OK;
     }
-    //tickdelay(micros_to_ticks(20000));
+    tickdelay(micros_to_ticks(20000));
     attempts--;
   }
   return !OK;

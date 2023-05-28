@@ -1,6 +1,7 @@
 #include "ball.h"
 
 extern vbe_mode_info_t modeinfo;
+
 extern Brick bricks[12][10];
 extern Paddle mainPaddle;
 extern Ball extraBall;
@@ -21,21 +22,11 @@ void collision_board(Ball* ball) {
         ball->vx = -ball->vx;
     } else if (ballMaxX >= screenWidth) {
         ball->vx = -ball->vx;
-    } else if (ballMinY <= minScreenY) {
+    } 
+    if (ballMinY <= minScreenY) {
         ball->vy = -ball->vy;
     } else if (ballMaxY >= screenHeight) {
         ball->vy = -ball->vy;
-    }
-
-    // if somehow the ball gets out of the screen, put it back in
-    if (ballMinX < minScreenX) {
-        ball->x = minScreenX + ball->radius;
-    } else if (ballMaxX > screenWidth) {
-        ball->x = screenWidth - ball->radius;
-    } else if (ballMinY < minScreenY) {
-        ball->y = minScreenY + ball->radius;
-    } else if (ballMaxY > screenHeight) {
-        ball->y = screenHeight - ball->radius;
     }
 }
 
@@ -52,11 +43,9 @@ void change_ball_pos(Ball* ball) {
     }   
     ball->x += ball->vx;
     ball->y += ball->vy;    
-
 }
 
 void collision_brick(Ball* ball, Brick* brick) {
-
     int16_t brickMinX = brick->x;
     int16_t brickMaxX = brick->x + brick->sprite->width;
     int16_t brickMinY = brick->y;
@@ -104,16 +93,14 @@ void collision_paddle(Ball* ball, Paddle* paddle) {
             ball->vy = -ball->vy;
         }
 
-        // Check if the ball is stuck inside the paddle
+        // Ins the ball is stuck inside the paddle
         if (ball->y > paddleMinY && ballMinY < paddleMaxY) {
-            // Move the ball to the correct position outside the paddle
             if (ball->y < paddle->y) {
                 ball->y = paddle->y - ball->radius;
             } else {
                 ball->y = paddleMaxY + ball->radius;
             }
         }
-
     }
 }
 
@@ -139,14 +126,12 @@ void collision_extra_ball(Ball* ball, Ball* extraBall) {
             extraBall->vy = -extraBall->vy;
         }
     }
-
 }
 
 bool check_ball_out(Ball* ball, Paddle* paddle) {
     if (ball->y >= modeinfo.YResolution - ball->sprite->height - 2) {
         return true;
     }
-
     return false;
 }
 
