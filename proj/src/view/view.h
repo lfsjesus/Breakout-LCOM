@@ -41,18 +41,25 @@ void draw_active_powerups();
  * @brief Draws the sprite for the settings screen
  */
 void draw_setting_screen();
-<<<<<<< HEAD
 
+
+/**
+ * @brief Draws the sprite for the leaderboard over screen
+ *
+ */
 void draw_leaderboard_screen();
 
+/**
+ * @brief Draws the sprite for the leaderboard records
+ * @param records array of leaderboard records
+ */
 void draw_leaderboard_records(LeaderboardRecord* records);
 
-=======
 /**
  * @brief Draws the sprite for the game instructions
  */
->>>>>>> documentation
 void draw_instruction();
+
 /**
  * @brief Draws the sprite for text
  * @param text text to draw
@@ -60,8 +67,7 @@ void draw_instruction();
  * @param y y-coordinate to draw
  */
 void draw_text(char *text, uint16_t x, uint16_t y);
-// Not being used
-int draw_scaled_sprite_xpm(Sprite *sprite, int x, int y);
+
 /**
  * @brief Draws sprite xpm
  * @param sprite pointer to the sprite to draw
@@ -70,10 +76,12 @@ int draw_scaled_sprite_xpm(Sprite *sprite, int x, int y);
  * @return int (0 on success and 1 on failure)
  */
 int draw_sprite_xpm(Sprite *sprite, int x, int y);
+
 /**
  * @brief Draws the frame according to the game state
  */
 void draw_new_frame();
+
 /**
  * @brief Clears the screen
  */
