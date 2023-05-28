@@ -49,11 +49,44 @@ static xpm_map_t alphabet[] = {A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y
 static Sprite* alphabet_sprites[26];
 static Sprite* number_sprites[10];
 
+/**
+ * @brief initializes letter sprites
+ * 
+ */
 void init_alphabet_sprites();
+
+/**
+ * @brief initializes number sprimtes
+ * 
+ */
 void init_number_sprites();
+
+/**
+ * @brief destroys alphabet sprites
+ * 
+ */
 void destroy_alphabet_sprites();
+
+/**
+ * @brief destroys number sprites
+ * 
+ */
 void destroy_number_sprites();
+
+/**
+ * @brief Get the sprite of a char letter
+ * 
+ * @param c 
+ * @return Sprite* 
+ */
 Sprite* get_char(char c);
+
+/**
+ * @brief Get the sprite of a number
+ * 
+ * @param c 
+ * @return Sprite* 
+ */
 Sprite* get_number(char c);
 
 #endif

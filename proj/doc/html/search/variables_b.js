@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['radius_0',['radius',['../struct_ball.html#a10678bc70bc0879f373bb409bf0a3c2c',1,'Ball']]],
-  ['redbrick_1',['redBrick',['../model_8c.html#a7a4b0d0e5e7549cbfaddc1c4641fce8e',1,'redBrick():&#160;model.c'],['../view_8c.html#a7a4b0d0e5e7549cbfaddc1c4641fce8e',1,'redBrick():&#160;model.c']]],
-  ['redbrickdamaged_2',['redBrickDamaged',['../model_8c.html#a6ca0684736e239d287f8047dfab8b99f',1,'redBrickDamaged():&#160;model.c'],['../view_8c.html#a6ca0684736e239d287f8047dfab8b99f',1,'redBrickDamaged():&#160;model.c']]],
-  ['right_5fclick_3',['right_click',['../struct_mouse_info.html#a1b8d5211c0c6e4335916182f05b372e9',1,'MouseInfo']]]
+  ['packet_5fcounter_598',['packet_counter',['../game_8c.html#a052736b69c140cd8dad251f100046dd3',1,'packet_counter():&#160;mouse.c'],['../mouse_8c.html#a2967db5b43d8c272194ce4877bced7d2',1,'packet_counter():&#160;mouse.c']]],
+  ['paddle_599',['paddle',['../model_8c.html#aaf44cb79cb3c1f0b20cc02b33d76b59e',1,'paddle():&#160;model.c'],['../view_8c.html#aaf44cb79cb3c1f0b20cc02b33d76b59e',1,'paddle():&#160;model.c']]],
+  ['paddle2_600',['paddle2',['../model_8c.html#a7367f1b48653df0eda5dabe93dea5b2a',1,'model.c']]],
+  ['playerpoints_601',['playerPoints',['../paddle_8c.html#a85ac91985fa0330b4a7827a155511311',1,'paddle.c']]],
+  ['powerups_602',['powerUps',['../powerup_8c.html#a357705b6cfe06d3e965239329f2c0ceb',1,'powerUps():&#160;model.c'],['../model_8c.html#a357705b6cfe06d3e965239329f2c0ceb',1,'powerUps():&#160;model.c'],['../view_8c.html#a357705b6cfe06d3e965239329f2c0ceb',1,'powerUps():&#160;model.c']]]
 ];

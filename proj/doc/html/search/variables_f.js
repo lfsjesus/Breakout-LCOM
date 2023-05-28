@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['width_0',['width',['../struct_sprite.html#a126fa60a3de74e112dc5fa7ab1809f37',1,'Sprite']]]
+  ['vx_620',['vx',['../struct_ball.html#aed1f84df84f15adb7a619d6bbd524fb6',1,'Ball']]],
+  ['vy_621',['vy',['../struct_ball.html#a777f3ae6670fe817e62c81176d83cb77',1,'Ball']]]
 ];

@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['s_5fbk_5fcode_0',['S_BK_CODE',['../i8042_8h.html#a2a2e0cfa890103e69ff1fc5601f74299',1,'i8042.h']]],
-  ['s_5fmk_5fcode_1',['S_MK_CODE',['../i8042_8h.html#a9b35cdd8f2d05d3b76b900cf28f99f09',1,'i8042.h']]],
-  ['space_5fbk_5fcode_2',['SPACE_BK_CODE',['../i8042_8h.html#a06ee710fc243d2465950c9a1917ebae3',1,'i8042.h']]],
-  ['space_5fmk_5fcode_3',['SPACE_MK_CODE',['../i8042_8h.html#a26fcdafd55743f7753401610ddb746dd',1,'i8042.h']]],
-  ['stat_5freg_4',['STAT_REG',['../i8042_8h.html#a89c4d098b53809674457b1660b1af780',1,'i8042.h']]]
+  ['reg_5fcount_5fin_5fprogress_689',['REG_COUNT_IN_PROGRESS',['../rtc_8h.html#afeca32c0aceeb242c885964797bbb577',1,'rtc.h']]],
+  ['reg_5finput_690',['REG_INPUT',['../rtc_8h.html#aef57692d80a04636cd333c18d4dcf2d0',1,'rtc.h']]],
+  ['reg_5foutput_691',['REG_OUTPUT',['../rtc_8h.html#a2cb2bb355c8ce0c0fa50b7bc60db2ffa',1,'rtc.h']]],
+  ['reg_5fupdate_5fin_5fprogress_692',['REG_UPDATE_IN_PROGRESS',['../rtc_8h.html#a71f7182f81b98b31e42adce3dd267dab',1,'rtc.h']]],
+  ['rtc_5firq_693',['RTC_IRQ',['../rtc_8h.html#a4e22feb6ffbc1cda32fadff5c740dc51',1,'rtc.h']]]
 ];

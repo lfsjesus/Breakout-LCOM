@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['sprite_2ec_0',['sprite.c',['../sprite_8c.html',1,'']]],
-  ['sprite_2eh_1',['sprite.h',['../sprite_8h.html',1,'']]]
+  ['paddle_2ec_402',['paddle.c',['../paddle_8c.html',1,'']]],
+  ['paddle_2eh_403',['paddle.h',['../paddle_8h.html',1,'']]],
+  ['powerup_2ec_404',['powerup.c',['../powerup_8c.html',1,'']]],
+  ['powerup_2eh_405',['powerup.h',['../powerup_8h.html',1,'']]]
 ];

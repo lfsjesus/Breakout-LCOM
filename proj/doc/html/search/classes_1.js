@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mouseinfo_0',['MouseInfo',['../struct_mouse_info.html',1,'']]]
+  ['leaderboardrecord_372',['LeaderboardRecord',['../struct_leaderboard_record.html',1,'']]]
 ];

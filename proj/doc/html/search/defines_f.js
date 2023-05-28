@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['write_5fbyte_5fmouse_0',['WRITE_BYTE_MOUSE',['../i8042_8h.html#a805da0759dba314e6339d8999c44824c',1,'i8042.h']]]
+  ['updating_708',['UPDATING',['../rtc_8h.html#ae07bc1582ec2a0d53dd74350b5a19c5e',1,'rtc.h']]]
 ];

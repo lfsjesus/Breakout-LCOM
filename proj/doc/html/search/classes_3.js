@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['sprite_0',['Sprite',['../struct_sprite.html',1,'']]]
+  ['paddle_374',['Paddle',['../struct_paddle.html',1,'']]],
+  ['powerup_375',['PowerUp',['../struct_power_up.html',1,'']]]
 ];
