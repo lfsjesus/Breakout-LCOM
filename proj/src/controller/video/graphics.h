@@ -55,7 +55,7 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t
  */
 int (normalize_color)(uint32_t color, uint32_t *new_color);
 /**
- * @brief 
+ * @brief Defines where the VRAM starts
  * @return int - 0 on success and 1 on failure
  */
 int (vg_set_start) ();
