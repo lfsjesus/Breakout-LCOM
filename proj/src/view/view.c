@@ -33,7 +33,7 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y) {
         continue;
       if (x + w >= modeinfo.XResolution || y + h >= modeinfo.YResolution)
         return 1;
-      memcpy(frame_buffer + buffer_index * frame_size + (modeinfo.XResolution * (y + h) + (x + w)) * bytes_per_pixel, &sprite->colors[w + h * width], bytes_per_pixel);
+      memcpy(frame_buffer + buffer_index * frame_size + (modeinfo.XResolution * (y + h) + (x + w)) * bytes_per_pixel, &current_color, bytes_per_pixel);
 
     }
   }

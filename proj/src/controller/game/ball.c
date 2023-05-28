@@ -21,21 +21,11 @@ void collision_board(Ball* ball) {
         ball->vx = -ball->vx;
     } else if (ballMaxX >= screenWidth) {
         ball->vx = -ball->vx;
-    } else if (ballMinY <= minScreenY) {
+    } 
+    if (ballMinY <= minScreenY) {
         ball->vy = -ball->vy;
     } else if (ballMaxY >= screenHeight) {
         ball->vy = -ball->vy;
-    }
-
-    // if somehow the ball gets out of the screen, put it back in
-    if (ballMinX < minScreenX) {
-        ball->x = minScreenX + ball->radius;
-    } else if (ballMaxX > screenWidth) {
-        ball->x = screenWidth - ball->radius;
-    } else if (ballMinY < minScreenY) {
-        ball->y = minScreenY + ball->radius;
-    } else if (ballMaxY > screenHeight) {
-        ball->y = screenHeight - ball->radius;
     }
 }
 
@@ -52,11 +42,9 @@ void change_ball_pos(Ball* ball) {
     }   
     ball->x += ball->vx;
     ball->y += ball->vy;    
-
 }
 
 void collision_brick(Ball* ball, Brick* brick) {
-
     int16_t brickMinX = brick->x;
     int16_t brickMaxX = brick->x + brick->sprite->width;
     int16_t brickMinY = brick->y;

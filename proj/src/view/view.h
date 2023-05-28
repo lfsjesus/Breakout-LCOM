@@ -29,6 +29,8 @@ void draw_instruction();
 
 void draw_text(char *text, uint16_t x, uint16_t y);
 
+int draw_scaled_sprite_xpm(Sprite *sprite, int x, int y);
+
 int draw_sprite_xpm(Sprite *sprite, int x, int y);
 
 void draw_new_frame();
