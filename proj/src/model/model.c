@@ -21,7 +21,7 @@ Sprite* ballPowerUpSprite;
 Sprite* blockPowerUpSprite;
 Sprite* lifePowerUpSprite;
 
-Ball mainBall = {NULL, 10, 500, 500, 4, 9, 1, 5};
+Ball mainBall = {NULL, 10, 500, 500, 4, 9};
 
 Paddle mainPaddle = {NULL, 350, 550};
 
