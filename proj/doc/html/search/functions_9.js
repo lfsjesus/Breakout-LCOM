@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normalize_5fcolor_486',['normalize_color',['../graphics_8c.html#a3b050d50b23adbbbd5a7ae66931e743a',1,'normalize_color(uint32_t color, uint32_t *new_color):&#160;graphics.c'],['../graphics_8h.html#a3b050d50b23adbbbd5a7ae66931e743a',1,'normalize_color(uint32_t color, uint32_t *new_color):&#160;graphics.c']]]
+  ['proj_5fmain_5floop_484',['proj_main_loop',['../main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b',1,'main.c']]]
 ];

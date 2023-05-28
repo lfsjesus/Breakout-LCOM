@@ -96,100 +96,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a99d2da2559e11200c6b40c469e9977ec"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8c.html#a99d2da2559e11200c6b40c469e9977ec">vg_draw_rectangle</a> (uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color)</td></tr>
 <tr class="memdesc:a99d2da2559e11200c6b40c469e9977ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a rectangle with a specific color.  <a href="graphics_8c.html#a99d2da2559e11200c6b40c469e9977ec">More...</a><br /></td></tr>
 <tr class="separator:a99d2da2559e11200c6b40c469e9977ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a7701a7c35f0ff156dba3e5f9c9f48e"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8c.html#a4a7701a7c35f0ff156dba3e5f9c9f48e">print_xpm</a> (xpm_map_t xpm, uint16_t x, uint16_t y)</td></tr>
-<tr class="memdesc:a4a7701a7c35f0ff156dba3e5f9c9f48e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints an image in xpm format.  <a href="graphics_8c.html#a4a7701a7c35f0ff156dba3e5f9c9f48e">More...</a><br /></td></tr>
-<tr class="separator:a4a7701a7c35f0ff156dba3e5f9c9f48e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a149b83afa4c646ca8f63f5fb36759e8b"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8c.html#a149b83afa4c646ca8f63f5fb36759e8b">vg_set_start</a> ()</td></tr>
 <tr class="memdesc:a149b83afa4c646ca8f63f5fb36759e8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines where the VRAM starts.  <a href="graphics_8c.html#a149b83afa4c646ca8f63f5fb36759e8b">More...</a><br /></td></tr>
 <tr class="separator:a149b83afa4c646ca8f63f5fb36759e8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b050d50b23adbbbd5a7ae66931e743a"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8c.html#a3b050d50b23adbbbd5a7ae66931e743a">normalize_color</a> (uint32_t color, uint32_t *new_color)</td></tr>
-<tr class="memdesc:a3b050d50b23adbbbd5a7ae66931e743a"><td class="mdescLeft">&#160;</td><td class="mdescRight">normalizes a color  <a href="graphics_8c.html#a3b050d50b23adbbbd5a7ae66931e743a">More...</a><br /></td></tr>
-<tr class="separator:a3b050d50b23adbbbd5a7ae66931e743a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a3b050d50b23adbbbd5a7ae66931e743a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b050d50b23adbbbd5a7ae66931e743a">&#9670;&nbsp;</a></span>normalize_color()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int() normalize_color </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>color</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t *&#160;</td>
-          <td class="paramname"><em>new_color</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>normalizes a color </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">color</td><td>color to normalize </td></tr>
-    <tr><td class="paramname">new_color</td><td>pointer to the normalized color </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int - 0 on success and 1 on failure </dd></dl>
-
-</div>
-</div>
-<a id="a4a7701a7c35f0ff156dba3e5f9c9f48e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a7701a7c35f0ff156dba3e5f9c9f48e">&#9670;&nbsp;</a></span>print_xpm()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int() print_xpm </td>
-          <td>(</td>
-          <td class="paramtype">xpm_map_t&#160;</td>
-          <td class="paramname"><em>xpm</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Prints an image in xpm format. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">xpm</td><td>xpm map </td></tr>
-    <tr><td class="paramname">x</td><td>x-coordinate to start </td></tr>
-    <tr><td class="paramname">y</td><td>y-coordinate to start </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int - 0 on success and 1 on failure </dd></dl>
-
-</div>
-</div>
 <a id="a55bb0148c696baca125c2c03bd585ae5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a55bb0148c696baca125c2c03bd585ae5">&#9670;&nbsp;</a></span>set_frame_buffer()</h2>
 

@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['teardown_520',['teardown',['../main_8c.html#abdcc0cd526b667641db5dc072cc162c4',1,'main.c']]],
-  ['timer_5fget_5fconf_521',['timer_get_conf',['../timer_8c.html#a703c60b40c8c49607d6ecb6fef82d27a',1,'timer.c']]],
-  ['timer_5fint_5fhandler_522',['timer_int_handler',['../timer_8c.html#a91a2072306c68353712a6b771287dc2c',1,'timer.c']]],
-  ['timer_5fset_5ffrequency_523',['timer_set_frequency',['../timer_8c.html#af2c04fa8e97ffa748fd3f612886a92a7',1,'timer.c']]],
-  ['timer_5fsubscribe_5fint_524',['timer_subscribe_int',['../group__i8254.html#gac57a7e1140a7e00ad95ac5488d2a671b',1,'timer_subscribe_int(uint8_t *bit_no):&#160;timer.c'],['../group__i8254.html#gac57a7e1140a7e00ad95ac5488d2a671b',1,'timer_subscribe_int(uint8_t *bit_no):&#160;timer.c']]],
-  ['timer_5funsubscribe_5fint_525',['timer_unsubscribe_int',['../timer_8c.html#afabd21de449be154dd65d5fdb2d8045d',1,'timer.c']]],
-  ['to_5fbin_526',['to_bin',['../rtc_8c.html#a1d13a7b61f6a4c2de714e6ff48cdba82',1,'to_bin(uint8_t bcd):&#160;rtc.c'],['../rtc_8h.html#a1d13a7b61f6a4c2de714e6ff48cdba82',1,'to_bin(uint8_t bcd):&#160;rtc.c']]]
+  ['update_5fkeyboard_5fstate_523',['update_keyboard_state',['../game_8c.html#aacf177f660c44528fc3926b3cd69fb88',1,'update_keyboard_state():&#160;game.c'],['../game_8h.html#aacf177f660c44528fc3926b3cd69fb88',1,'update_keyboard_state():&#160;game.c']]],
+  ['update_5fmouse_5fstate_524',['update_mouse_state',['../game_8c.html#aa577e78e2462033d486b5d8fa64c7bec',1,'update_mouse_state():&#160;game.c'],['../game_8h.html#aa577e78e2462033d486b5d8fa64c7bec',1,'update_mouse_state():&#160;game.c']]],
+  ['update_5frtc_5fstate_525',['update_rtc_state',['../game_8c.html#a1a2176ba0e79afd72c7bc2bf91b978f3',1,'update_rtc_state():&#160;game.c'],['../game_8h.html#a1a2176ba0e79afd72c7bc2bf91b978f3',1,'update_rtc_state():&#160;game.c']]],
+  ['update_5fsettings_5fstate_526',['update_settings_state',['../game_8c.html#a5db742ccada40ef765f6e6b4e242a962',1,'update_settings_state():&#160;game.c'],['../game_8h.html#a5db742ccada40ef765f6e6b4e242a962',1,'update_settings_state():&#160;game.c']]],
+  ['update_5ftimer_5fstate_527',['update_timer_state',['../game_8c.html#a2e7983abedd3fae94a24b4775a97210f',1,'update_timer_state():&#160;game.c'],['../game_8h.html#a2e7983abedd3fae94a24b4775a97210f',1,'update_timer_state():&#160;game.c']]],
+  ['util_5fget_5flsb_528',['util_get_LSB',['../utils_8c.html#a81621440b3d65680979425e39aa8c789',1,'utils.c']]],
+  ['util_5fget_5fmsb_529',['util_get_MSB',['../utils_8c.html#a6a880076cd2ec468834438b6e0c58836',1,'utils.c']]],
+  ['util_5fsys_5finb_530',['util_sys_inb',['../utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4',1,'utils.c']]]
 ];
