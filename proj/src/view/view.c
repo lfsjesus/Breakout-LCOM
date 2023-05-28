@@ -94,35 +94,32 @@ void draw_bricks() {
 
 void draw_new_frame() {
   switch (gameState){
-  case START:
-    draw_mouse();
-    break;
-  
-  case SETTINGS:
-    draw_setting_screen();
-    if (get_control_device() == MOUSE)
-      draw_mouse();  
-    break;
-  
-  case SCORE:
-    vg_draw_rectangle(100, 100, 10, 10, 0x00FF00);
-    break;
-  
-  case INIT:
-    draw_instruction();
-  case GAME:
-    draw_points();
-    draw_lives();
-    draw_paddle();
-    draw_bricks();
-    draw_ball();
-    draw_extra_ball();
-    draw_active_powerups();
-    break;
-  default:
-    break;
+    case START:
+      draw_mouse();
+      break;
+    case SETTINGS:
+      draw_setting_screen();
+      if (get_control_device() == MOUSE) {
+        draw_mouse();  
+      }
+      break;
+    case SCORE:
+      vg_draw_rectangle(100, 100, 10, 10, 0x00FF00);
+      break;
+    case INIT:
+      draw_instruction();
+    case GAME:
+      draw_points();
+      draw_lives();
+      draw_paddle();
+      draw_bricks();
+      draw_ball();
+      draw_extra_ball();
+      draw_active_powerups();
+      break;
+    default:
+      break;
   }
-
 }
 
 void draw_setting_screen() {

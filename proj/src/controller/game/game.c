@@ -7,7 +7,7 @@ extern uint32_t counter; // Timer counter
 
 SystemState systemState = RUNNING;
 GameState gameState = START;
-ControlDevice controlDevice =  MOUSE;
+ControlDevice controlDevice = MOUSE;
 
 extern vbe_mode_info_t mode_info;
 extern MouseInfo mouse_info;
@@ -16,7 +16,7 @@ extern Paddle mainPaddle;
 extern Ball mainBall;
 extern Ball extraBall;
 
-static uint8_t current_setting = 0; // Value between 0 and 5
+uint8_t current_setting = 0; // Value between 0 and 5
 
 uint8_t get_current_setting() {
     return current_setting;
@@ -31,31 +31,35 @@ void update_keyboard_state() {
     switch (gameState) {
     case START:
         switch (scancode) {
-        case ESC_BK_CODE:
-            systemState = EXIT;
-            break;
-        case P_BK_CODE:
-            gameState = GAME;
-            break;
-        case H_BK_CODE:
-            gameState = SETTINGS;
-            break;
-        case S_BK_CODE:
-            gameState = SCORE;
-            break;
-    }
+            case ESC_BK_CODE:
+                systemState = EXIT;
+                break;
+            case P_BK_CODE:
+                gameState = GAME;
+                break;
+            case H_BK_CODE:
+                gameState = SETTINGS;
+                break;
+            case S_BK_CODE:
+                gameState = SCORE;
+                break;
+        }
         break;
     case SETTINGS: 
-        update_settings_state();
+        if (controlDevice == KEYBOARD) {
+            settings_keyboard_state();
+            update_settings_state();
+        }
+        if (scancode == ESC_BK_CODE) gameState = START;
         break;
     default:
         switch (scancode){
-        case ESC_BK_CODE:
-            reset_game();
-            gameState = START;
-        default:
-            break;
-        }
+            case ESC_BK_CODE:
+                reset_game();
+                gameState = START;
+            default:
+                break;
+            }
         break;
     
 }
@@ -78,7 +82,10 @@ void update_mouse_state() {
             collision_paddle(&mainBall, &mainPaddle);
             break;
         case SETTINGS:
-            update_settings_state();
+            if (controlDevice == MOUSE) {
+                settings_mouse_state();
+                update_settings_state();
+            }
             break;
         default:
             break;
@@ -125,15 +132,10 @@ void refresh_buttons_state() {
 }
 
 void update_settings_state() {
-    switch (controlDevice) {
-        case KEYBOARD:
-            settings_keyboard_state();
-            break;
-        case MOUSE:
-            if(scancode == ESC_BK_CODE) gameState = START;
-            settings_mouse_state();
-            break;
-    }
+    /*
+    Havia um problema antes quando nao confirmavamos o controlDevice antes de chamar a função. Como 
+    é feito em cada int do mouse, o controlDevice era alterado para KEYBOARD e depois imediatamente para MOUSE porque o keyboard nao enviava nada.
+    */
     setup_ball(current_setting);
     setup_paddle(current_setting);
     settings_change_control_device();
@@ -149,6 +151,7 @@ void settings_keyboard_state() {
             break;
         case A_BK_CODE:
             current_setting = (current_setting / 2) * 2;
+            printf("CS: %d", current_setting);
             break;
         case D_BK_CODE:
             current_setting = (current_setting / 2) * 2 + 1;
@@ -165,6 +168,7 @@ void settings_mouse_state() {
         }
         else if (mouse_info.x >= 332 && mouse_info.x <= 396 && mouse_info.y >= 260 && mouse_info.y <= 320) {
             current_setting = 1;
+            printf("CS: %d", current_setting);
         }
         else if (mouse_info.x >= 406 && mouse_info.x <= 470 && mouse_info.y >= 260 && mouse_info.y <= 320) {
             current_setting = 2;
