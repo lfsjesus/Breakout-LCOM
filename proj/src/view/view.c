@@ -143,7 +143,7 @@ void draw_points() {
 }
 
 void draw_instruction() {
-  draw_text("MOVE AND SHOOT", 200, 470);
+  draw_text("MOVE AND SHOOT", 250, 470);
 }
 
 void draw_text(char *text, uint16_t x, uint16_t y) {
