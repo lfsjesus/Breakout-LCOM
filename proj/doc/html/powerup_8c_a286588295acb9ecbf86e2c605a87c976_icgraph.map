@@ -1,0 +1,8 @@
+<map id="extra_ball_active" name="extra_ball_active">
+<area shape="rect" id="node1" title="Checks if extra ball is active." alt="" coords="875,31,994,56"/>
+<area shape="rect" id="node2" href="$ball_8c.html#ab103dd4a073d7b68f95063a4d2ba870a" title="Handles ball&#45;extraBall collisions." alt="" coords="696,5,827,31"/>
+<area shape="rect" id="node4" href="$game_8c.html#a0a6313b337713e89579587af280c3b10" title="Handles the single player game mode." alt="" coords="342,31,481,56"/>
+<area shape="rect" id="node3" href="$ball_8c.html#a508436ba528b47e3e165077433834e1a" title="Changes the position of the ball." alt="" coords="529,5,648,31"/>
+<area shape="rect" id="node5" href="$game_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates states according to timer." alt="" coords="162,31,294,56"/>
+<area shape="rect" id="node6" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,31,114,56"/>
+</map>

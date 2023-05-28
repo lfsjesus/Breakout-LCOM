@@ -1,0 +1,8 @@
+<map id="check_powerup_collision" name="check_powerup_collision">
+<area shape="rect" id="node1" title="Handles active power ups collision with the paddle." alt="" coords="5,80,172,106"/>
+<area shape="rect" id="node2" href="$powerup_8c.html#ac1a5e100f7833511a370a46a39b1d48c" title="Activates the power up according to its type." alt="" coords="220,80,343,106"/>
+<area shape="rect" id="node3" href="$ball_8c.html#a0ef8d3b88ebcd004cfc25de72a508948" title="Adds a new ball to the game." alt="" coords="422,5,491,31"/>
+<area shape="rect" id="node4" href="$brick_8c.html#a9a1c82217e23b5f51348040c89b3915f" title="Reduces 4hp from red bricks." alt="" coords="391,55,522,80"/>
+<area shape="rect" id="node5" href="$powerup_8c.html#a2d407899d10056dc2f169de1d5bddb2f" title="Sets the powerup active to false." alt="" coords="398,104,516,130"/>
+<area shape="rect" id="node6" href="$paddle_8c.html#a32f3f6bc23dda8d7767a2aeaef573ab2" title="Increases the player&#39;s number of lives by 1." alt="" coords="406,153,507,179"/>
+</map>

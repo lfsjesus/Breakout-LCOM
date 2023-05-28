@@ -1,0 +1,5 @@
+<map id="draw_lives" name="draw_lives">
+<area shape="rect" id="node1" title="Draws the sprite for the lives of the player." alt="" coords="5,31,89,56"/>
+<area shape="rect" id="node2" href="$view_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Draws sprite xpm." alt="" coords="137,5,257,31"/>
+<area shape="rect" id="node3" href="$paddle_8c.html#a2feb7845114b3cf5ead59c6a7f95894e" title="Gets the player&#39;s number of lives." alt="" coords="162,55,232,80"/>
+</map>

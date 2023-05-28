@@ -1,0 +1,5 @@
+<map id="settings_keyboard_state" name="settings_keyboard_state">
+<area shape="rect" id="node1" title="Sets the settings according to key pressed in the keyboard." alt="" coords="366,5,529,31"/>
+<area shape="rect" id="node2" href="$game_8c.html#aacf177f660c44528fc3926b3cd69fb88" title="Updates states according to keyboard usage." alt="" coords="162,5,318,31"/>
+<area shape="rect" id="node3" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,31"/>
+</map>

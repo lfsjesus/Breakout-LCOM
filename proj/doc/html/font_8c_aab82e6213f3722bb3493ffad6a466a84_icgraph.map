@@ -1,0 +1,10 @@
+<map id="get_number" name="get_number">
+<area shape="rect" id="node1" title="Get the sprite of a number." alt="" coords="871,31,960,56"/>
+<area shape="rect" id="node2" href="$view_8c.html#ac7324359ece91c5a3470fde8bf5778f5" title="Draws the sprite for the points (all digits)" alt="" coords="732,5,823,31"/>
+<area shape="rect" id="node6" href="$view_8c.html#a407acb6cf3d2c21b8c120a1e0b8e6abc" title="Draws the sprite for text." alt="" coords="738,55,817,80"/>
+<area shape="rect" id="node3" href="$view_8c.html#a8fe6fe827e29e6b0cb98cda00dc38355" title="Draws the frame according to the game state." alt="" coords="342,55,462,80"/>
+<area shape="rect" id="node4" href="$game_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates states according to timer." alt="" coords="162,55,294,80"/>
+<area shape="rect" id="node5" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,55,114,80"/>
+<area shape="rect" id="node7" href="$view_8c.html#a2057607b5b36aac44a48005ee5bfa533" title="Draws the sprite for the game instructions." alt="" coords="539,55,655,80"/>
+<area shape="rect" id="node8" href="$view_8c.html#a75838abc9205258a9073df57e3c3f567" title="Draws the sprite for the leaderboard records." alt="" coords="510,104,684,130"/>
+</map>

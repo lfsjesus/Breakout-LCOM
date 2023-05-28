@@ -1,0 +1,8 @@
+<map id="setup_paddle" name="setup_paddle">
+<area shape="rect" id="node1" title="Set up the paddle object for the game." alt="" coords="563,31,662,56"/>
+<area shape="rect" id="node2" href="$main_8c.html#a05848de25ac2dbec233935058a1d24b4" title=" " alt="" coords="421,5,460,31"/>
+<area shape="rect" id="node4" href="$game_8c.html#a5db742ccada40ef765f6e6b4e242a962" title="Sets up the game according to the settings." alt="" coords="366,55,515,80"/>
+<area shape="rect" id="node3" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,55,114,80"/>
+<area shape="rect" id="node5" href="$game_8c.html#aacf177f660c44528fc3926b3cd69fb88" title="Updates states according to keyboard usage." alt="" coords="162,55,318,80"/>
+<area shape="rect" id="node6" href="$game_8c.html#aa577e78e2462033d486b5d8fa64c7bec" title="Updates states according to mouse usage." alt="" coords="169,104,311,130"/>
+</map>

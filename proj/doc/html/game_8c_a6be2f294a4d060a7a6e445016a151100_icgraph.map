@@ -1,0 +1,7 @@
+<map id="reset_game" name="reset_game">
+<area shape="rect" id="node1" title="Resets the game (ball, paddle, bricks, lives and points)" alt="" coords="553,31,643,56"/>
+<area shape="rect" id="node2" href="$game_8c.html#a0a6313b337713e89579587af280c3b10" title="Handles the single player game mode." alt="" coords="366,5,505,31"/>
+<area shape="rect" id="node5" href="$game_8c.html#aacf177f660c44528fc3926b3cd69fb88" title="Updates states according to keyboard usage." alt="" coords="162,56,318,82"/>
+<area shape="rect" id="node3" href="$game_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates states according to timer." alt="" coords="174,7,306,32"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,32,114,58"/>
+</map>

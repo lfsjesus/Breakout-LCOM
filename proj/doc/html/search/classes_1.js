@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['leaderboardrecord_370',['LeaderboardRecord',['../struct_leaderboard_record.html',1,'']]]
+  ['leaderboardrecord_0',['LeaderboardRecord',['../struct_leaderboard_record.html',1,'']]]
 ];

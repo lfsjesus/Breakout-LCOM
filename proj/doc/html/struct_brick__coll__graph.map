@@ -1,0 +1,4 @@
+<map id="Brick" name="Brick">
+<area shape="rect" id="node1" title="struct used for brick objects" alt="" coords="7,94,59,120"/>
+<area shape="rect" id="node2" href="$struct_sprite.html" title="Struct for Sprite objects." alt="" coords="5,5,61,31"/>
+</map>

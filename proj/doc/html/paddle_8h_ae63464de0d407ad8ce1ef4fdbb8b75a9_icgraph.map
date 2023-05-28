@@ -1,0 +1,9 @@
+<map id="mouse_move_paddle" name="mouse_move_paddle">
+<area shape="rect" id="node1" title="Handles paddle movement with mouse." alt="" coords="700,29,844,55"/>
+<area shape="rect" id="node2" href="$paddle_8c.html#a13a51e741b552975b15c22cfa98ed36f" title="Checks if paddle should be moved with keyboard or mouse and handles it accordingly." alt="" coords="553,29,652,55"/>
+<area shape="rect" id="node3" href="$paddle_8c.html#a0b86cef063fb878032d6c999bffa1e77" title="Moves paddle and ball according to the paddle." alt="" coords="352,29,505,55"/>
+<area shape="rect" id="node4" href="$game_8c.html#aa577e78e2462033d486b5d8fa64c7bec" title="Updates states according to mouse usage." alt="" coords="162,5,304,31"/>
+<area shape="rect" id="node7" href="$game_8c.html#a0a6313b337713e89579587af280c3b10" title="Handles the single player game mode." alt="" coords="359,79,498,104"/>
+<area shape="rect" id="node6" href="$game_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates states according to timer." alt="" coords="167,55,299,80"/>
+<area shape="rect" id="node5" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,31,114,56"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="collision_paddle" name="collision_paddle">
+<area shape="rect" id="node1" title="Handles ball&#45;paddle collisions." alt="" coords="699,31,812,56"/>
+<area shape="rect" id="node2" href="$ball_8c.html#a508436ba528b47e3e165077433834e1a" title="Changes the position of the ball." alt="" coords="532,5,651,31"/>
+<area shape="rect" id="node6" href="$game_8c.html#aa577e78e2462033d486b5d8fa64c7bec" title="Updates states according to mouse usage." alt="" coords="342,56,484,82"/>
+<area shape="rect" id="node3" href="$game_8c.html#a0a6313b337713e89579587af280c3b10" title="Handles the single player game mode." alt="" coords="344,5,483,31"/>
+<area shape="rect" id="node4" href="$game_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates states according to timer." alt="" coords="162,5,294,31"/>
+<area shape="rect" id="node5" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,31,114,56"/>
+</map>

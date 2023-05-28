@@ -1,0 +1,4 @@
+<map id="collision_extra_ball" name="collision_extra_ball">
+<area shape="rect" id="node1" title="Handles ball&#45;extraBall collisions." alt="" coords="5,5,137,31"/>
+<area shape="rect" id="node2" href="$powerup_8c.html#a286588295acb9ecbf86e2c605a87c976" title="Checks if extra ball is active." alt="" coords="185,5,304,31"/>
+</map>

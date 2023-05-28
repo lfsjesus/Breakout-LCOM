@@ -1,0 +1,6 @@
+<map id="kbc_ih" name="kbc_ih">
+<area shape="rect" id="node1" title="Reads the output buffer." alt="" coords="5,31,65,56"/>
+<area shape="rect" id="node2" href="$kbc_8c.html#ab9660ae8733cfa002aed76e370944ab7" title="Reads the output (10 attempts)" alt="" coords="113,31,202,56"/>
+<area shape="rect" id="node3" href="$kbc_8c.html#a7a3298d751903e7896747bb6413ad4d6" title="Reads the status register." alt="" coords="250,5,389,31"/>
+<area shape="rect" id="node4" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="437,31,528,56"/>
+</map>

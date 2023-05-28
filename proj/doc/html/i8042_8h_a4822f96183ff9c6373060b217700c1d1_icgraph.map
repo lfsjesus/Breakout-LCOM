@@ -1,0 +1,8 @@
+<map id="write_kbc_command" name="write_kbc_command">
+<area shape="rect" id="node1" title="Tries to read the output (3 attempts)" alt="" coords="453,31,595,56"/>
+<area shape="rect" id="node2" href="$keyboard_8c.html#a58017421d19bb2004825d339ebb600fa" title="Restores the keyboard." alt="" coords="284,5,405,31"/>
+<area shape="rect" id="node3" href="$mouse_8c.html#a850e22e760722ec65c9fa5d3f5aa23ce" title="configures the mouse" alt="" coords="294,55,396,80"/>
+<area shape="rect" id="node4" href="$main_8c.html#a05848de25ac2dbec233935058a1d24b4" title=" " alt="" coords="180,29,218,55"/>
+<area shape="rect" id="node6" href="$main_8c.html#abdcc0cd526b667641db5dc072cc162c4" title=" " alt="" coords="162,79,236,104"/>
+<area shape="rect" id="node5" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,55,114,80"/>
+</map>

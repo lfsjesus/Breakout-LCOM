@@ -1,0 +1,7 @@
+<map id="activate_powerup" name="activate_powerup">
+<area shape="rect" id="node1" title="Activates the power up according to its type." alt="" coords="5,80,129,106"/>
+<area shape="rect" id="node2" href="$ball_8c.html#a0ef8d3b88ebcd004cfc25de72a508948" title="Adds a new ball to the game." alt="" coords="208,5,277,31"/>
+<area shape="rect" id="node3" href="$brick_8c.html#a9a1c82217e23b5f51348040c89b3915f" title="Reduces 4hp from red bricks." alt="" coords="177,55,308,80"/>
+<area shape="rect" id="node4" href="$powerup_8c.html#a2d407899d10056dc2f169de1d5bddb2f" title="Sets the powerup active to false." alt="" coords="183,104,302,130"/>
+<area shape="rect" id="node5" href="$paddle_8c.html#a32f3f6bc23dda8d7767a2aeaef573ab2" title="Increases the player&#39;s number of lives by 1." alt="" coords="192,153,293,179"/>
+</map>

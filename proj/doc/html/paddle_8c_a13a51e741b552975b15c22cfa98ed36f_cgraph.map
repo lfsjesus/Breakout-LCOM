@@ -1,0 +1,5 @@
+<map id="move_paddle" name="move_paddle">
+<area shape="rect" id="node1" title="Checks if paddle should be moved with keyboard or mouse and handles it accordingly." alt="" coords="5,31,104,56"/>
+<area shape="rect" id="node2" href="$paddle_8c.html#a0ba0d11ced7e1faf9e36323fb12dc7d5" title=" " alt="" coords="152,5,310,31"/>
+<area shape="rect" id="node3" href="$paddle_8c.html#ae63464de0d407ad8ce1ef4fdbb8b75a9" title="Handles paddle movement with mouse." alt="" coords="159,55,303,80"/>
+</map>

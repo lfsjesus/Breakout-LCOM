@@ -1,0 +1,6 @@
+<map id="move_active_powerups" name="move_active_powerups">
+<area shape="rect" id="node1" title="Moves all active powerup down the screen." alt="" coords="529,5,688,31"/>
+<area shape="rect" id="node2" href="$game_8c.html#a0a6313b337713e89579587af280c3b10" title="Handles the single player game mode." alt="" coords="342,5,481,31"/>
+<area shape="rect" id="node3" href="$game_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates states according to timer." alt="" coords="162,5,294,31"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,31"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="refresh_buttons_state" name="refresh_buttons_state">
+<area shape="rect" id="node1" title="Updates states according to mouse clicks." alt="" coords="5,5,153,31"/>
+<area shape="rect" id="node2" href="$leaderboard_8c.html#a0490b1f8637d0d36b255b93ac016ff25" title="Fetches the leaderboard.txt file to fill game&#39;s leaderboard." alt="" coords="201,5,309,31"/>
+<area shape="rect" id="node3" href="$leaderboard_8c.html#abda4142f0486576d2e0ae6164325d761" title=" " alt="" coords="357,5,460,31"/>
+</map>

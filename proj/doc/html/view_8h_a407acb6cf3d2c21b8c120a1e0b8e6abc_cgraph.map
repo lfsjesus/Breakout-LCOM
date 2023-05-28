@@ -1,0 +1,6 @@
+<map id="draw_text" name="draw_text">
+<area shape="rect" id="node1" title="Draws the sprite for text." alt="" coords="5,55,84,80"/>
+<area shape="rect" id="node2" href="$view_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Draws sprite xpm." alt="" coords="132,5,252,31"/>
+<area shape="rect" id="node3" href="$font_8c.html#aba2de35a9be9fb56801de427c0c0d52e" title="Get the sprite of a char letter." alt="" coords="156,55,228,80"/>
+<area shape="rect" id="node4" href="$font_8c.html#aab82e6213f3722bb3493ffad6a466a84" title="Get the sprite of a number." alt="" coords="147,104,237,130"/>
+</map>

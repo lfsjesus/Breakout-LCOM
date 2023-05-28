@@ -1,0 +1,7 @@
+<map id="settings_change_control_device" name="settings_change_control_device">
+<area shape="rect" id="node1" title="Sets the control device (mouse or keyboard) according to settings." alt="" coords="563,23,726,64"/>
+<area shape="rect" id="node2" href="$game_8c.html#a5db742ccada40ef765f6e6b4e242a962" title="Sets up the game according to the settings." alt="" coords="366,31,515,56"/>
+<area shape="rect" id="node3" href="$game_8c.html#aacf177f660c44528fc3926b3cd69fb88" title="Updates states according to keyboard usage." alt="" coords="162,5,318,31"/>
+<area shape="rect" id="node5" href="$game_8c.html#aa577e78e2462033d486b5d8fa64c7bec" title="Updates states according to mouse usage." alt="" coords="169,55,311,80"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,31,114,56"/>
+</map>

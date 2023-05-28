@@ -1,0 +1,13 @@
+<map id="src/controller/game/paddle.h" name="src/controller/game/paddle.h">
+<area shape="rect" id="node1" title=" " alt="" coords="276,5,408,46"/>
+<area shape="rect" id="node2" href="$ball_8h.html" title=" " alt="" coords="224,94,356,135"/>
+<area shape="rect" id="node4" href="$game_8h.html" title=" " alt="" coords="197,271,330,312"/>
+<area shape="rect" id="node9" href="$powerup_8h.html" title=" " alt="" coords="328,183,460,223"/>
+<area shape="rect" id="node11" href="$paddle_8c.html" title=" " alt="" coords="432,94,564,135"/>
+<area shape="rect" id="node3" href="$ball_8c.html" title=" " alt="" coords="120,183,252,223"/>
+<area shape="rect" id="node5" href="$game_8c.html" title=" " alt="" coords="5,360,138,401"/>
+<area shape="rect" id="node6" href="$main_8c.html" title=" " alt="" coords="162,368,245,393"/>
+<area shape="rect" id="node7" href="$view_8h.html" title=" " alt="" coords="268,368,379,393"/>
+<area shape="rect" id="node8" href="$view_8c.html" title=" " alt="" coords="268,449,379,474"/>
+<area shape="rect" id="node10" href="$powerup_8c.html" title=" " alt="" coords="353,271,486,312"/>
+</map>

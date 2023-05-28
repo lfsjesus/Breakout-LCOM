@@ -1,0 +1,9 @@
+<map id="read_output" name="read_output">
+<area shape="rect" id="node1" title="Reads the output (10 attempts)" alt="" coords="535,55,625,80"/>
+<area shape="rect" id="node2" href="$keyboard_8c.html#aea970a154161a35f6894898a092ed70a" title="Reads the output buffer." alt="" coords="397,5,456,31"/>
+<area shape="rect" id="node5" href="$keyboard_8c.html#a58017421d19bb2004825d339ebb600fa" title="Restores the keyboard." alt="" coords="366,55,487,80"/>
+<area shape="rect" id="node6" href="$mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="When interrupt handler is called, reads a new byte from the mouse." alt="" coords="388,104,465,130"/>
+<area shape="rect" id="node3" href="$game_8c.html#aacf177f660c44528fc3926b3cd69fb88" title="Updates states according to keyboard usage." alt="" coords="162,19,318,44"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,56,114,82"/>
+<area shape="rect" id="node7" href="$game_8c.html#aa577e78e2462033d486b5d8fa64c7bec" title="Updates states according to mouse usage." alt="" coords="169,80,311,106"/>
+</map>

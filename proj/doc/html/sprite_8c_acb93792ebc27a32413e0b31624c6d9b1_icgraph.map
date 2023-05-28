@@ -1,0 +1,8 @@
+<map id="create_sprite_xpm" name="create_sprite_xpm">
+<area shape="rect" id="node1" title="Builds a sprite with a XPM with colors in direct mode." alt="" coords="584,56,712,82"/>
+<area shape="rect" id="node2" href="$font_8c.html#ab67c79e0a214404edb8d9574302f000e" title="initializes letter sprites" alt="" coords="395,5,536,31"/>
+<area shape="rect" id="node3" href="$model_8c.html#a834200084177d31e41dd9b28754a3312" title="Set up all sprite object." alt="" coords="248,56,347,82"/>
+<area shape="rect" id="node6" href="$font_8c.html#af2747cb79a86ee423297970e88165c82" title="initializes number sprimtes" alt="" coords="398,107,533,132"/>
+<area shape="rect" id="node4" href="$main_8c.html#a05848de25ac2dbec233935058a1d24b4" title=" " alt="" coords="162,56,200,82"/>
+<area shape="rect" id="node5" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,56,114,82"/>
+</map>

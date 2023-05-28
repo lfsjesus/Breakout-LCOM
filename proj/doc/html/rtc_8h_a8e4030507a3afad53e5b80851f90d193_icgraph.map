@@ -1,0 +1,12 @@
+<map id="rtc_output" name="rtc_output">
+<area shape="rect" id="node1" title=" " alt="" coords="790,55,869,80"/>
+<area shape="rect" id="node2" href="$rtc_8c.html#ad887ae657d7170fc8a5c4870a17dab71" title=" " alt="" coords="651,5,730,31"/>
+<area shape="rect" id="node7" href="$rtc_8c.html#a500758aaee53d35bbcd5309fcfb078a5" title=" " alt="" coords="639,55,742,80"/>
+<area shape="rect" id="node8" href="$rtc_8c.html#a05f8a643eaa3f15f433fcf21639090a0" title=" " alt="" coords="508,80,591,106"/>
+<area shape="rect" id="node3" href="$rtc_8c.html#ae90692a7bc8bfad938b5e01aa19543ea" title=" " alt="" coords="362,31,440,56"/>
+<area shape="rect" id="node6" href="$rtc_8c.html#a118d5dfa4a65e94bd4c3a25bae05706b" title=" " alt="" coords="509,31,590,56"/>
+<area shape="rect" id="node4" href="$main_8c.html#a05848de25ac2dbec233935058a1d24b4" title=" " alt="" coords="209,31,247,56"/>
+<area shape="rect" id="node5" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,56,114,82"/>
+<area shape="rect" id="node9" href="$game_8c.html#a1a2176ba0e79afd72c7bc2bf91b978f3" title="Updates RTC info when needed." alt="" coords="342,80,460,106"/>
+<area shape="rect" id="node10" href="$game_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates states according to timer." alt="" coords="162,80,294,106"/>
+</map>

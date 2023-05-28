@@ -1,0 +1,4 @@
+<map id="draw_leaderboard_screen" name="draw_leaderboard_screen">
+<area shape="rect" id="node1" title="Draws the sprite for the leaderboard over screen." alt="" coords="5,5,175,31"/>
+<area shape="rect" id="node2" href="$view_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Draws sprite xpm." alt="" coords="223,5,343,31"/>
+</map>

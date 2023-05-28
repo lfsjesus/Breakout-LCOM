@@ -1,0 +1,8 @@
+<map id="draw_leaderboard_records" name="draw_leaderboard_records">
+<area shape="rect" id="node1" title="Draws the sprite for the leaderboard records." alt="" coords="5,80,179,106"/>
+<area shape="rect" id="node2" href="$view_8c.html#a407acb6cf3d2c21b8c120a1e0b8e6abc" title="Draws the sprite for text." alt="" coords="247,55,326,80"/>
+<area shape="rect" id="node6" href="$leaderboard_8c.html#ae29bb5a08de4f807fc3cae69e0071fa8" title="Get the number of entries in the leaderboard that are filled." alt="" coords="227,104,346,130"/>
+<area shape="rect" id="node3" href="$view_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Draws sprite xpm." alt="" coords="394,5,514,31"/>
+<area shape="rect" id="node4" href="$font_8c.html#aba2de35a9be9fb56801de427c0c0d52e" title="Get the sprite of a char letter." alt="" coords="419,55,490,80"/>
+<area shape="rect" id="node5" href="$font_8c.html#aab82e6213f3722bb3493ffad6a466a84" title="Get the sprite of a number." alt="" coords="410,104,499,130"/>
+</map>

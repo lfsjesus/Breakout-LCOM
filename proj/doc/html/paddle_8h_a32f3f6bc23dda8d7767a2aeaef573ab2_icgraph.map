@@ -1,0 +1,9 @@
+<map id="increaseLives" name="increaseLives">
+<area shape="rect" id="node1" title="Increases the player&#39;s number of lives by 1." alt="" coords="1081,5,1183,31"/>
+<area shape="rect" id="node2" href="$powerup_8c.html#ac1a5e100f7833511a370a46a39b1d48c" title="Activates the power up according to its type." alt="" coords="910,5,1033,31"/>
+<area shape="rect" id="node3" href="$powerup_8c.html#a7be796257b5053fef7c50bc096f5f724" title="Handles active power ups collision with the paddle." alt="" coords="696,5,862,31"/>
+<area shape="rect" id="node4" href="$ball_8c.html#a508436ba528b47e3e165077433834e1a" title="Changes the position of the ball." alt="" coords="529,5,648,31"/>
+<area shape="rect" id="node5" href="$game_8c.html#a0a6313b337713e89579587af280c3b10" title="Handles the single player game mode." alt="" coords="342,5,481,31"/>
+<area shape="rect" id="node6" href="$game_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates states according to timer." alt="" coords="162,5,294,31"/>
+<area shape="rect" id="node7" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,31"/>
+</map>

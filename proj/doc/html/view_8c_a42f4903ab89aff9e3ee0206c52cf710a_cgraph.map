@@ -1,0 +1,4 @@
+<map id="draw_mouse" name="draw_mouse">
+<area shape="rect" id="node1" title="Draws the sprite for the mouse." alt="" coords="5,5,101,31"/>
+<area shape="rect" id="node2" href="$view_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Draws sprite xpm." alt="" coords="149,5,269,31"/>
+</map>

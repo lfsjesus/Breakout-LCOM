@@ -1,0 +1,10 @@
+<map id="leaderboard_fill" name="leaderboard_fill">
+<area shape="rect" id="node1" title="Fetches the leaderboard.txt file to fill game&#39;s leaderboard." alt="" coords="764,56,872,82"/>
+<area shape="rect" id="node2" href="$leaderboard_8c.html#ae515f38070422854c3c4c5edd992b144" title="Adds a new record to the leaderboard table if it &quot;fits&quot; there or if it is better than any one." alt="" coords="556,7,716,32"/>
+<area shape="rect" id="node6" href="$game_8c.html#a579e50623674c04eea7e20a6d3bad602" title="Updates states according to mouse clicks." alt="" coords="562,56,710,82"/>
+<area shape="rect" id="node8" href="$game_8c.html#aacf177f660c44528fc3926b3cd69fb88" title="Updates states according to keyboard usage." alt="" coords="162,107,318,132"/>
+<area shape="rect" id="node3" href="$game_8c.html#a0a6313b337713e89579587af280c3b10" title="Handles the single player game mode." alt="" coords="368,7,507,32"/>
+<area shape="rect" id="node4" href="$game_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates states according to timer." alt="" coords="174,5,306,31"/>
+<area shape="rect" id="node5" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,56,114,82"/>
+<area shape="rect" id="node7" href="$game_8c.html#aa577e78e2462033d486b5d8fa64c7bec" title="Updates states according to mouse usage." alt="" coords="366,56,508,82"/>
+</map>

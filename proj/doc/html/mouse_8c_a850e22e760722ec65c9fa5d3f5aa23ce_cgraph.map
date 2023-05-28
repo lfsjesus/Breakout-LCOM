@@ -1,0 +1,6 @@
+<map id="mouse_config" name="mouse_config">
+<area shape="rect" id="node1" title="configures the mouse" alt="" coords="5,5,108,31"/>
+<area shape="rect" id="node2" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="532,5,623,31"/>
+<area shape="rect" id="node3" href="$kbc_8c.html#a4822f96183ff9c6373060b217700c1d1" title="Tries to read the output (3 attempts)" alt="" coords="156,31,297,56"/>
+<area shape="rect" id="node4" href="$kbc_8c.html#a7a3298d751903e7896747bb6413ad4d6" title="Reads the status register." alt="" coords="345,31,484,56"/>
+</map>

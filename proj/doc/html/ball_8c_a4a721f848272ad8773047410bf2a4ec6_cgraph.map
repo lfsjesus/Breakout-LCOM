@@ -1,0 +1,6 @@
+<map id="collision_brick" name="collision_brick">
+<area shape="rect" id="node1" title="Handles ball&#45;brick collisions." alt="" coords="5,31,109,56"/>
+<area shape="rect" id="node2" href="$brick_8c.html#aed81100f4ddae20514512ff8d38f05b8" title="Decreases the hp of the brick by 1. If the hp is 0 after decreasing, removes brick and updates brick ..." alt="" coords="165,5,261,31"/>
+<area shape="rect" id="node4" href="$paddle_8c.html#a5af081c1f2abbee362b5f4b1db4f0e91" title="Increases the player points by 1." alt="" coords="157,55,269,80"/>
+<area shape="rect" id="node3" href="$model_8c.html#af64ce8a223796a2d56b0bea24d83ecd2" title="decrements the brick_counter variable by 1" alt="" coords="317,5,475,31"/>
+</map>

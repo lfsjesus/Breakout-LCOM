@@ -1,0 +1,10 @@
+<map id="reset_game" name="reset_game">
+<area shape="rect" id="node1" title="Resets the game (ball, paddle, bricks, lives and points)" alt="" coords="5,129,95,155"/>
+<area shape="rect" id="node2" href="$ball_8c.html#a95d33fc3d7290242b72731dc4524fe2c" title="Resets the ball." alt="" coords="161,5,238,31"/>
+<area shape="rect" id="node3" href="$paddle_8c.html#ad9200a237920fe22c7e50f6399356499" title="Sets the player&#39;s number of lives to 3." alt="" coords="157,55,242,80"/>
+<area shape="rect" id="node4" href="$paddle_8c.html#a95a842cdb72284ac221dcacb7867accc" title="Resets the paddle to the position (350, 550)" alt="" coords="152,104,247,130"/>
+<area shape="rect" id="node5" href="$paddle_8c.html#a9c07b5cb8510a64c285bacc886b028e2" title="Sets the player points to 0." alt="" coords="153,153,246,179"/>
+<area shape="rect" id="node6" href="$powerup_8c.html#ae18a1f2d6efc0fbddb64441cb419ab74" title=" " alt="" coords="143,203,256,228"/>
+<area shape="rect" id="node8" href="$model_8c.html#ad71d452a81792e39bdc70d6dbf346a90" title="Set the up bricks object." alt="" coords="152,252,247,278"/>
+<area shape="rect" id="node7" href="$ball_8c.html#abbb57e2edcdbaf0f9cab1a61d6f5846f" title="Disables a ball." alt="" coords="304,203,429,228"/>
+</map>

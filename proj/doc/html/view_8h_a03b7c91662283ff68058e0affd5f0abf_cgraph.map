@@ -1,0 +1,4 @@
+<map id="draw_bricks" name="draw_bricks">
+<area shape="rect" id="node1" title="Draws the sprites for all the bricks according to brick&#39;s HP (health&#45;points)" alt="" coords="5,5,97,31"/>
+<area shape="rect" id="node2" href="$view_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Draws sprite xpm." alt="" coords="145,5,265,31"/>
+</map>

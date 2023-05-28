@@ -1,0 +1,4 @@
+<map id="init_alphabet_sprites" name="init_alphabet_sprites">
+<area shape="rect" id="node1" title="initializes letter sprites" alt="" coords="5,5,146,31"/>
+<area shape="rect" id="node2" href="$sprite_8c.html#acb93792ebc27a32413e0b31624c6d9b1" title="Builds a sprite with a XPM with colors in direct mode." alt="" coords="194,5,322,31"/>
+</map>

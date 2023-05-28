@@ -1,0 +1,9 @@
+<map id="disable_extra_ball" name="disable_extra_ball">
+<area shape="rect" id="node1" title="Disables a ball." alt="" coords="852,81,977,107"/>
+<area shape="rect" id="node2" href="$powerup_8c.html#ae18a1f2d6efc0fbddb64441cb419ab74" title=" " alt="" coords="691,56,804,82"/>
+<area shape="rect" id="node4" href="$game_8c.html#a0a6313b337713e89579587af280c3b10" title="Handles the single player game mode." alt="" coords="366,56,505,82"/>
+<area shape="rect" id="node3" href="$game_8c.html#a6be2f294a4d060a7a6e445016a151100" title="Resets the game (ball, paddle, bricks, lives and points)" alt="" coords="553,5,643,31"/>
+<area shape="rect" id="node7" href="$game_8c.html#aacf177f660c44528fc3926b3cd69fb88" title="Updates states according to keyboard usage." alt="" coords="162,7,318,32"/>
+<area shape="rect" id="node5" href="$game_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates states according to timer." alt="" coords="174,56,306,82"/>
+<area shape="rect" id="node6" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,32,114,58"/>
+</map>

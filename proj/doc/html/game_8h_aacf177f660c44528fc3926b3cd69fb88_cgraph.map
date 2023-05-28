@@ -1,0 +1,22 @@
+<map id="update_keyboard_state" name="update_keyboard_state">
+<area shape="rect" id="node1" title="Updates states according to keyboard usage." alt="" coords="5,228,162,254"/>
+<area shape="rect" id="node2" href="$keyboard_8c.html#aea970a154161a35f6894898a092ed70a" title="Reads the output buffer." alt="" coords="262,56,321,82"/>
+<area shape="rect" id="node6" href="$leaderboard_8c.html#a0490b1f8637d0d36b255b93ac016ff25" title="Fetches the leaderboard.txt file to fill game&#39;s leaderboard." alt="" coords="237,129,346,155"/>
+<area shape="rect" id="node8" href="$game_8c.html#a6be2f294a4d060a7a6e445016a151100" title="Resets the game (ball, paddle, bricks, lives and points)" alt="" coords="247,228,336,254"/>
+<area shape="rect" id="node16" href="$game_8c.html#a65ac0aa0a8eeab6a0935ebbde97e5aff" title="Sets the settings according to key pressed in the keyboard." alt="" coords="210,277,373,303"/>
+<area shape="rect" id="node17" href="$game_8c.html#a5db742ccada40ef765f6e6b4e242a962" title="Sets up the game according to the settings." alt="" coords="217,461,366,487"/>
+<area shape="rect" id="node3" href="$kbc_8c.html#ab9660ae8733cfa002aed76e370944ab7" title="Reads the output (10 attempts)" alt="" coords="458,31,547,56"/>
+<area shape="rect" id="node4" href="$kbc_8c.html#a7a3298d751903e7896747bb6413ad4d6" title="Reads the status register." alt="" coords="631,5,771,31"/>
+<area shape="rect" id="node5" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="819,31,909,56"/>
+<area shape="rect" id="node7" href="$leaderboard_8c.html#abda4142f0486576d2e0ae6164325d761" title=" " alt="" coords="451,80,554,106"/>
+<area shape="rect" id="node9" href="$ball_8c.html#a95d33fc3d7290242b72731dc4524fe2c" title="Resets the ball." alt="" coords="464,129,541,155"/>
+<area shape="rect" id="node10" href="$paddle_8c.html#ad9200a237920fe22c7e50f6399356499" title="Sets the player&#39;s number of lives to 3." alt="" coords="460,179,544,204"/>
+<area shape="rect" id="node11" href="$paddle_8c.html#a95a842cdb72284ac221dcacb7867accc" title="Resets the paddle to the position (350, 550)" alt="" coords="455,228,550,254"/>
+<area shape="rect" id="node12" href="$paddle_8c.html#a9c07b5cb8510a64c285bacc886b028e2" title="Sets the player points to 0." alt="" coords="456,277,548,303"/>
+<area shape="rect" id="node13" href="$powerup_8c.html#ae18a1f2d6efc0fbddb64441cb419ab74" title=" " alt="" coords="446,327,559,352"/>
+<area shape="rect" id="node15" href="$model_8c.html#ad71d452a81792e39bdc70d6dbf346a90" title="Set the up bricks object." alt="" coords="455,376,550,402"/>
+<area shape="rect" id="node14" href="$ball_8c.html#abbb57e2edcdbaf0f9cab1a61d6f5846f" title="Disables a ball." alt="" coords="638,327,764,352"/>
+<area shape="rect" id="node18" href="$game_8c.html#a3df14e9ac8264536807c5f07bb3c72ba" title="Sets the control device (mouse or keyboard) according to settings." alt="" coords="421,426,583,467"/>
+<area shape="rect" id="node19" href="$model_8c.html#ae2c6a7a14abdfec0566ce83295ccce7c" title="Set up the ball object for the game." alt="" coords="462,491,542,516"/>
+<area shape="rect" id="node20" href="$model_8c.html#a1ae84809c7f2659c7aca7f5392613adb" title="Set up the paddle object for the game." alt="" coords="453,540,551,566"/>
+</map>

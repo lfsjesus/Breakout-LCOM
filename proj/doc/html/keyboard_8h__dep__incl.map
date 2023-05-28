@@ -1,0 +1,15 @@
+<map id="src/controller/keyboard_mouse/keyboard.h" name="src/controller/keyboard_mouse/keyboard.h">
+<area shape="rect" id="node1" title=" " alt="" coords="411,5,564,46"/>
+<area shape="rect" id="node2" href="$paddle_8h.html" title=" " alt="" coords="267,94,399,135"/>
+<area shape="rect" id="node7" href="$main_8c.html" title=" " alt="" coords="446,456,529,482"/>
+<area shape="rect" id="node13" href="$keyboard_8c.html" title=" " alt="" coords="526,94,679,135"/>
+<area shape="rect" id="node3" href="$ball_8h.html" title=" " alt="" coords="111,183,243,223"/>
+<area shape="rect" id="node5" href="$game_8h.html" title=" " alt="" coords="161,360,294,401"/>
+<area shape="rect" id="node10" href="$powerup_8h.html" title=" " alt="" coords="41,271,174,312"/>
+<area shape="rect" id="node12" href="$paddle_8c.html" title=" " alt="" coords="267,183,399,223"/>
+<area shape="rect" id="node4" href="$ball_8c.html" title=" " alt="" coords="249,271,382,312"/>
+<area shape="rect" id="node6" href="$game_8c.html" title=" " alt="" coords="289,449,422,489"/>
+<area shape="rect" id="node8" href="$view_8h.html" title=" " alt="" coords="155,456,265,482"/>
+<area shape="rect" id="node9" href="$view_8c.html" title=" " alt="" coords="155,537,265,563"/>
+<area shape="rect" id="node11" href="$powerup_8c.html" title=" " alt="" coords="5,360,138,401"/>
+</map>

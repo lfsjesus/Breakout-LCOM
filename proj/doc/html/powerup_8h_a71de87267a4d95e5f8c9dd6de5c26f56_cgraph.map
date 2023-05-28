@@ -1,0 +1,4 @@
+<map id="move_active_powerups" name="move_active_powerups">
+<area shape="rect" id="node1" title="Moves all active powerup down the screen." alt="" coords="5,5,164,31"/>
+<area shape="rect" id="node2" href="$powerup_8c.html#a2d407899d10056dc2f169de1d5bddb2f" title="Sets the powerup active to false." alt="" coords="212,5,330,31"/>
+</map>

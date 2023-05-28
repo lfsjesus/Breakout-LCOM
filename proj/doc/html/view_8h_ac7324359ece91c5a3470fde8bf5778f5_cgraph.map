@@ -1,0 +1,6 @@
+<map id="draw_points" name="draw_points">
+<area shape="rect" id="node1" title="Draws the sprite for the points (all digits)" alt="" coords="5,55,97,80"/>
+<area shape="rect" id="node2" href="$view_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Draws sprite xpm." alt="" coords="145,5,265,31"/>
+<area shape="rect" id="node3" href="$font_8c.html#aab82e6213f3722bb3493ffad6a466a84" title="Get the sprite of a number." alt="" coords="160,55,250,80"/>
+<area shape="rect" id="node4" href="$paddle_8c.html#a2bfc3c1acea7211e0fc7494cf8ef4188" title="Gets the player&#39;s points." alt="" coords="167,104,243,130"/>
+</map>

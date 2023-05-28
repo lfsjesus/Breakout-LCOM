@@ -1,0 +1,5 @@
+<map id="draw_setting_screen" name="draw_setting_screen">
+<area shape="rect" id="node1" title="Draws the sprite for the settings screen." alt="" coords="5,31,147,56"/>
+<area shape="rect" id="node2" href="$view_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Draws sprite xpm." alt="" coords="201,5,321,31"/>
+<area shape="rect" id="node3" href="$game_8c.html#a5251408e5d3cba77c340ba6840744699" title="Gets the current setting." alt="" coords="195,55,327,80"/>
+</map>

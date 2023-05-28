@@ -1,0 +1,8 @@
+<map id="destroy_sprite" name="destroy_sprite">
+<area shape="rect" id="node1" title="Destroys a sprite." alt="" coords="657,56,760,82"/>
+<area shape="rect" id="node2" href="$font_8c.html#a8eb8b94da46f5a350157438ffd912e45" title="destroys alphabet sprites" alt="" coords="442,5,609,31"/>
+<area shape="rect" id="node3" href="$model_8c.html#a8fdbc6c7bfca3ef4a8800a3cdc19d932" title="Destroys all the sprite objects Important to use this before ending the game loop." alt="" coords="284,56,394,82"/>
+<area shape="rect" id="node6" href="$font_8c.html#a2acc79e43afba216c8dbbb23b6a4d37f" title="destroys number sprites" alt="" coords="445,107,606,132"/>
+<area shape="rect" id="node4" href="$main_8c.html#abdcc0cd526b667641db5dc072cc162c4" title=" " alt="" coords="162,56,236,82"/>
+<area shape="rect" id="node5" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,56,114,82"/>
+</map>

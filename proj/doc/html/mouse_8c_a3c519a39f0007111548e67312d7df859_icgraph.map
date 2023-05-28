@@ -1,0 +1,6 @@
+<map id="mouse_process_packet" name="mouse_process_packet">
+<area shape="rect" id="node1" title="Processes the mouse packet." alt="" coords="523,5,683,31"/>
+<area shape="rect" id="node2" href="$mouse_8c.html#a68dbff952658b38121693949e3abae64" title="Syncronizes the information from the mouse." alt="" coords="352,5,475,31"/>
+<area shape="rect" id="node3" href="$game_8c.html#aa577e78e2462033d486b5d8fa64c7bec" title="Updates states according to mouse usage." alt="" coords="162,5,304,31"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,31"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="write_kbc_command" name="write_kbc_command">
+<area shape="rect" id="node1" title="Tries to read the output (3 attempts)" alt="" coords="5,5,147,31"/>
+<area shape="rect" id="node2" href="$kbc_8c.html#a7a3298d751903e7896747bb6413ad4d6" title="Reads the status register." alt="" coords="195,5,334,31"/>
+<area shape="rect" id="node3" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="382,5,472,31"/>
+</map>

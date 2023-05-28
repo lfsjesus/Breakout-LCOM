@@ -1,0 +1,17 @@
+<map id="change_ball_pos" name="change_ball_pos">
+<area shape="rect" id="node1" title="Changes the position of the ball." alt="" coords="5,221,124,247"/>
+<area shape="rect" id="node2" href="$powerup_8c.html#a7be796257b5053fef7c50bc096f5f724" title="Handles active power ups collision with the paddle." alt="" coords="172,111,338,136"/>
+<area shape="rect" id="node8" href="$ball_8c.html#a17e2c242cd638dc9468be85835c7b20a" title="Handles ball collisions with edges of the screen." alt="" coords="201,172,309,198"/>
+<area shape="rect" id="node9" href="$ball_8c.html#a4a721f848272ad8773047410bf2a4ec6" title="Handles ball&#45;brick collisions." alt="" coords="203,221,307,247"/>
+<area shape="rect" id="node13" href="$ball_8c.html#ab103dd4a073d7b68f95063a4d2ba870a" title="Handles ball&#45;extraBall collisions." alt="" coords="189,271,321,296"/>
+<area shape="rect" id="node15" href="$ball_8c.html#a9cf82bc750b719b1aa5570ec123d0ba8" title="Handles ball&#45;paddle collisions." alt="" coords="198,320,312,346"/>
+<area shape="rect" id="node3" href="$powerup_8c.html#ac1a5e100f7833511a370a46a39b1d48c" title="Activates the power up according to its type." alt="" coords="386,104,509,130"/>
+<area shape="rect" id="node4" href="$ball_8c.html#a0ef8d3b88ebcd004cfc25de72a508948" title="Adds a new ball to the game." alt="" coords="602,5,671,31"/>
+<area shape="rect" id="node5" href="$brick_8c.html#a9a1c82217e23b5f51348040c89b3915f" title="Reduces 4hp from red bricks." alt="" coords="571,55,702,80"/>
+<area shape="rect" id="node6" href="$powerup_8c.html#a2d407899d10056dc2f169de1d5bddb2f" title="Sets the powerup active to false." alt="" coords="577,104,696,130"/>
+<area shape="rect" id="node7" href="$paddle_8c.html#a32f3f6bc23dda8d7767a2aeaef573ab2" title="Increases the player&#39;s number of lives by 1." alt="" coords="586,153,687,179"/>
+<area shape="rect" id="node10" href="$brick_8c.html#aed81100f4ddae20514512ff8d38f05b8" title="Decreases the hp of the brick by 1. If the hp is 0 after decreasing, removes brick and updates brick ..." alt="" coords="400,196,495,222"/>
+<area shape="rect" id="node12" href="$paddle_8c.html#a5af081c1f2abbee362b5f4b1db4f0e91" title="Increases the player points by 1." alt="" coords="392,245,504,271"/>
+<area shape="rect" id="node11" href="$model_8c.html#af64ce8a223796a2d56b0bea24d83ecd2" title="decrements the brick_counter variable by 1" alt="" coords="557,203,716,228"/>
+<area shape="rect" id="node14" href="$powerup_8c.html#a286588295acb9ecbf86e2c605a87c976" title="Checks if extra ball is active." alt="" coords="388,295,507,320"/>
+</map>

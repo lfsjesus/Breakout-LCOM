@@ -1,0 +1,17 @@
+<map id="src/model/model.h" name="src/model/model.h">
+<area shape="rect" id="node1" title=" " alt="" coords="245,5,373,31"/>
+<area shape="rect" id="node2" href="$ball_8h.html" title=" " alt="" coords="243,168,375,208"/>
+<area shape="rect" id="node9" href="$powerup_8h.html" title=" " alt="" coords="35,256,167,297"/>
+<area shape="rect" id="node11" href="$brick_8h.html" title=" " alt="" coords="347,79,479,120"/>
+<area shape="rect" id="node13" href="$paddle_8h.html" title=" " alt="" coords="139,79,271,120"/>
+<area shape="rect" id="node15" href="$model_8c.html" title=" " alt="" coords="503,87,632,112"/>
+<area shape="rect" id="node3" href="$ball_8c.html" title=" " alt="" coords="243,256,375,297"/>
+<area shape="rect" id="node4" href="$game_8h.html" title=" " alt="" coords="268,345,400,386"/>
+<area shape="rect" id="node5" href="$game_8c.html" title=" " alt="" coords="76,434,208,474"/>
+<area shape="rect" id="node6" href="$main_8c.html" title=" " alt="" coords="233,441,315,467"/>
+<area shape="rect" id="node7" href="$view_8h.html" title=" " alt="" coords="339,441,449,467"/>
+<area shape="rect" id="node8" href="$view_8c.html" title=" " alt="" coords="339,522,449,548"/>
+<area shape="rect" id="node10" href="$powerup_8c.html" title=" " alt="" coords="35,345,167,386"/>
+<area shape="rect" id="node12" href="$brick_8c.html" title=" " alt="" coords="501,168,634,208"/>
+<area shape="rect" id="node14" href="$paddle_8c.html" title=" " alt="" coords="35,168,167,208"/>
+</map>

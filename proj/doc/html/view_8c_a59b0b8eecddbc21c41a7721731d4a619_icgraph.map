@@ -1,0 +1,6 @@
+<map id="draw_active_powerups" name="draw_active_powerups">
+<area shape="rect" id="node1" title="Draws the sprite for all the powerups that are active." alt="" coords="510,5,665,31"/>
+<area shape="rect" id="node2" href="$view_8c.html#a8fe6fe827e29e6b0cb98cda00dc38355" title="Draws the frame according to the game state." alt="" coords="342,5,462,31"/>
+<area shape="rect" id="node3" href="$game_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates states according to timer." alt="" coords="162,5,294,31"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,31"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="PowerUp" name="PowerUp">
+<area shape="rect" id="node1" title="Struct used for powerup objects." alt="" coords="5,94,81,120"/>
+<area shape="rect" id="node2" href="$struct_sprite.html" title="Struct for Sprite objects." alt="" coords="15,5,71,31"/>
+</map>

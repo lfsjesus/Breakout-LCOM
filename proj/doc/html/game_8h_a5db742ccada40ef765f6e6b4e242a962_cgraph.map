@@ -1,0 +1,6 @@
+<map id="update_settings_state" name="update_settings_state">
+<area shape="rect" id="node1" title="Sets up the game according to the settings." alt="" coords="5,70,155,96"/>
+<area shape="rect" id="node2" href="$game_8c.html#a3df14e9ac8264536807c5f07bb3c72ba" title="Sets the control device (mouse or keyboard) according to settings." alt="" coords="203,5,365,46"/>
+<area shape="rect" id="node3" href="$model_8c.html#ae2c6a7a14abdfec0566ce83295ccce7c" title="Set up the ball object for the game." alt="" coords="244,70,324,96"/>
+<area shape="rect" id="node4" href="$model_8c.html#a1ae84809c7f2659c7aca7f5392613adb" title="Set up the paddle object for the game." alt="" coords="235,120,333,145"/>
+</map>

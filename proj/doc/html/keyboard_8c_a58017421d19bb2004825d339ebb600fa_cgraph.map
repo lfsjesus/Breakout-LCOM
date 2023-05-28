@@ -1,0 +1,7 @@
+<map id="keyboard_restore" name="keyboard_restore">
+<area shape="rect" id="node1" title="Restores the keyboard." alt="" coords="5,31,127,56"/>
+<area shape="rect" id="node2" href="$kbc_8c.html#ab9660ae8733cfa002aed76e370944ab7" title="Reads the output (10 attempts)" alt="" coords="201,55,290,80"/>
+<area shape="rect" id="node5" href="$kbc_8c.html#a4822f96183ff9c6373060b217700c1d1" title="Tries to read the output (3 attempts)" alt="" coords="175,5,316,31"/>
+<area shape="rect" id="node3" href="$kbc_8c.html#a7a3298d751903e7896747bb6413ad4d6" title="Reads the status register." alt="" coords="364,5,503,31"/>
+<area shape="rect" id="node4" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="551,31,642,56"/>
+</map>

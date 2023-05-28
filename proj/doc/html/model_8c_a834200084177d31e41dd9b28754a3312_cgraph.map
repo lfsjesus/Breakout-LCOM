@@ -1,0 +1,6 @@
+<map id="setup_sprites" name="setup_sprites">
+<area shape="rect" id="node1" title="Set up all sprite object." alt="" coords="5,24,105,49"/>
+<area shape="rect" id="node2" href="$sprite_8c.html#acb93792ebc27a32413e0b31624c6d9b1" title="Builds a sprite with a XPM with colors in direct mode." alt="" coords="341,24,469,49"/>
+<area shape="rect" id="node3" href="$font_8c.html#ab67c79e0a214404edb8d9574302f000e" title="initializes letter sprites" alt="" coords="153,24,293,49"/>
+<area shape="rect" id="node4" href="$font_8c.html#af2747cb79a86ee423297970e88165c82" title="initializes number sprimtes" alt="" coords="156,73,290,99"/>
+</map>

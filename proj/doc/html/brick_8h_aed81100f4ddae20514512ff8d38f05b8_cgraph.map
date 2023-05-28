@@ -1,0 +1,4 @@
+<map id="decrease_hp" name="decrease_hp">
+<area shape="rect" id="node1" title="Decreases the hp of the brick by 1. If the hp is 0 after decreasing, removes brick and updates brick ..." alt="" coords="5,5,101,31"/>
+<area shape="rect" id="node2" href="$model_8c.html#af64ce8a223796a2d56b0bea24d83ecd2" title="decrements the brick_counter variable by 1" alt="" coords="149,5,307,31"/>
+</map>
