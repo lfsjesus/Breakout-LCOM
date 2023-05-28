@@ -6,11 +6,11 @@
 #include "../../controller/keyboard_mouse/mouse.h"
 #include "../../controller/video/graphics.h"
 #include "../../controller/serialPort/serialport.h"
+#include "../../view/view.h"
 #include "paddle.h"
 #include "ball.h"
 #include "brick.h"
 #include "powerup.h"
-#include "../../view/view.h"
 
 typedef enum {
     RUNNING,
@@ -32,5 +32,12 @@ void update_timer_state();
 void update_sp_state();
 void refresh_buttons_state();
 void reset_game();
+void update_settings_state();
+void settings_keyboard_state();
+void settings_mouse_state();
+void settings_change_control_device();
+void singleplayer_handler();
+uint8_t get_current_setting();
+ControlDevice get_control_device();
 
 #endif

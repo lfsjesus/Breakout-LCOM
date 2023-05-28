@@ -13,6 +13,12 @@
 #define ESC_MK_CODE 0x01
 #define ESC_BK_CODE 0x81
 
+#define ENTER_MK_CODE 0x1C
+#define ENTER_BK_CODE 0x9C
+
+#define SPACE_MK_CODE 0x39
+#define SPACE_BK_CODE 0xB9
+
 #define S_MK_CODE 0x1F
 #define S_BK_CODE 0x9F
 
@@ -27,6 +33,18 @@
 
 #define D_MK_CODE 0x20
 #define D_BK_CODE 0xA0
+
+#define ONE_MK_CODE 0x02
+#define ONE_BK_CODE 0x82
+
+#define TWO_MK_CODE 0x03
+#define TWO_BK_CODE 0x83
+
+#define THREE_MK_CODE 0x04
+#define THREE_BK_CODE 0x84
+
+#define FOUR_MK_CODE 0x05
+#define FOUR_BK_CODE 0x85
 
 #define KBC_READ_CMD 0x20
 #define KBC_WRITE_CMD 0x60

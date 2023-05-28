@@ -3,12 +3,12 @@
 
 Sprite* mouse;
 Sprite* background;
-Sprite* button_singleplayer;
-Sprite* button_multiplayer;
-Sprite* button_leaderboard;
-Sprite* button_settings;
+Sprite* settings_backgrounds[6];
 Sprite* heart;
 Sprite* ball;
+Sprite* ball2;
+Sprite* paddle;
+Sprite* paddle2;
 Sprite* extraBallSprite;
 Sprite* blueBrick;
 Sprite* greenBrick;
@@ -33,14 +33,17 @@ Brick bricks[12][10];
 void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
     background = create_sprite_xpm((xpm_map_t) menu_background_xpm);
-    button_singleplayer = create_sprite_xpm((xpm_map_t) singleplayer_button_xpm);
-    button_multiplayer = create_sprite_xpm((xpm_map_t) multiplayer_button_xpm);
-    button_leaderboard = create_sprite_xpm((xpm_map_t) leaderboard_button_xpm);
-    button_settings = create_sprite_xpm((xpm_map_t) settings_button_xpm);
+    //button_singleplayer = create_sprite_xpm((xpm_map_t) singleplayer_button_xpm);
+    //button_multiplayer = create_sprite_xpm((xpm_map_t) multiplayer_button_xpm);
+    //button_leaderboard = create_sprite_xpm((xpm_map_t) leaderboard_button_xpm);
+    //button_settings = create_sprite_xpm((xpm_map_t) settings_button_xpm);
     mainPaddle.sprite = create_sprite_xpm((xpm_map_t) paddle_xpm);
     guestPaddle.sprite = create_sprite_xpm((xpm_map_t) paddle_xpm);
+    paddle = create_sprite_xpm((xpm_map_t) paddle_xpm);
+    paddle2 = create_sprite_xpm((xpm_map_t) paddle2_xpm);
     heart = create_sprite_xpm((xpm_map_t) heart_xpm);
-    mainBall.sprite = create_sprite_xpm((xpm_map_t) ball_xpm);
+    ball = create_sprite_xpm((xpm_map_t) ball_xpm);
+    ball2 = create_sprite_xpm((xpm_map_t) ball2_xpm);
     blueBrick = create_sprite_xpm((xpm_map_t) bricks_xpm[0]);
     greenBrick = create_sprite_xpm((xpm_map_t) bricks_xpm[2]);
     redBrick = create_sprite_xpm((xpm_map_t) bricks_xpm[4]);
@@ -51,19 +54,23 @@ void setup_sprites() {
     blockPowerUpSprite = create_sprite_xpm((xpm_map_t) block_power_xpm);
     lifePowerUpSprite = create_sprite_xpm((xpm_map_t) life_power_xpm);
     extraBallSprite = create_sprite_xpm((xpm_map_t) extra_ball_xpm);
+    settings_backgrounds[0] = create_sprite_xpm((xpm_map_t) controller_mouse_xpm);
+    settings_backgrounds[1] = create_sprite_xpm((xpm_map_t) controller_keyboard_xpm);
+    settings_backgrounds[2] = create_sprite_xpm((xpm_map_t) ball_option1_xpm);
+    settings_backgrounds[3] = create_sprite_xpm((xpm_map_t) ball_option2_xpm);
+    settings_backgrounds[4] = create_sprite_xpm((xpm_map_t) paddle_option1_xpm);
+    settings_backgrounds[5] = create_sprite_xpm((xpm_map_t) paddle_option2_xpm);
     init_alphabet_sprites();
 }
 
 void destroy_sprites() {
     destroy_sprite(mouse);
     destroy_sprite(background);
-    destroy_sprite(button_singleplayer);
-    destroy_sprite(button_multiplayer);
-    destroy_sprite(button_leaderboard);
-    destroy_sprite(button_settings);
-    destroy_sprite(mainPaddle.sprite);
+    destroy_sprite(paddle);
+    destroy_sprite(paddle2);
     destroy_sprite(heart);
-    destroy_sprite(mainBall.sprite);
+    destroy_sprite(ball);
+    destroy_sprite(ball2);
     destroy_sprite(blueBrick);
     destroy_sprite(greenBrick);
     destroy_sprite(redBrick);
@@ -73,6 +80,13 @@ void destroy_sprites() {
     destroy_sprite(ballPowerUpSprite);
     destroy_sprite(blockPowerUpSprite);
     destroy_sprite(lifePowerUpSprite);
+    destroy_sprite(extraBallSprite);
+    destroy_sprite(settings_backgrounds[0]);
+    destroy_sprite(settings_backgrounds[1]);
+    destroy_sprite(settings_backgrounds[2]);
+    destroy_sprite(settings_backgrounds[3]);
+    destroy_sprite(settings_backgrounds[4]);
+    destroy_sprite(settings_backgrounds[5]);
     destroy_alphabet_sprites();
 }
 
@@ -104,6 +118,24 @@ void setup_bricks() {
                 brick_counter++;
             }
         }
+    }
+}
+
+void setup_ball(uint8_t n) {
+    if (n == 2) {
+        mainBall.sprite = ball;
+    }
+    else if (n == 3) {
+        mainBall.sprite = ball2;
+    }
+}
+
+void setup_paddle(uint8_t n) {
+    if (n == 4) {
+        mainPaddle.sprite = paddle;
+    }
+    else if (n == 5) {
+        mainPaddle.sprite = paddle2;
     }
 }
 

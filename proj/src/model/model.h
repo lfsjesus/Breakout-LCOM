@@ -5,13 +5,17 @@
 #include <lcom/lcf.h>
 #include "xpm/mouse.xpm"
 #include "xpm/menu_background.xpm"
-#include "xpm/singleplayer_button.xpm"
-#include "xpm/multiplayer_button.xpm"
-#include "xpm/leaderboard_button.xpm"
-#include "xpm/settings_button.xpm"
+#include "xpm/controller_mouse.xpm"
+#include "xpm/controller_keyboard.xpm"
+#include "xpm/ball_option1.xpm"
+#include "xpm/ball_option2.xpm"
+#include "xpm/paddle_option1.xpm"
+#include "xpm/paddle_option2.xpm"
 #include "xpm/paddle.xpm"
+#include "xpm/paddle2.xpm"
 #include "xpm/heart.xpm"
 #include "xpm/ball.xpm"
+#include "xpm/ball2.xpm"
 #include "xpm/extra_ball.xpm"
 #include "../model/sprite.h"
 #include "../model/maps/maps.h"
@@ -25,6 +29,8 @@ void setup_sprites();
 void destroy_sprites();
 void setup_bricks();
 void setup_powerups();
+void setup_ball(uint8_t n);
+void setup_paddle(uint8_t n);
 
 typedef struct {
     Sprite* sprite; 

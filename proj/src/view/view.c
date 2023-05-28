@@ -12,14 +12,11 @@ extern PowerUp powerUps[3];
 
 extern GameState gameState;
 
-extern Sprite *mouse;
-extern Sprite *background;
-extern Sprite *button_singleplayer;
-extern Sprite *button_multiplayer;
-extern Sprite *button_leaderboard;
-extern Sprite *button_settings;
-extern Sprite *paddle;
-extern Sprite *heart;
+extern Sprite* settings_backgrounds[6];
+extern Sprite* mouse;
+extern Sprite* background;
+extern Sprite* paddle;
+extern Sprite* heart;
 extern Sprite* blueBrick;
 extern Sprite* greenBrick;
 extern Sprite* redBrick;
@@ -47,14 +44,6 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y) {
 
 void draw_mouse() {
   draw_sprite_xpm(mouse, mouse_info.x, mouse_info.y);
-}
-
-void draw_menu() {
-  draw_sprite_xpm(button_singleplayer, 150, 290);
-  draw_sprite_xpm(button_multiplayer, 444, 290);
-  draw_sprite_xpm(button_leaderboard, 150, 390);
-  draw_sprite_xpm(button_settings, 444, 390);
-
 }
 
 void draw_ball() {
@@ -111,35 +100,40 @@ void draw_bricks() {
 
 void draw_new_frame() {
   switch (gameState){
-  case START:
-    draw_menu();
-    draw_mouse();
-    break;
-  
-  case SETTINGS:
-     vg_draw_rectangle(100, 100, 10, 10, 0xFF0000);
-    break;
-  
-  case SCORE:
-    vg_draw_rectangle(100, 100, 10, 10, 0x00FF00);
-    break;
-  
-  case INIT:
-    draw_instruction();
-  case GAME:
-    draw_points();
-    draw_lives();
-    draw_paddle();
-    draw_bricks();
-    draw_ball();
-    draw_extra_ball();
-    draw_active_powerups();
-    draw_guest_paddle();
-    break;
-  default:
-    break;
-  }
 
+    case START:
+      if (get_control_device() == MOUSE) {
+        draw_mouse();
+      }
+      break;
+    case SETTINGS:
+      draw_setting_screen();
+      if (get_control_device() == MOUSE) {
+        draw_mouse();  
+      }
+      break;
+    case SCORE:
+      vg_draw_rectangle(100, 100, 10, 10, 0x00FF00);
+      break;
+    case INIT:
+      draw_instruction();
+    case GAME:
+      draw_points();
+      draw_lives();
+      draw_paddle();
+      draw_bricks();
+      draw_ball();
+      draw_extra_ball();
+      draw_active_powerups();
+      draw_guest_paddle();
+      break;
+    default:
+      break;
+  }
+}
+
+void draw_setting_screen() {
+  draw_sprite_xpm(settings_backgrounds[get_current_setting()], 0, 0);
 }
 
 void draw_points() {
