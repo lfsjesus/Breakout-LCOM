@@ -7,6 +7,7 @@
 #include "../controller/keyboard_mouse/mouse.h"
 #include "../model/sprite.h"
 #include "../controller/game/game.h"
+#include "../controller/game/leaderboard.h"
 #include "../model/xpm/font/font.h"
 
 #define TRANSPARENT 0xFFFFFE
@@ -24,6 +25,10 @@ void draw_lives();
 void draw_active_powerups();
 
 void draw_setting_screen();
+
+void draw_leaderboard_screen();
+
+void draw_leaderboard_records(LeaderboardRecord* records);
 
 void draw_instruction();
 

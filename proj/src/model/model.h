@@ -16,6 +16,7 @@
 #include "xpm/heart.xpm"
 #include "xpm/ball.xpm"
 #include "xpm/ball2.xpm"
+#include "xpm/leaderboard.xpm"
 #include "xpm/extra_ball.xpm"
 #include "../model/sprite.h"
 #include "../model/maps/maps.h"

@@ -11,6 +11,7 @@ ControlDevice controlDevice = MOUSE;
 
 extern vbe_mode_info_t mode_info;
 extern MouseInfo mouse_info;
+extern rtc_time_info rtc_time;
 
 extern Paddle mainPaddle;
 extern Ball mainBall;
@@ -40,6 +41,8 @@ void update_keyboard_state() {
             case TWO_BK_CODE:
                 break;
             case THREE_BK_CODE:
+                gameState = LEADERBOARD;
+                leaderboard_fill();
                 break;
             case FOUR_BK_CODE:
                 gameState = SETTINGS;
@@ -115,6 +118,7 @@ void update_timer_state() {
         case GAME:
             timer_int_handler();
             singleplayer_handler();
+            update_rtc_state(); 
             break;
         default:
             break;
@@ -124,6 +128,9 @@ void update_timer_state() {
     draw_new_frame();
 }
 
+void update_rtc_state() {
+    rtc_update();
+}
 
 void refresh_buttons_state() {
     if (mouse_info.left_click) {
@@ -134,7 +141,8 @@ void refresh_buttons_state() {
             gameState = GAME;
         }
         else if (mouse_info.x >= 100 && mouse_info.x <= 280 && mouse_info.y >= 350 && mouse_info.y <= 450) {
-            gameState = SCORE;
+            gameState = LEADERBOARD;
+            leaderboard_fill();
         }
         else if (mouse_info.x >= 420 && mouse_info.x <= 700 && mouse_info.y >= 350 && mouse_info.y <= 450) {
             gameState = SETTINGS;
@@ -162,7 +170,6 @@ void settings_keyboard_state() {
             break;
         case A_BK_CODE:
             current_setting = (current_setting / 2) * 2;
-            printf("CS: %d", current_setting);
             break;
         case D_BK_CODE:
             current_setting = (current_setting / 2) * 2 + 1;
@@ -179,7 +186,6 @@ void settings_mouse_state() {
         }
         else if (mouse_info.x >= 332 && mouse_info.x <= 396 && mouse_info.y >= 260 && mouse_info.y <= 320) {
             current_setting = 1;
-            printf("CS: %d", current_setting);
         }
         else if (mouse_info.x >= 406 && mouse_info.x <= 470 && mouse_info.y >= 260 && mouse_info.y <= 320) {
             current_setting = 2;
@@ -223,6 +229,7 @@ void singleplayer_handler() {
     }
     
     if (getBrickCounter() == 0 || getLives(&mainPaddle) == 0) {
+        add_leaderboard_record(1, getPoints(), &rtc_time);
         gameState = START;
         reset_game();
     }
@@ -238,5 +245,7 @@ void reset_game() {
     reset_paddle(&mainPaddle);
     reset_points();
     reset_lives();
+    counter = 0;
+    reset_powerups();
     setup_bricks();
 }

@@ -2,6 +2,7 @@
 #include "controller/video/graphics.h"
 #include "controller/keyboard_mouse/keyboard.h"
 #include "controller/keyboard_mouse/mouse.h"
+#include "controller/rtc/rtc.h"
 #include "controller/timer/i8254.h"
 #include "controller/game/game.h"
 
@@ -18,10 +19,10 @@ int (main)(int argc, char *argv[]) {
 
 int setup() {
   // Atualização da frequência
-  if (timer_set_frequency(0, 60) != 0) return 1;
+  if (timer_set_frequency(0, 60) != OK) return 1;
 
   // Inicialização dos buffers de vídeo (double buffering)
-  if (set_frame_buffer(0x115) != 0) return 1;
+  if (set_frame_buffer(0x115) != OK) return 1;
 
   // Inicialização do modo gráfico
   if (set_graphics_mode(0x115) != 0) return 1;
@@ -33,24 +34,23 @@ int setup() {
   setup_powerups();
   uint8_t hook_id_helper;
   // Ativação das interrupções dos dispositivos
-  if (timer_subscribe_int(&hook_id_helper) != 0) return 1;
-  if (keyboard_subscribe_int(&hook_id_helper) != 0) return 1;
-  if (mouse_subscribe_int(&hook_id_helper) != 0) return 1;
-  //if (rtc_subscribe_interrupts() != 0) return 1;
+  if (timer_subscribe_int(&hook_id_helper) != OK) return 1;
+  if (keyboard_subscribe_int(&hook_id_helper) != OK) return 1;
+  if (mouse_subscribe_int(&hook_id_helper) != OK) return 1;
 
   // Ativar stream-mode e report de dados do rato
-  if (mouse_config(ENABLE_STREAM_MODE) != 0) return 1;
-  if (mouse_config(ENABLE_DATA_REPORT) != 0) return 1;
+  if (mouse_config(ENABLE_STREAM_MODE) != OK) return 1;
+  if (mouse_config(ENABLE_DATA_REPORT) != OK) return 1;
 
-  // Setup do Real Time Clock
-  //rtc_setup();
+  // Setup RTC (não vão ser usadas interrupções)
+  rtc_config();
 
   return OK;
 }
 
 int teardown() {
   // Volta ao modo de texto
-  if (vg_exit() != 0) return 1;
+  if (vg_exit() != OK) return 1;
 
   // Destruição dos sprites
   destroy_sprites();
@@ -59,7 +59,6 @@ int teardown() {
   if (timer_unsubscribe_int() != 0) return 1;
   if (keyboard_unsubscribe_int() != 0) return 1;
   if (mouse_unsubscribe_int() != 0) return 1;
-  //if (rtc_unsubscribe_interrupts() != 0) return 1;
 
   // Desativar o report de dados do rato
   if (mouse_config(DISABLE_DATA_REPORT) != 0) return 1;
@@ -82,11 +81,10 @@ int (proj_main_loop)(int argc, char *argv[]) {
       switch(_ENDPOINT_P(msg.m_source)) {
         case HARDWARE: 
           //printf("Interrupt: %d\n", msg.m_notify.interrupts);
-          if (msg.m_notify.interrupts & BIT(TIMER0_IRQ))   update_timer_state();    //troca buffers
+          if (msg.m_notify.interrupts & BIT(TIMER0_IRQ))   update_timer_state();    // Troca de buffer
           if (msg.m_notify.interrupts & BIT(KEYBOARD_IRQ)) update_keyboard_state(); 
           if (msg.m_notify.interrupts & BIT(MOUSE_IRQ))    update_mouse_state();
           break;
-          //if (msg.m_notify.interrupts & RTC_IRQ)      update_rtc_state(); 
         }
     }
   }

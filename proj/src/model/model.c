@@ -4,6 +4,7 @@
 Sprite* mouse;
 Sprite* background;
 Sprite* settings_backgrounds[6];
+Sprite* leaderboard;
 Sprite* heart;
 Sprite* ball;
 Sprite* ball2;
@@ -52,7 +53,9 @@ void setup_sprites() {
     settings_backgrounds[3] = create_sprite_xpm((xpm_map_t) ball_option2_xpm);
     settings_backgrounds[4] = create_sprite_xpm((xpm_map_t) paddle_option1_xpm);
     settings_backgrounds[5] = create_sprite_xpm((xpm_map_t) paddle_option2_xpm);
+    leaderboard = create_sprite_xpm((xpm_map_t) leaderboard_xpm);
     init_alphabet_sprites();
+    init_number_sprites();
 }
 
 void destroy_sprites() {
@@ -79,7 +82,9 @@ void destroy_sprites() {
     destroy_sprite(settings_backgrounds[3]);
     destroy_sprite(settings_backgrounds[4]);
     destroy_sprite(settings_backgrounds[5]);
+    destroy_sprite(leaderboard);
     destroy_alphabet_sprites();
+    destroy_number_sprites();
 }
 
 void setup_bricks() {

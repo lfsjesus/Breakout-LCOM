@@ -5,7 +5,9 @@
 #include <lcom/lcf.h>
 #include "../../controller/keyboard_mouse/mouse.h"
 #include "../../controller/video/graphics.h"
+#include "../../controller/rtc/rtc.h"
 #include "../../view/view.h"
+#include "leaderboard.h"
 #include "paddle.h"
 #include "ball.h"
 #include "brick.h"
@@ -20,7 +22,7 @@ typedef enum {
     START,
     INIT,
     GAME,
-    SCORE,
+    LEADERBOARD,
     SETTINGS,
     END
 } GameState;
@@ -28,6 +30,7 @@ typedef enum {
 void update_keyboard_state();
 void update_mouse_state();
 void update_timer_state();
+void update_rtc_state();
 void refresh_buttons_state();
 void reset_game();
 void update_settings_state();

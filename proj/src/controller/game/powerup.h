@@ -17,4 +17,6 @@ void check_powerup_collision(Paddle *paddle);
 
 bool extra_ball_active();
 
+void reset_powerups();
+
 #endif
