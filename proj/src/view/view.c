@@ -118,7 +118,7 @@ void draw_new_frame() {
     default:
       break;
   }
-  if (get_control_device() == MOUSE) {
+  if (get_control_device() == MOUSE && gameState != INIT  && gameState != SINGLEPLAYER) {
     draw_mouse();  
   }
 }

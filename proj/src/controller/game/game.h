@@ -37,51 +37,64 @@ typedef enum {
  * @brief Updates states according to keyboard usage
  */
 void update_keyboard_state();
+
 /**
  * @brief Updates states according to mouse usage
  */
 void update_mouse_state();
+
 /**
  * @brief Updates states according to timer
  */
 void update_timer_state();
-<<<<<<< HEAD
+
+
+/**
+ * @brief Updates RTC info when needed
+ */
 void update_rtc_state();
-=======
+
 /**
  * @brief Updates states according to mouse clicks
  */
->>>>>>> documentation
 void refresh_buttons_state();
+
 /**
  * @brief Resets the game (ball, paddle, bricks, lives and points)
  */
 void reset_game();
+
 /**
  * @brief Sets up the game according to the settings
  */
 void update_settings_state();
+
 /**
  * @brief Sets the settings according to key pressed in the keyboard
  */
 void settings_keyboard_state();
+
 /**
  * @brief Sets the settings accoring to mouse usage
  */
 void settings_mouse_state();
+
 /**
  * @brief Sets the control device (mouse or keyboard) according to settings
  */
 void settings_change_control_device();
+
 /**
  * @brief Handles the single player game mode
  */
 void singleplayer_handler();
+
 /**
  * @brief Gets the current setting
  * @return uint8_t current setting
  */
 uint8_t get_current_setting();
+
 /**
  * @brief Gets the current control device
  * @return ControlDevice current control device
