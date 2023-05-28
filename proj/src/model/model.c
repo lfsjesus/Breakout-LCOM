@@ -88,6 +88,7 @@ void destroy_sprites() {
 }
 
 void setup_bricks(char* map[12]) {
+    brick_counter = 0;
     int width = 75;
     int height = 37;
     int padding = 50;
