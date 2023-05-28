@@ -5,13 +5,14 @@
 #include "controller/rtc/rtc.h"
 #include "controller/timer/i8254.h"
 #include "controller/game/game.h"
+#include "controller/serialPort/serialport.h"
 
 extern SystemState systemState;
 
 int (main)(int argc, char *argv[]) {
   lcf_set_language("EN-US");
   lcf_trace_calls("");
-  lcf_log_output("");
+  lcf_log_output("/home/lcom/labs/gitlab/g4/proj/src/debug/output.txt");
   if (lcf_start(argc, argv)) return 1;
   lcf_cleanup();
   return 0;
@@ -24,6 +25,8 @@ int init() {
   // video buffers init
   if (set_frame_buffer(0x115) != OK) return 1;
   if (set_graphics_mode(0x115) != 0) return 1;
+  
+  if (sp_setup() != 0)  return 1;
 
   setup_bricks(map1);
   setup_sprites();
@@ -36,6 +39,7 @@ int init() {
   if (timer_subscribe_int(&aux_bitno) != OK) return 1;
   if (keyboard_subscribe_int() != OK) return 1;
   if (mouse_subscribe_int() != OK) return 1;
+  if (sp_subscribe_int(&aux_bitno) != 0) return 1;
 
   // Mouse config
   if (mouse_config(ENABLE_STREAM_MODE) != OK) return 1;
@@ -57,6 +61,7 @@ int teardown() {
   if (timer_unsubscribe_int() != 0) return 1;
   if (keyboard_unsubscribe_int() != 0) return 1;
   if (mouse_unsubscribe_int() != 0) return 1;
+  if (sp_unsubscribe_int() != 0) return 1;
 
   // Disable mouse report
   if (mouse_config(DISABLE_DATA_REPORT) != 0) return 1;
@@ -87,6 +92,10 @@ int (proj_main_loop)(int argc, char *argv[]) {
           if (msg.m_notify.interrupts & BIT(MOUSE_IRQ)) {
             update_mouse_state();
           }
+          if (msg.m_notify.interrupts & BIT(COM1_IRQ))  {
+             update_sp_state();
+          }
+
           break;
         }
     }

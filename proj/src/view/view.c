@@ -2,10 +2,12 @@
 #include <lcom/lcf.h>
 
 extern MouseInfo mouse_info;
+extern MouseInfo guest_mouse_info;
 extern Ball mainBall;
 extern Ball extraBall;
 extern Brick bricks[12][10];
 extern Paddle mainPaddle;
+extern Paddle guestPaddle;
 extern PowerUp powerUps[3];
 
 extern AppState gameState;
@@ -58,6 +60,11 @@ void draw_paddle() {
   draw_sprite_xpm(mainPaddle.sprite, mainPaddle.x, mainPaddle.y);
 }
 
+void draw_guest_paddle() {
+  draw_sprite_xpm(mainPaddle.sprite, guest_mouse_info.x, guestPaddle.y);
+  //printf("GUEST-> %d; %d\n", guest_mouse_info.x, guest_mouse_info.y);
+}
+
 void draw_bricks() {
   for (int i = 0; i < 12; i++) {
     for (int j = 0; j < 10; j++) {
@@ -95,6 +102,7 @@ void draw_bricks() {
 
 void draw_new_frame() {
   switch (gameState){
+
     case START:
       break;
     case SETTINGS:
@@ -115,6 +123,9 @@ void draw_new_frame() {
       draw_extra_ball();
       draw_active_powerups();
       break;
+    case MULTIPLAYER:
+      draw_guest_paddle();
+      draw_paddle();
     default:
       break;
   }

@@ -25,6 +25,8 @@ Ball mainBall = {NULL, 10, 500, 500, 4, 9};
 
 Paddle mainPaddle = {NULL, 350, 550};
 
+Paddle guestPaddle  = {NULL, 350, 20};
+
 PowerUp powerUps[3] = {{NULL, 0, 0, 1, false}, {NULL, 0, 0, 2, false}, {NULL, 0, 0, 3, false}};
 
 Brick bricks[12][10];
@@ -32,6 +34,8 @@ Brick bricks[12][10];
 void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
     background = create_sprite_xpm((xpm_map_t) menu_background_xpm);
+    mainPaddle.sprite = create_sprite_xpm((xpm_map_t) paddle_xpm);
+    guestPaddle.sprite = create_sprite_xpm((xpm_map_t) paddle_xpm);
     paddle = create_sprite_xpm((xpm_map_t) paddle_xpm);
     paddle2 = create_sprite_xpm((xpm_map_t) paddle2_xpm);
     heart = create_sprite_xpm((xpm_map_t) heart_xpm);

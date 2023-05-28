@@ -5,6 +5,7 @@
 #include <lcom/lcf.h>
 #include "../../controller/keyboard_mouse/mouse.h"
 #include "../../controller/video/graphics.h"
+#include "../../controller/serialPort/serialport.h"
 #include "../../controller/rtc/rtc.h"
 #include "../../view/view.h"
 #include "leaderboard.h"
@@ -28,6 +29,7 @@ typedef enum {
     START,
     INIT,
     SINGLEPLAYER,
+    MULTIPLAYER,
     LEADERBOARD,
     SETTINGS,
     END
@@ -47,6 +49,9 @@ void update_mouse_state();
  * @brief Updates states according to timer
  */
 void update_timer_state();
+
+
+void update_sp_state();
 
 
 /**

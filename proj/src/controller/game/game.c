@@ -11,6 +11,8 @@ ControlDevice controlDevice = MOUSE;
 
 extern vbe_mode_info_t mode_info;
 extern MouseInfo mouse_info;
+MouseInfo guest_mouse_info = {0, 0, 350, 20};
+
 extern rtc_time_info rtc_time;
 
 extern Paddle mainPaddle;
@@ -42,6 +44,7 @@ void update_keyboard_state() {
                 gameState = INIT;
                 break;
             case TWO_BK_CODE:
+                gameState = MULTIPLAYER;
                 break;
             case THREE_BK_CODE:
                 gameState = LEADERBOARD;
@@ -77,6 +80,7 @@ void update_mouse_state() {
     if (packet_counter == 3) {
         sync_mouse_info();
     }
+
     switch (gameState) {
         case START: 
             refresh_buttons_state();
@@ -94,6 +98,10 @@ void update_mouse_state() {
                 update_settings_state();
             }
             break;
+        case MULTIPLAYER:
+            send_mouse_packet(mouse_info);
+            move_paddle(&mainPaddle);
+
         default:
             break;
     }
@@ -135,13 +143,23 @@ void update_rtc_state() {
     rtc_update();
 }
 
+void update_sp_state() {
+    sp_ih();
+    uint8_t byte = pop(get_queue());
+
+    sp_read_playing_byte(byte);
+    sp_clear_queues();
+}
+
+
+
 void refresh_buttons_state() {
     if (mouse_info.left_click) {
         if (mouse_info.x >= 100 && mouse_info.x <= 380 && mouse_info.y >= 250 && mouse_info.y <= 350) {
             gameState = INIT;
         }
         else if (mouse_info.x >= 420 && mouse_info.x <= 700 && mouse_info.y >= 250 && mouse_info.y <= 350) {
-            gameState = SINGLEPLAYER;
+            gameState = MULTIPLAYER;
         }
         else if (mouse_info.x >= 100 && mouse_info.x <= 380 && mouse_info.y >= 350 && mouse_info.y <= 450) {
             gameState = LEADERBOARD;

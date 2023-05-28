@@ -16,6 +16,11 @@
  * @brief Draws the sprite for the mouse
  */
 void draw_mouse();
+
+void draw_menu();
+
+void draw_paddle();
+
 /**
  * @brief Draws the sprite for the ball
  */
