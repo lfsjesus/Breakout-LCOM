@@ -18,6 +18,15 @@
     "keyboard.h": "c",
     "brick.h": "c",
     "ball.h": "c",
-    "lcf.h": "c"
+    "lcf.h": "c",
+<<<<<<< HEAD
+    "view.h": "c",
+    "serialport.h": "c",
+    "game.h": "c",
+    "util.h": "c",
+    "stdio.h": "c"
+=======
+    "powerup.h": "c"
+>>>>>>> b784873448d212d42870e8f04f6ac59a7ad76d60
   },
 }
