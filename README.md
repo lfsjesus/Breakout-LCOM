@@ -23,5 +23,5 @@ All of the relevant documentation can be found [here](./docs).
 ### Tecnologies Used
 
 <div>
-	<img height="40" src="https://user-images.githubusercontent.com/25181517/192106073-90fffafe-3562-4ff9-a37e-c77a2da0ff58.png" alt="C" title="C" />
+	<img height="40" src="https://raw.githubusercontent.com/github/explore/f3e22f0dca2be955676bc70d6214b95b13354ee8/topics/c/c.png" alt="C" title="C" />
 </div>
